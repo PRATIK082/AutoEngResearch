@@ -1,0 +1,17 @@
+safety:
+  asil_decomposition:
+    - { function: EngineControl, asil: D }
+    - { function: BrakeControl, asil: D }
+    - { function: SteeringControl, asil: C }
+  freedom_from_interference:
+    - { partition: EnginePartition, asil: D, components: [Swc_EngineControl] }
+    - { partition: BrakePartition, asil: D, components: [Swc_BrakeControl] }
+  watchdog:
+    enabled: true
+    timeout_ms: 50
+    supervised_entities: [Swc_EngineControl, Swc_BrakeControl]
+  memory_protection:
+    mpu: true
+    regions:
+      - { name: EngineData, access: read_write, asil: D }
+      - { name: BrakeData, access: read_write, asil: D }

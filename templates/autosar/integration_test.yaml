@@ -13,3 +13,15 @@ tests:
       - step: send invalid torque request
       - step: run Runnable_10ms
       - expect: request rejected and fault logged
+  - id: TC_003
+    name: SecOCAuthentication
+    requirement: REQ_003
+    scenario:
+      - step: send EngineStatusPdu without valid MAC
+      - expect: PDU rejected by SecOC
+  - id: TC_004
+    name: WatchdogReset
+    requirement: REQ_004
+    scenario:
+      - step: stall Task_Engine_10ms
+      - expect: ECU reset within 50 ms

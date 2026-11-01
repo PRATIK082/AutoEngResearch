@@ -2,45 +2,154 @@ autosar:
   schema: R4.0
   system_name: VehicleSystem
 
+  # ---------------------------------------------------------------- ECU topology
   ecus:
     - name: ECU_EngineController
       type: ApplicationECU
-      components: [Swc_EngineControl]
+      mcu: Infineon_TC397
+      asil: D
+      components: [Swc_EngineControl, Swc_ThrottleControl]
     - name: ECU_BrakeController
       type: ApplicationECU
-      components: [Swc_BrakeControl]
+      mcu: NXP_S32K344
+      asil: D
+      components: [Swc_BrakeControl, Swc_AbsControl]
+    - name: ECU_ChassisController
+      type: ApplicationECU
+      mcu: ST_SPC58
+      asil: C
+      components: [Swc_SteeringControl, Swc_SuspensionControl]
+    - name: ECU_BodyController
+      type: ApplicationECU
+      mcu: NXP_S32K144
+      asil: B
+      components: [Swc_LightingControl, Swc_DoorControl]
     - name: ECU_Gateway
       type: CommunicationECU
-      components: [Swc_Gateway]
+      mcu: NXP_S32G274
+      asil: B
+      components: [Swc_Gateway, Swc_Diagnostics]
+    - name: ECU_ADAS
+      type: ApplicationECU
+      mcu: NVIDIA_Orin
+      asil: D
+      components: [Swc_CameraFusion, Swc_RadarProcessing]
 
+  # ------------------------------------------------------ software components
+  software_components:
+    - name: Swc_EngineControl
+      type: ApplicationSwComponentType
+      ports:
+        - { name: RpmOut, direction: provided, interface: If_EngineRpm }
+        - { name: TorqueRequestIn, direction: required, interface: If_TorqueRequest }
+        - { name: TempOut, direction: provided, interface: If_EngineTemp }
+    - name: Swc_ThrottleControl
+      type: ApplicationSwComponentType
+      ports:
+        - { name: ThrottlePosOut, direction: provided, interface: If_ThrottlePos }
+    - name: Swc_BrakeControl
+      type: ApplicationSwComponentType
+      ports:
+        - { name: BrakeTorqueOut, direction: provided, interface: If_BrakeTorque }
+        - { name: VehicleSpeedIn, direction: required, interface: If_VehicleSpeed }
+    - name: Swc_AbsControl
+      type: ApplicationSwComponentType
+      ports:
+        - { name: WheelSpeedIn, direction: required, interface: If_WheelSpeed }
+        - { name: BrakeTorqueReqOut, direction: provided, interface: If_BrakeTorqueReq }
+    - name: Swc_Dashboard
+      type: ApplicationSwComponentType
+      ports:
+        - { name: RpmIn, direction: required, interface: If_EngineRpm }
+        - { name: SpeedIn, direction: required, interface: If_VehicleSpeed }
+    - name: Swc_Gateway
+      type: ApplicationSwComponentType
+      ports:
+        - { name: CanIn, direction: required, interface: If_CanFrame }
+        - { name: EthOut, direction: provided, interface: If_EthFrame }
+    - name: Swc_Diagnostics
+      type: ServiceSwComponentType
+      ports:
+        - { name: UdsRequest, direction: required, interface: If_UdsRequest }
+        - { name: UdsResponse, direction: provided, interface: If_UdsResponse }
+
+  # --------------------------------------------------------- port interfaces
   port_interfaces:
     - name: If_EngineRpm
       type: SenderReceiverInterface
       data_elements:
-        - name: Rpm
-          type: uint16
-          min: 0
-          max: 8000
+        - { name: Rpm, type: uint16, min: 0, max: 8000, unit: rpm }
+    - name: If_EngineTemp
+      type: SenderReceiverInterface
+      data_elements:
+        - { name: Temp, type: int8, min: -40, max: 150, unit: celsius }
+    - name: If_ThrottlePos
+      type: SenderReceiverInterface
+      data_elements:
+        - { name: Position, type: uint8, min: 0, max: 100, unit: percent }
+    - name: If_BrakeTorque
+      type: SenderReceiverInterface
+      data_elements:
+        - { name: Torque, type: int16, min: -5000, max: 5000, unit: Nm }
+    - name: If_VehicleSpeed
+      type: SenderReceiverInterface
+      data_elements:
+        - { name: Speed, type: uint16, min: 0, max: 300, unit: kmh }
+    - name: If_WheelSpeed
+      type: SenderReceiverInterface
+      data_elements:
+        - { name: Fl, type: uint16, unit: rpm }
+        - { name: Fr, type: uint16, unit: rpm }
+        - { name: Rl, type: uint16, unit: rpm }
+        - { name: Rr, type: uint16, unit: rpm }
+    - name: If_TorqueRequest
+      type: SenderReceiverInterface
+      data_elements:
+        - { name: Torque, type: int16, unit: Nm }
+    - name: If_BrakeTorqueReq
+      type: SenderReceiverInterface
+      data_elements:
+        - { name: Torque, type: int16, unit: Nm }
+    - name: If_CanFrame
+      type: SenderReceiverInterface
+      data_elements:
+        - { name: Frame, type: uint8_array, length: 8 }
+    - name: If_EthFrame
+      type: SenderReceiverInterface
+      data_elements:
+        - { name: Frame, type: uint8_array, length: 1500 }
+    - name: If_UdsRequest
+      type: ClientServerInterface
+      operations:
+        - { name: UdsRequest, args: [data_in: uint8_array] }
+    - name: If_UdsResponse
+      type: ClientServerInterface
+      operations:
+        - { name: UdsResponse, args: [data_out: uint8_array] }
 
-  components:
-    - name: Swc_EngineControl
-      type: ApplicationSwComponentType
-      ports:
-        - name: RpmOut
-          direction: provided
-          interface: If_EngineRpm
-    - name: Swc_Dashboard
-      type: ApplicationSwComponentType
-      ports:
-        - name: RpmIn
-          direction: required
-          interface: If_EngineRpm
-
+  # -------------------------------------------------------------- connections
   connections:
     - from: Swc_EngineControl.RpmOut
       to: Swc_Dashboard.RpmIn
       medium: CAN_Powertrain
+    - from: Swc_EngineControl.TempOut
+      to: Swc_Dashboard.TempIn
+      medium: CAN_Powertrain
+    - from: Swc_BrakeControl.BrakeTorqueOut
+      to: Swc_Gateway.CanIn
+      medium: CAN_Chassis
+    - from: Swc_Gateway.EthOut
+      to: Swc_Diagnostics.EthIn
+      medium: ETH_Backbone
 
+  # ------------------------------------------------------------------- modes
   modes:
     - name: EngineMode
       values: [Off, Cranking, Running, Shutdown]
+    - name: VehicleMode
+      values: [Park, Drive, Reverse, Neutral]
+    - name: DiagnosticMode
+      values: [DefaultSession, ProgrammingSession, ExtendedSession]
+
+  # ---------------------------------------------------------- network (ref)
+  networks: [CAN_Powertrain, CAN_Chassis, CAN_Body, LIN_Body, ETH_Backbone, FLEXRAY_Chassis]

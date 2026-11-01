@@ -1,0 +1,22 @@
+security:
+  secoc:
+    enabled: true
+    authenticators:
+      - name: SecOC_Tx_EngineStatus
+        pdu: EngineStatusPdu
+        algorithm: CMAC_AES_128
+        freshness_value_length: 4
+      - name: SecOC_Rx_BrakeStatus
+        pdu: BrakeStatusPdu
+        algorithm: CMAC_AES_128
+        freshness_value_length: 4
+  crypto:
+    keys:
+      - { name: Key_EngineSecOC, type: AES_128, usage: SecOC }
+      - { name: Key_DiagSecurity, type: AES_128, usage: SecurityAccess }
+  hsm:
+    enabled: true
+    firmware: HSM_v2.1
+  intrusion_detection:
+    enabled: true
+    monitored_signals: [EngineRpm, BrakeTorque, VehicleSpeed]

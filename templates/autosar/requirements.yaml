@@ -2,16 +2,26 @@ requirements:
   - id: REQ_001
     title: Engine RPM shall be reported to the dashboard within 20 ms
     priority: high
+    asil: QM
     links:
-      - type: implemented_by
-        target: Swc_EngineControl.RpmOut
-      - type: verified_by
-        target: TC_001
+      - { type: implemented_by, target: Swc_EngineControl.RpmOut }
+      - { type: verified_by, target: TC_001 }
   - id: REQ_002
     title: Brake torque request shall be validated before application
     priority: high
+    asil: D
     links:
-      - type: implemented_by
-        target: Swc_BrakeControl.TorqueRequest
-      - type: verified_by
-        target: TC_002
+      - { type: implemented_by, target: Swc_BrakeControl.TorqueRequest }
+      - { type: verified_by, target: TC_002 }
+  - id: REQ_003
+    title: SecOC shall authenticate all safety-critical PDUs
+    priority: high
+    asil: D
+    links:
+      - { type: implemented_by, target: SecOC }
+  - id: REQ_004
+    title: Watchdog shall reset ECU within 50 ms on task overrun
+    priority: high
+    asil: D
+    links:
+      - { type: implemented_by, target: WdgM }

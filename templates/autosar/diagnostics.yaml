@@ -1,0 +1,24 @@
+diagnostics:
+  sessions:
+    - { name: DefaultSession, id: 0x01 }
+    - { name: ProgrammingSession, id: 0x02 }
+    - { name: ExtendedSession, id: 0x03 }
+  services:
+    - { sid: 0x10, name: DiagnosticSessionControl }
+    - { sid: 0x11, name: EcuReset }
+    - { sid: 0x14, name: ClearDiagnosticInformation }
+    - { sid: 0x19, name: ReadDTCInformation }
+    - { sid: 0x22, name: ReadDataByIdentifier }
+    - { sid: 0x27, name: SecurityAccess }
+    - { sid: 0x2E, name: WriteDataByIdentifier }
+    - { sid: 0x31, name: RoutineControl }
+    - { sid: 0x34, name: RequestDownload }
+    - { sid: 0x36, name: TransferData }
+    - { sid: 0x37, name: RequestTransferExit }
+  dtcs:
+    - { code: P0300, description: Random/Multiple Cylinder Misfire Detected, severity: 2 }
+    - { code: P0171, description: System Too Lean, severity: 2 }
+    - { code: U0100, description: Lost Communication with ECM/PCM, severity: 1 }
+  dids:
+    - { id: 0xF190, name: VIN, length: 17 }
+    - { id: 0xF18C, name: ECU_SerialNumber, length: 10 }

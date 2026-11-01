@@ -1,0 +1,44 @@
+os:
+  counters:
+    - name: SystemCounter
+      type: SOFTWARE
+      max: 1000000
+      ticks_per_base: 1
+  tasks:
+    - name: Task_Engine_10ms
+      priority: 10
+      schedule: FULL
+      autostart: true
+      runnables: [Swc_EngineControl.Runnable_10ms]
+    - name: Task_Brake_5ms
+      priority: 15
+      schedule: FULL
+      autostart: true
+      runnables: [Swc_BrakeControl.Runnable_5ms]
+    - name: Task_Diagnostics
+      priority: 5
+      schedule: NON
+      autostart: false
+      runnables: [Swc_Diagnostics.Runnable_Uds]
+  alarms:
+    - name: Alarm_Engine_10ms
+      counter: SystemCounter
+      cycle_ms: 10
+      action: ActivateTask
+      task: Task_Engine_10ms
+    - name: Alarm_Brake_5ms
+      counter: SystemCounter
+      cycle_ms: 5
+      action: ActivateTask
+      task: Task_Brake_5ms
+  resources:
+    - name: Res_EngineData
+      property: STANDARD
+  spinlocks:
+    - name: Sp_EngineData
+      linked_resource: Res_EngineData
+  isrs:
+    - name: ISR_CanRx
+      category: 2
+      priority: 20
+      source: CAN_RX_INTERRUPT

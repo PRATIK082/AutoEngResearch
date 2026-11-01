@@ -1,20 +1,74 @@
 application:
+  os: AUTOSAR_OS
   components:
     - name: Swc_EngineControl
       runnables:
         - name: Runnable_Init
           trigger: Init
+          wcet_ms: 1
         - name: Runnable_10ms
           trigger: TimingEvent
           period_ms: 10
+          wcet_ms: 2
+          priority: 10
           data_access:
             - port: RpmOut
               access: write
+            - port: TempOut
+              access: write
+            - port: TorqueRequestIn
+              access: read
+        - name: Runnable_Shutdown
+          trigger: Shutdown
+          wcet_ms: 1
+      internal_behavior:
+        events:
+          - { name: TimingEvent_10ms, type: TimingEvent, period_ms: 10 }
+        runnables: [Runnable_Init, Runnable_10ms, Runnable_Shutdown]
+        mode_switches:
+          - { mode: EngineMode, on: Running, runnable: Runnable_10ms }
+
+    - name: Swc_BrakeControl
+      runnables:
+        - name: Runnable_Init
+          trigger: Init
+        - name: Runnable_5ms
+          trigger: TimingEvent
+          period_ms: 5
+          wcet_ms: 1
+          priority: 15
+          data_access:
+            - port: BrakeTorqueOut
+              access: write
+            - port: VehicleSpeedIn
+              access: read
         - name: Runnable_Shutdown
           trigger: Shutdown
       internal_behavior:
         events:
-          - name: TimingEvent_10ms
-            type: TimingEvent
-            period_ms: 10
-        runnables: [Runnable_Init, Runnable_10ms, Runnable_Shutdown]
+          - { name: TimingEvent_5ms, type: TimingEvent, period_ms: 5 }
+
+  tasks:
+    - name: Task_Engine_10ms
+      priority: 10
+      schedule: FULL
+      runnables: [Swc_EngineControl.Runnable_10ms]
+    - name: Task_Brake_5ms
+      priority: 15
+      schedule: FULL
+      runnables: [Swc_BrakeControl.Runnable_5ms]
+
+  events:
+    - name: Ev_Engine_10ms
+      type: TimingEvent
+      period_ms: 10
+    - name: Ev_Brake_5ms
+      type: TimingEvent
+      period_ms: 5
+
+  alarms:
+    - name: Alarm_Engine_10ms
+      counter: SystemCounter
+      cycle_ms: 10
+      action: ActivateTask
+      task: Task_Engine_10ms

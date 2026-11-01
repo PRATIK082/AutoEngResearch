@@ -2,7 +2,9 @@ network:
   clusters:
     - name: CAN_Powertrain
       protocol: CAN
+      version: CAN_FD
       baudrate: 500000
+      data_baudrate: 2000000
       channel: CAN0
       frames:
         - name: EngineStatusFrame
@@ -13,22 +15,70 @@ network:
             - name: EngineStatusPdu
               length: 8
               signals:
-                - name: EngineRpm
-                  start_bit: 0
-                  length: 16
-                  factor: 0.25
-                  offset: 0
-                  unit: rpm
-                - name: EngineTemp
-                  start_bit: 16
-                  length: 8
-                  factor: 1
-                  offset: -40
-                  unit: celsius
+                - { name: EngineRpm, start_bit: 0, length: 16, factor: 0.25, offset: 0, unit: rpm }
+                - { name: EngineTemp, start_bit: 16, length: 8, factor: 1, offset: -40, unit: celsius }
+                - { name: ThrottlePos, start_bit: 24, length: 8, factor: 0.5, unit: percent }
+        - name: BrakeStatusFrame
+          id: 0x124
+          dlc: 8
+          cycle_time_ms: 5
+          pdus:
+            - name: BrakeStatusPdu
+              length: 8
+              signals:
+                - { name: BrakeTorque, start_bit: 0, length: 16, factor: 0.1, unit: Nm }
+                - { name: VehicleSpeed, start_bit: 16, length: 16, factor: 0.01, unit: kmh }
+
+    - name: CAN_Chassis
+      protocol: CAN
+      baudrate: 500000
+      channel: CAN1
+      frames:
+        - name: ChassisStatusFrame
+          id: 0x200
+          dlc: 8
+          cycle_time_ms: 20
+
+    - name: LIN_Body
+      protocol: LIN
+      baudrate: 19200
+      master: ECU_BodyController
+      frames:
+        - name: LightingFrame
+          id: 0x10
+          dlc: 8
+          cycle_time_ms: 100
+          signals:
+            - { name: HeadlightState, start_bit: 0, length: 2 }
+            - { name: TurnSignalLeft, start_bit: 2, length: 1 }
+            - { name: TurnSignalRight, start_bit: 3, length: 1 }
+
+    - name: FLEXRAY_Chassis
+      protocol: FlexRay
+      cycle_length_ms: 5
+      channels: [A, B]
+      frames:
+        - name: ChassisControlFrame
+          slot_id: 10
+          payload_length: 16
+          cycle_repetition: 1
+
     - name: ETH_Backbone
       protocol: Ethernet
-      speed_mbps: 100
-      frames:
-        - name: CameraFrame
-          vlan: 10
-          priority: 7
+      speed_mbps: 1000
+      vlan: 10
+      services:
+        - name: SomeIp_EngineStatus
+          service_id: 0x1234
+          instance_id: 0x0001
+          method: EngineRpmGet
+        - name: DoIp_Diagnostics
+          protocol: DoIP
+          target_address: 0x0E80
+          tester_address: 0x0F00
+
+    - name: CAN_FD_HighSpeed
+      protocol: CAN_FD
+      baudrate: 500000
+      data_baudrate: 4000000
+      channel: CAN2

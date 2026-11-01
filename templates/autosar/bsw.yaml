@@ -1,0 +1,58 @@
+bsw:
+  modules:
+    - name: EcuM
+      description: ECU state manager
+      states: [Startup, Shutdown, Sleep, Wakeup]
+    - name: BswM
+      description: BSW mode manager
+      rules:
+        - { name: EngineRunning, condition: Rpm > 0, action: activate_comm }
+    - name: Com
+      description: Communication module
+      signals: [EngineRpm, BrakeTorque, VehicleSpeed]
+    - name: PduR
+      description: PDU router
+      routings:
+        - { from: EngineStatusPdu, to: CAN_Powertrain, direction: tx }
+    - name: CanIf
+      description: CAN interface
+    - name: CanTp
+      description: CAN transport protocol
+    - name: CanNm
+      description: CAN network management
+    - name: Dcm
+      description: Diagnostic communication manager
+      sessions: [DefaultSession, ProgrammingSession, ExtendedSession]
+    - name: Dem
+      description: Diagnostic event manager
+      dtcs: [P0300, P0171, U0100]
+    - name: NvM
+      description: Non-volatile memory manager
+      blocks: [CalibrationData, UserSettings]
+    - name: WdgM
+      description: Watchdog manager
+      supervised_entities: [Swc_EngineControl, Swc_BrakeControl]
+    - name: MemIf
+      description: Memory abstraction interface
+    - name: Fee
+      description: Flash EEPROM emulation
+    - name: Ea
+      description: EEPROM abstraction
+    - name: Fls
+      description: Flash driver
+    - name: Eep
+      description: EEPROM driver
+    - name: SchM
+      description: Schedule manager
+    - name: Os
+      description: AUTOSAR OS
+    - name: Crypto
+      description: Crypto driver
+    - name: Csm
+      description: Crypto service manager
+    - name: KeyM
+      description: Key manager
+    - name: SecOC
+      description: Secure onboard communication
+    - name: IdsM
+      description: Intrusion detection system manager
