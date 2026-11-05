@@ -4,8 +4,8 @@ cd /d "%~dp0"
 
 echo Cleaning project debug and compiled artifacts...
 if exist target rmdir /s /q target
-if exist crates\arxml-model-r4-0\src\generated.rs del /f /q crates\arxml-model-r4-0\src\generated.rs
-if exist crates\arxml-model-r4-0\src\element_api.rs del /f /q crates\arxml-model-r4-0\src\element_api.rs
+if exist engineering\crates\arxml-model-r4-0\src\generated.rs del /f /q engineering\crates\arxml-model-r4-0\src\generated.rs
+if exist engineering\crates\arxml-model-r4-0\src\element_api.rs del /f /q engineering\crates\arxml-model-r4-0\src\element_api.rs
 del /s /q *.log 2>nul
 del /s /q *.arxml.out 2>nul
 del /s /q sample.out.arxml 2>nul

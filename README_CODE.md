@@ -10,38 +10,38 @@ Tooling to **read**, **write** and **validate** AUTOSAR ARXML documents, driven 
 the official AUTOSAR XSD schemas.
 
 The Rust code for the schema is **generated** with the
-[`xsd-parser`](https://crates.io/crates/xsd-parser) library from the XSD file.
+[`xsd-parser`](https://crates.io/engineering/crates/xsd-parser) library from the XSD file.
 The generated model is plain Rust (no `xsd-parser` dependency at runtime), so it
 can be vendored and used as a standalone base library.
 
-> The generated model (`crates/arxml-model-r4-0/src/generated.rs`, ~130 MB) is
+> The generated model (`engineering/crates/arxml-model-r4-0/src/generated.rs`, ~130 MB) is
 > **not committed** — it is a build artifact. Run `./generate.ps1` once to
 > create it before building the model crates.
 
 ```text
-AUTOSAR_00047.xsd ──► tools/xsdgen ──► crates/arxml-model-r4-0/src/generated.rs
+AUTOSAR_00047.xsd ──► engineering/tools/xsdgen ──► engineering/crates/arxml-model-r4-0/src/generated.rs
                                                   │
-                       crates/arxml-core ◄─────────┤  (runtime: read / write / validate)
+                       engineering/crates/arxml-core ◄─────────┤  (runtime: read / write / validate)
                        ├─ dom: generic DOM, path access, generic validation
                        └─ typed helpers over the generated model
                                                   │
-                       crates/arxml (facade) ◄────┘  (version detection + dispatch)
+                       engineering/crates/arxml (facade) ◄────┘  (version detection + dispatch)
 
-crates/arxml-model-r4-0/src/generated.rs ──► tools/arxml-index ──► model-index.json
-any .arxml ──► tools/arxml-cli (get / set / validate, schema independent)
+engineering/crates/arxml-model-r4-0/src/generated.rs ──► engineering/tools/arxml-index ──► model-index.json
+any .arxml ──► engineering/tools/arxml-cli (get / set / validate, schema independent)
 ```
 
 ## Workspace layout
 
 | Path | Purpose | Depends on `xsd-parser`? |
 | --- | --- | --- |
-| `tools/xsdgen` | XSD → Rust code generator (CLI) | **yes** (build time only) |
-| `crates/arxml-core` | Runtime helpers: read / write / validate, namespace detection | no |
-| `crates/arxml-model-r4-0` | Generated model for AUTOSAR R4.0 (`AUTOSAR_00047.xsd`) + version API (`generated.rs` is produced by the generator, not committed) | no |
-| `crates/arxml` | Version aware facade (`ArxmlVersion`, `detect_version`, `Model`) | no |
-| `tools/arxml-index` | Scans the generated code → JSON index of types/fields | no |
-| `tools/arxml-cli` | Schema independent CLI: `version`/`get`/`set`/`validate` | no |
-| `schemas/` | XSD sources (`AUTOSAR_00047.xsd`, `xml.xsd`) | – |
+| `engineering/tools/xsdgen` | XSD → Rust code generator (CLI) | **yes** (build time only) |
+| `engineering/crates/arxml-core` | Runtime helpers: read / write / validate, namespace detection | no |
+| `engineering/crates/arxml-model-r4-0` | Generated model for AUTOSAR R4.0 (`AUTOSAR_00047.xsd`) + version API (`generated.rs` is produced by the generator, not committed) | no |
+| `engineering/crates/arxml` | Version aware facade (`ArxmlVersion`, `detect_version`, `Model`) | no |
+| `engineering/tools/arxml-index` | Scans the generated code → JSON index of types/fields | no |
+| `engineering/tools/arxml-cli` | Schema independent CLI: `version`/`get`/`set`/`validate` | no |
+| `engineering/schemas/` | XSD sources (`AUTOSAR_00047.xsd`, `xml.xsd`) | – |
 | `generate.ps1` | One command regeneration of a model crate | – |
 
 Only `xsd-parser-types`, `quick-xml` and `regex` are needed at runtime — the
@@ -53,12 +53,12 @@ generator itself is never linked into the shipped library.
 ./generate.ps1
 # equivalent to:
 cargo run -p xsdgen --release -- `
-    schemas/AUTOSAR_00047.xsd `
-    crates/arxml-model-r4-0/src/generated.rs `
+    engineering/schemas/AUTOSAR_00047.xsd `
+    engineering/crates/arxml-model-r4-0/src/generated.rs `
     --namespace http://autosar.org/schema/r4.0
 ```
 
-Options of `tools/xsdgen`:
+Options of `engineering/tools/xsdgen`:
 
 ```text
 xsdgen <schema.xsd> <generated.rs>
@@ -108,8 +108,8 @@ let xml = model.to_string()?;
 cargo run -p arxml --example read_write_validate
 ```
 
-The example (`crates/arxml/examples/read_write_validate.rs`) reads
-`crates/arxml/examples/data/sample.arxml`, validates it, renames the package,
+The example (`engineering/crates/arxml/examples/read_write_validate.rs`) reads
+`engineering/crates/arxml/examples/data/sample.arxml`, validates it, renames the package,
 writes it back, re-reads it and validates it again.
 
 ## 3. Generic, schema independent tooling
@@ -121,7 +121,7 @@ Two independent tools solve that:
 
 ### `arxml_core::dom` — generic ARXML DOM (no generated code involved)
 
-`crates/arxml-core/src/dom.rs` implements a small XML tree on top of
+`engineering/crates/arxml-core/src/dom.rs` implements a small XML tree on top of
 `quick-xml` only. It works for **any** AUTOSAR release and needs neither the
 generated model nor `xsd-parser`:
 
@@ -153,7 +153,7 @@ Runnable example (works without the 130 MB model crate):
 cargo run -p arxml-core --example generic_edit
 ```
 
-### `tools/arxml-cli` — same capabilities from the command line
+### `engineering/tools/arxml-cli` — same capabilities from the command line
 
 ```powershell
 cargo run -p arxml-cli -- version  model.arxml
@@ -162,14 +162,14 @@ cargo run -p arxml-cli -- set      model.arxml "AR-PACKAGES/AR-PACKAGE/SHORT-NAM
 cargo run -p arxml-cli -- validate model.arxml
 ```
 
-### `tools/arxml-index` — index of the generated code
+### `engineering/tools/arxml-index` — index of the generated code
 
 The tool scans the generated Rust and writes a JSON index, so field/type
 look-ups never require reading the generated file:
 
 ```powershell
 cargo run -p arxml-index --release -- `
-    crates/arxml-model-r4-0/src/generated.rs -o target/model-index.json
+    engineering/crates/arxml-model-r4-0/src/generated.rs -o target/model-index.json
 ```
 
 ```json
@@ -199,12 +199,12 @@ separate XSD validator.
 
 ## Adding another AUTOSAR release
 
-1. Put the new XSD (and the W3C `xml.xsd` it imports) into `schemas/`.
-2. Create a model crate, e.g. `crates/arxml-model-r4-1` with
+1. Put the new XSD (and the W3C `xml.xsd` it imports) into `engineering/schemas/`.
+2. Create a model crate, e.g. `engineering/crates/arxml-model-r4-1` with
    `arxml-core` + `xsd-parser-types` + `regex` as dependencies and a
    `generated.rs` produced by
-   `cargo run -p xsdgen --release -- schemas/AUTOSAR_00047_4-1.xsd crates/arxml-model-r4-1/src/generated.rs --namespace <ns>`.
-3. Add the release to `ArxmlVersion` in `crates/arxml/src/lib.rs`, add the
+   `cargo run -p xsdgen --release -- engineering/schemas/AUTOSAR_00047_4-1.xsd engineering/crates/arxml-model-r4-1/src/generated.rs --namespace <ns>`.
+3. Add the release to `ArxmlVersion` in `engineering/crates/arxml/src/lib.rs`, add the
    feature `r4-1 = ["dep:arxml-model-r4-1"]` and extend the `Model` enum.
 4. Add the crate to `[workspace] members`.
 
@@ -225,7 +225,7 @@ document to the right model.
 3. **Name collisions are the real work.** XSD names like `MEMORY-SECTION` and
    `MEMORY-SECTION-TYPE` map to the same Rust identifier, and the XMLSchema
    built-ins (`BooleanType`, `StringType`, …) clash with AUTOSAR types. The fix
-   belongs in the *naming layer* (`tools/xsdgen/src/naming.rs`), not in
+   belongs in the *naming layer* (`engineering/tools/xsdgen/src/naming.rs`), not in
    post-processing the generated file: the `Named`/`Generated` distinction of
    `xsd-parser` must be preserved, otherwise the generator produces code that
    does not compile (thousands of type-inference errors).
@@ -245,7 +245,7 @@ document to the right model.
   crate has a `generated` feature (enabled by default) that can be switched off
   when only the facade is needed.
 * `xsd-parser` maps some AUTOSAR types to the same Rust identifier (e.g.
-  `MEMORY-SECTION` and `MEMORY-SECTION-TYPE`). `tools/xsdgen/src/naming.rs`
+  `MEMORY-SECTION` and `MEMORY-SECTION-TYPE`). `engineering/tools/xsdgen/src/naming.rs`
   installs a small naming layer that makes every type and enum variant
   identifier unique (`MemorySectionType`, `MemorySectionType2`, …) and splits the
   XML namespaces into separate Rust modules, so the built-in XMLSchema types do

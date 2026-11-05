@@ -1,12 +1,12 @@
 [workspace]
 members = [
-    "crates/arxml-core",
-    "crates/arxml-model-r4-0",
-    "crates/arxml",
-    "tools/xsdgen",
-    "tools/arxml-index",
-    "tools/arxml-cli",
-    "tools/xsd-api-gen",
+    "engineering/crates/arxml-core",
+    "engineering/crates/arxml-model-r4-0",
+    "engineering/crates/arxml",
+    "engineering/tools/xsdgen",
+    "engineering/tools/arxml-index",
+    "engineering/tools/arxml-cli",
+    "engineering/tools/xsd-api-gen",
 ]
 resolver = "2"
 
@@ -17,8 +17,8 @@ license = "MIT"
 publish = false
 
 [workspace.dependencies]
-arxml-core = { path = "crates/arxml-core" }
-arxml-model-r4-0 = { path = "crates/arxml-model-r4-0" }
+arxml-core = { path = "engineering/crates/arxml-core" }
+arxml-model-r4-0 = { path = "engineering/crates/arxml-model-r4-0" }
 
 # Only the runtime support crate is needed by the generated model code.
 # `xsd-parser` itself is a build-time dependency of `tools/xsdgen` only.

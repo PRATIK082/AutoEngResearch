@@ -3,11 +3,11 @@ setlocal
 cd /d "%~dp0"
 
 echo === [1/7] Generate model (xsd -> Rust) ===
-cargo run -p xsdgen --release -- schemas\AUTOSAR_00047.xsd crates\arxml-model-r4-0\src\generated.rs --namespace http://autosar.org/schema/r4.0
+cargo run -p xsdgen --release -- engineering\schemas\AUTOSAR_00047.xsd engineering\crates\arxml-model-r4-0\src\generated.rs --namespace http://autosar.org/schema/r4.0
 if errorlevel 1 goto :fail
 
 echo === [2/7] Generate draft per-element API (xsd -> Rust) ===
-cargo run -p xsd-api-gen -- schemas\AUTOSAR_00047.xsd crates\arxml-model-r4-0\src\element_api.rs
+cargo run -p xsd-api-gen -- engineering\schemas\AUTOSAR_00047.xsd engineering\crates\arxml-model-r4-0\src\element_api.rs
 if errorlevel 1 goto :fail
 
 echo === [3/7] Build workspace ===
@@ -23,11 +23,11 @@ cargo run -p arxml --example read_write_validate
 if errorlevel 1 goto :fail
 
 echo === [6/7] Run generic_edit example ===
-cargo run -p arxml-core --example generic_edit -- crates\arxml\examples\data\sample.arxml
+cargo run -p arxml-core --example generic_edit -- engineering\crates\arxml\examples\data\sample.arxml
 if errorlevel 1 goto :fail
 
 echo === [7/7] Build model index ===
-cargo run -p arxml-index --release -- crates\arxml-model-r4-0\src\generated.rs -o target\model-index.json
+cargo run -p arxml-index --release -- engineering\crates\arxml-model-r4-0\src\generated.rs -o target\model-index.json
 if errorlevel 1 goto :fail
 
 echo.

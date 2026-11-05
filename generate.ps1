@@ -5,7 +5,7 @@
 
 .EXAMPLE
     ./generate.ps1
-    ./generate.ps1 -Schema schemas/AUTOSAR_00047.xsd -Namespace http://autosar.org/schema/r4.0 -Output crates/arxml-model-r4-0/src/generated.rs
+    ./generate.ps1 -Schema engineering/schemas/AUTOSAR_00047.xsd -Namespace http://autosar.org/schema/r4.0 -Output engineering/crates/arxml-model-r4-0/src/generated.rs
 
 .NOTES
     The generator needs the W3C xml.xsd (schemas/xml.xsd) next to the AUTOSAR
@@ -13,9 +13,9 @@
 #>
 [CmdletBinding()]
 param(
-    [string]$Schema = "schemas/AUTOSAR_00047.xsd",
+    [string]$Schema = "engineering/schemas/AUTOSAR_00047.xsd",
     [string]$Namespace = "http://autosar.org/schema/r4.0",
-    [string]$Output = "crates/arxml-model-r4-0/src/generated.rs",
+    [string]$Output = "engineering/crates/arxml-model-r4-0/src/generated.rs",
     [switch]$NoNamespaceModules,
     [switch]$SchemaModules,
     [switch]$Debug
