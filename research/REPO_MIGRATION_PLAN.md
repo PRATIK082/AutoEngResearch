@@ -2,8 +2,8 @@
 
 ## 1. Repository audit
 
-- Current repo: PRATIK082/selfdata (main)
-- Remote: https://github.com/PRATIK082/selfdata.git
+- Current repo: PRATIK082/AutoEngResearch (main)
+- Remote: https://github.com/PRATIK082/AutoEngResearch.git
 - Top-level folders: crates, docs, drivers, platforms, research, schemas, stacks, templates, tools
 - File count: ~144
 - Primary content currently mixed: Rust AUTOSAR tooling + research corpus.
