@@ -200,3 +200,7 @@
 - Improvement areas are research directions, not recommendations to build products.
 
 *End of solution versus gap matrix.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

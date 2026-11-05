@@ -266,3 +266,7 @@ From Chapter 27 §27.4 (Task.md artefact 12), consolidated:
 ---
 
 *End of Chapter 37.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

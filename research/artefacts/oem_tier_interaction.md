@@ -348,3 +348,7 @@ Semiconductor vendor  ──►  Tier-2 (component/sensor)  ──►  Tier-1 (E
 ---
 
 *End of oem_tier_interaction.md — OEM–Tier-1–Tier-2 Engineering Interaction Map (Artefact #4).*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

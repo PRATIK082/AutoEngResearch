@@ -127,3 +127,7 @@
 - Skill-gap severity ratings are author synthesis from source reports, not measured data.
 
 *End of skills and competency gap matrix.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

@@ -253,3 +253,7 @@ Toolchain fragmentation is a root cause, not just a symptom (knowledge index cro
 ---
 
 *End of Chapter 18.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

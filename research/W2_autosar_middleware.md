@@ -591,3 +591,7 @@ Key quantitative anchors (all attributed):
 - Can hypervisors be certified as SEooC at acceptable cost, enabling true ECU consolidation?
 - What fraction of Classic ECUs are realistically migratable to Adaptive within 10 years?
 - How much of AUTOSAR config can be safely automated by AI without safety-case invalidation?
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

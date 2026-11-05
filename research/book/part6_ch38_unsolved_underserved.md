@@ -188,3 +188,7 @@ From the problem records (automation feasibility and AI applicability fields):
 ---
 
 *End of Chapter 38.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

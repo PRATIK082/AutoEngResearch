@@ -980,3 +980,8 @@ The problems below are recorded in the structured problem-record format requeste
 - Quantitative impact figures are deliberately omitted where no reliable source exists (per master prompt rule: never invent statistics).
 - Vendor marketing claims (e.g., "zero false positives") are treated as aspirational and cross-checked against MISRA Compliance:2020's statement that no tool is perfect.
 - This report focuses on problem discovery only; no solutions or product recommendations are proposed.
+
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

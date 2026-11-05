@@ -391,3 +391,7 @@ All IDs listed in §§35.1–35.9: G1-001…G1-035, G2-001…G2-032, G3-001…G3
 ---
 
 *End of Chapter 35.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

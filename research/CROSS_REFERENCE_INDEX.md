@@ -33,3 +33,7 @@ Maps topics, problem IDs, book chapters, and artefacts.
 ## Book index
 
 - research/book/INDEX.md
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

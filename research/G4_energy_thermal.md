@@ -705,3 +705,7 @@ This workstream complements W1 (system engineering), W2 (AUTOSAR/middleware), W3
 ---
 
 *End of G4 report.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

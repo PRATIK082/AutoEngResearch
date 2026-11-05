@@ -163,3 +163,7 @@ AUTOSAR methodology and template require deep understanding; "attachment-level" 
 ---
 
 *End of Chapter 8.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

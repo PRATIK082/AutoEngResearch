@@ -171,3 +171,7 @@
 - URLs may require access permissions; some sources are paywalled.
 
 *End of bibliography.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

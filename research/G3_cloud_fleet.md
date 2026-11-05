@@ -892,3 +892,8 @@ Evidence tiers: published statistics are cited with source; practitioner/market 
 | G3-026 | Cloud/edge skill gaps | Human skills / cloud |
 | G3-027 | OEM business-model shift to platform operator | Business model / cloud |
 | G3-028 | Cost and complexity of connected-vehicle cloud infrastructure at scale | Cloud economics |
+
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

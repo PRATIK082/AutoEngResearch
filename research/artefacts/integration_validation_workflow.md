@@ -159,3 +159,8 @@ W1-001, W1-005, W1-006, W1-007, W1-008, W1-010, W1-011, W1-016, W1-017, W1-018, 
 *Sources: research/W1–W5, G1–G2; part2_ch10_integration.md; part2_ch11_testing_validation.md; part2_ch12_hil_vehicle_certification.md; KNOWLEDGE_INDEX.md; DATA_VERIFY.md.*
 
 *End of artefact: integration_validation_workflow.md*
+
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

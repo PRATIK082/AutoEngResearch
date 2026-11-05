@@ -679,3 +679,7 @@ Vehicle-domain software in the automotive industry is characterised by:
 ---
 
 *End of G2 report.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

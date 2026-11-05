@@ -293,3 +293,7 @@ Stage 10 Field          : UDS/DoIP diagnostics, telematics, OTA platforms, field
 ---
 
 *End of toolchain_map.md — Automotive Engineering Toolchain Map (Artefact #5).*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

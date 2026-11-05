@@ -335,3 +335,7 @@ Reality (research findings):
 ---
 
 *End of lifecycle_map.md — End-to-End Automotive Software Lifecycle Map (Artefact #2).*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

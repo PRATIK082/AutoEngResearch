@@ -23,3 +23,7 @@ Emerging AI governance, regional regulations, AI Act, functional safety/cybersec
 
 - Regulatory landscape evolving; dates and requirements subject to change.
 - No automotive-specific AI certification standard fully established as of 2026.
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

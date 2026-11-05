@@ -230,3 +230,7 @@ All problem IDs in the corpus are potentially relevant; the most frequently cite
 ### Book completion note
 
 With Chapters 41–45, Part VII (Research Conclusions) is complete. The full book structure (Task.md §14) now has Parts I–VII drafted in `research/book/`. Part VI (Chapters 35–40, consolidated problem discovery) remains to be written by a subsequent pass; Part II Chapters 10–13 (lifecycle deep-dives) are also pending. The problem IDs, cross-references, and evidence limitations in this Part are consistent with the research corpus and with `KNOWLEDGE_INDEX.md`, `CROSS_CHECK.md`, `CROSS_QUESTIONS.md`, and `DATA_VERIFY.md`.
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

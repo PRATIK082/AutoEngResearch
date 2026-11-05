@@ -24,3 +24,7 @@ Maps Task.md sections to research artifacts.
 
 Gaps to fill: semiconductor/hardware, vehicle domains detail, cloud/backend, architecture metrics, stakeholders.
 - G4 energy/thermal: research/G4_energy_thermal.md (32 problem records, G4-001..G4-032).
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

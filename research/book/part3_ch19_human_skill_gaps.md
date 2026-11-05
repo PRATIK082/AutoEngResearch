@@ -118,3 +118,7 @@ The talent shortage is structural, not cyclical (knowledge index cross-cutting t
 ---
 
 *End of Chapter 19.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

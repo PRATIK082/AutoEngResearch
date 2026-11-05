@@ -126,3 +126,7 @@ Supplier/OEM toolchain mismatch and data exchange friction arise from format inc
 ---
 
 *End of Chapter 9.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

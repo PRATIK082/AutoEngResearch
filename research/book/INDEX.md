@@ -9,3 +9,7 @@ Part VI — Consolidated Problem Discovery (ch35–ch40)
 Part VII — Research Conclusions (ch41–ch45)
 
 Artefacts: research/artefacts/ (14 files).
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

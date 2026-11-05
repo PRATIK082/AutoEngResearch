@@ -203,3 +203,7 @@
 - Confidence levels are not shown per row here; consult source reports.
 
 *End of problem-to-root-cause matrix.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

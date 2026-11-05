@@ -205,3 +205,7 @@ These are the problems that will dominate the next decade and that the industry 
 ---
 
 *End of Chapter 39.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

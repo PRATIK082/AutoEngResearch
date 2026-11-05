@@ -141,3 +141,7 @@ AI-generated code safety and certification gaps (W5-019) are particularly releva
 ---
 
 *End of Chapter 7.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

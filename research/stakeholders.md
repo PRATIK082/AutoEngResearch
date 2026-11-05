@@ -577,3 +577,7 @@ These eight mechanisms recur across every stakeholder and are the organisational
 ---
 
 *End of research/stakeholders.md — Industry Stakeholders and Supply-Chain Deep Dive.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

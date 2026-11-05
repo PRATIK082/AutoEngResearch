@@ -333,3 +333,7 @@ W5-012, W5-013, W5-014, W5-022, W5-023
 - Problem records follow the structured format in each W*.md (Domain, Lifecycle stage, Problem, Root cause, Evidence, Automation feasibility, AI applicability, Human approval, Confidence, Unanswered questions).
 - Numerical claims are sourced; treat market/workforce stats as estimates (see each report's limitations).
 - This index is a navigation aid; consult the source reports for full evidence and citations.
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

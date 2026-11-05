@@ -205,3 +205,8 @@
 ---
 
 *End of artefact: ai_automation_opportunity_map.md*
+
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

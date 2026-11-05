@@ -1180,3 +1180,8 @@ Tier 2 (Verify) default. Sources dated 2020–2026; older sources (2011–2018) 
 W3 documents 38 distinct problem records spanning MIL, SIL, PIL, HIL, vehicle-level validation, and cross-cutting test concerns. The dominant pattern: **testing is the last hardware-bound, late, manual, fragmented bottleneck** in automotive software. Shift-left/virtualization offers a path, but gaps in fidelity, traceability, standardization, scenario completeness, and skill remain the binding constraints. Quantitative anchors (47% V&V time, 91% invalid failures, 43.6% flaky scenarios, ~50% dev cost, $50k+/bench HIL) support prioritization but are indicative, not audited.
 
 **End of W3 report.**
+
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

@@ -255,3 +255,7 @@ Cross-references throughout; the full set of problem IDs is catalogued in Chapte
 ---
 
 *End of Chapter 40. End of Part VI.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

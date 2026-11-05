@@ -198,3 +198,7 @@ Topics not covered, or covered only superficially, across all workstreams.
 The five workstreams are individually thorough but **not integrated**: 131 problem records reduce to roughly 60–70 unique problems once overlaps are removed; the same root causes (toolchain fragmentation, ARXML complexity, compliance overhead, timing, scenario completeness, skills, knowledge silos) are recorded 2–5 times each under different IDs and schemas. Several quantitative anchors are stale (NHTSA 2020 OTA), unverified (66% MBSE reliance), or ambiguous (shift-left "up 6%"). Key topic gaps include hardware/semiconductor lifecycle, cloud/backend software, energy/thermal software, OSS governance, and architecture-quality metrics. Recommendations: build a master problem index with global IDs, harmonize the record schema, deduplicate overlapping families, reconcile quantities and staleness, close the topic gaps, and prioritize investment in the seven cross-cutting root causes.
 
 *End of cross-check report.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

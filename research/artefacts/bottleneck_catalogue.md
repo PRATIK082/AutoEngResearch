@@ -223,3 +223,8 @@ Numerical values are sourced estimates, not audited facts (see DATA_VERIFY.md).
 ---
 
 *End of artefact: bottleneck_catalogue.md*
+
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

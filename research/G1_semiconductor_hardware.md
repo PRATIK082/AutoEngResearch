@@ -1033,3 +1033,7 @@ Semiconductor and hardware engineering in automotive is characterised by:
 ---
 
 *End of G1 report.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

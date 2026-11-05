@@ -470,3 +470,7 @@ Update:        ISO 24089 ──► UNECE R156
 ---
 
 *End of DOMAIN_MAP.md — Automotive Industry Domain Map (Artefact #1).*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+

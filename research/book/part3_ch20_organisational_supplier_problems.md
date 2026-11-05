@@ -159,3 +159,7 @@ This chapter collects problems that arise from organisational structure, supply-
 ---
 
 *End of Chapter 20.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+

@@ -133,3 +133,7 @@ This chapter collects problems of software quality, functional safety (ISO 26262
 ---
 
 *End of Chapter 22.*
+
+---
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
+
