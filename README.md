@@ -12,6 +12,12 @@ This repository is a professional automotive engineering research publication an
 
 To build a structured, evidence-based, continuously maintainable research corpus that supports automotive software engineering improvement, problem discovery, and future solution design.
 
+## Foundational pillars
+
+1. Automotive Engineering Intelligence — discover and understand real engineering problems across the entire automotive lifecycle.
+2. Technology, AI and Process Research — investigate existing tools, automation, AI, engineering workflows and unsolved technology gaps.
+3. Governance, Safety and Compliance — ensure research and future engineering opportunities consider copyright, IP, AI governance, functional safety and automotive regulations.
+
 ## Research scope
 
 - Requirements and system engineering
