@@ -13,6 +13,7 @@ Maps topics, problem IDs, book chapters, and artefacts.
 - G2 (vehicle domains): Part I ch3, Part III ch14
 - G3 (cloud/fleet): Part III ch15/ch16/ch18, Part V ch28–ch29
 - G4 (energy/thermal): Part III ch14/ch21
+- W6 (bootloader/flash): Part II ch13, Part III ch14/ch15/ch18
 
 ## Artefacts
 

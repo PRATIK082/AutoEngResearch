@@ -4,7 +4,7 @@
 **Parent project:** THE STATE OF AUTOMOTIVE SOFTWARE ENGINEERING  
 **Date compiled:** 2026-11-05  
 **Scope:** Global automotive software industry — ICE, hybrid, EV, ADAS/ADS; Classic + Adaptive AUTOSAR; OEM/Tier-1/Tier-2 perspectives.  
-**Evidence basis:** Task.md (research master prompt) + workstreams W1–W5 problem reports.
+**Evidence basis:** Task.md (research master prompt) + workstreams W1–W6 problem reports.
 
 ---
 
