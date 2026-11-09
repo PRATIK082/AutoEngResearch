@@ -19,9 +19,9 @@ Maps Task.md sections to research artifacts.
 - 11 Root-cause: problem records
 - 12 Hidden problems: CROSS_CHECK
 - 13 Methodology: DATA_VERIFY
-- 14 Book structure: pending
+- 14 Book structure: 45 chapters (book INDEX verified, Phase 5.3)
 - 15 Artefacts: partial (DOMAIN_MAP, KNOWLEDGE_INDEX)
-- 16 Quality rules: ongoing
+- 16 Quality rules: reviewed (see QUALITY_REVIEW.md, Phase 5.4)
 
 Gaps to fill: semiconductor/hardware, vehicle domains detail, cloud/backend, architecture metrics, stakeholders.
 - G4 energy/thermal: research/G4_energy_thermal.md (32 problem records, G4-001..G4-032).

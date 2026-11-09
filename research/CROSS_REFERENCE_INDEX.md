@@ -35,6 +35,14 @@ Maps topics, problem IDs, book chapters, and artefacts.
 
 - research/book/INDEX.md
 
+## Integration & tracking
+
+- research/INTEGRATION_PLAN.md
+- research/ISSUE_TRACKER.md
+- research/OVERLAP_ANALYSIS_W6.md
+- research/QUALITY_REVIEW.md
+- research/SOLUTIONS_BOOTLOADER_FLASH.md
+
 ---
 See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
 

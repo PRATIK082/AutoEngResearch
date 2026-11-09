@@ -75,8 +75,8 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done, `[!]` blocked.
 ### Phase 3 — Issue tracking: old vs. current vs. future (mode: triage)
 - [x] P3.1 Create ISSUE_TRACKER.md (old issues, current issues, status, owner, resolution) — issue agent
 - [x] P3.2 Tag each W6 problem as old/current/future — issue agent (ISSUE_TRACKER.md)
-- [ ] P3.3 Map W6 to existing G1/G3/G4/W2 problems (dup/overlap) — review agent
-- [ ] P3.4 Resolve or defer each issue with rationale — issue agent
+- [x] P3.3 Map W6 to existing G1/G3/G4/W2 problems (dup/overlap) — review agent (OVERLAP_ANALYSIS_W6.md)
+- [x] P3.4 Resolve or defer each issue with rationale — issue agent (ISSUE_TRACKER.md)
 
 ### Phase 4 — Solution design (future) (mode: design)
 - [x] P4.1 Create SOLUTIONS_BOOTLOADER_FLASH.md (solution concepts, roadmap) — solution agent
@@ -89,8 +89,8 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done, `[!]` blocked.
 - [x] P5.1 Run coverage check (all W6 IDs present in KNOWLEDGE_INDEX) — tooling agent
 - [x] P5.2 Run link check (all relative links resolve; 0 broken) — tooling agent
 - [x] P5.3 Verify book INDEX lists all 45 chapters (45 chapter files present) — review agent
-- [ ] P5.4 Final review against Task.md §16 quality rules — review agent
-- [ ] P5.5 Commit + push integrated changes — orchestrator
+- [x] P5.4 Final review against Task.md §16 quality rules — review agent (QUALITY_REVIEW.md) §16 quality rules — review agent
+- [~] P5.5 Commit + push integrated changes — orchestrator — orchestrator
 
 ---
 
