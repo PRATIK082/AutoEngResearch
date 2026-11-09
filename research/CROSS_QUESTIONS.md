@@ -623,6 +623,14 @@ Total: 18+31+23 = 72. Good.
 
 ---
 
+## W6 Bootloader & Flash — cross-domain questions (added 2026-11-09)
+
+- CQ-W6-01 — How does bootloader standardisation (W6-001) interact with AUTOSAR scope (W2) and UNECE R156 update engineering (W4-016)? What evidence exists that an industry bootloader standard is feasible?
+- CQ-W6-02 — What is the quantified cost of late bootloader rework (W6-030) vs. early verification, and how does it compare to other late-discovery costs (W1-015, W3)?
+- CQ-W6-03 — How do bootloader testing gaps (W6-012) and power-fault coverage (W6-014) interact with HIL availability constraints (W4-018, G1-032)?
+- CQ-W6-04 — What is the relationship between secure boot (W6-003) and cybersecurity talent shortage (W5-004) and R155 type approval (W4-015)?
+- CQ-W6-05 — How does OTA/bootloader orchestration (W6-025) interact with safe-state activation (W2-010) and fleet-scale rollback (G3-018)?
+
 *End of CROSS_QUESTIONS.md*
 
 ---

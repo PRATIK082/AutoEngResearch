@@ -204,6 +204,18 @@
 
 ---
 
+## Bootloader & flash opportunities (W6)
+
+| Opportunity | Problem IDs | Automation/AI potential |
+|---|---|---|
+| Automated memory-map & linker boundary verification | W6-002 | High (CI check) |
+| UDS flash conformance timing validation | W6-007, W6-016 | Medium-High |
+| Power-fault injection test generation | W6-008, W6-014 | Medium-High (AI test gen) |
+| Manufacturing/EOL traceability automation | W6-015, W6-023 | High |
+| Bootloader V&V evidence generation | W6-024, W6-030 | Medium (doc automation) |
+| Image integrity verification | W6-028 | High |
+| Key/certificate lifecycle automation | W6-019 | Medium |
+
 *End of artefact: ai_automation_opportunity_map.md*
 
 

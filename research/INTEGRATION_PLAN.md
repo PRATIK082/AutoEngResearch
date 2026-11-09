@@ -63,32 +63,32 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done, `[!]` blocked.
 - [x] P1.18 Update artefact: requirements_to_release_traceability.md — add W6 — artefact agent
 - [x] P1.19 Update artefact: semiconductor_to_vehicle_dependency.md — add flash/bootloader dep — artefact agent
 - [x] P1.20 Update artefact: glossary.md — add bootloader/flash terms — artefact agent
-- [ ] P1.21 Update book INDEX problem-ID indices (all affected chapters) — interlink agent
+- [x] P1.21 Update book INDEX problem-ID indices (ch8, ch13, ch14 updated; ch16/17/18/22 have no index sections) — interlink agent
 
 ### Phase 2 — Interlink & flow repair (mode: interlink)
-- [ ] P2.1 Verify all W6 IDs resolve in KNOWLEDGE_INDEX (done) and book indices — review agent
-- [ ] P2.2 Repair broken relative links across research/ — tooling agent
-- [ ] P2.3 Add "See also" cross-links in W6 report to book chapters/artefacts — interlink agent
+- [x] P2.1 Verify all W6 IDs resolve in KNOWLEDGE_INDEX and book indices — review agent
+- [x] P2.2 Repair broken relative links across research/ — link check passed (0 broken) — tooling agent
+- [x] P2.3 Add "See also" cross-links in W6 report to book chapters/artefacts — interlink agent
 - [x] P2.4 Update DOMAIN_MAP domain→problem mapping (add bootloader/flash) — interlink agent
-- [ ] P2.5 Update CROSS_QUESTIONS.md with W6 unanswered questions — research agent
+- [x] P2.5 Update CROSS_QUESTIONS.md with W6 unanswered questions — research agent
 
 ### Phase 3 — Issue tracking: old vs. current vs. future (mode: triage)
 - [x] P3.1 Create ISSUE_TRACKER.md (old issues, current issues, status, owner, resolution) — issue agent
-- [ ] P3.2 Tag each W6 problem as old/current/future — issue agent
+- [x] P3.2 Tag each W6 problem as old/current/future — issue agent (ISSUE_TRACKER.md)
 - [ ] P3.3 Map W6 to existing G1/G3/G4/W2 problems (dup/overlap) — review agent
 - [ ] P3.4 Resolve or defer each issue with rationale — issue agent
 
 ### Phase 4 — Solution design (future) (mode: design)
 - [x] P4.1 Create SOLUTIONS_BOOTLOADER_FLASH.md (solution concepts, roadmap) — solution agent
-- [ ] P4.2 Update Part IV (ch23–27) with bootloader/flash solution landscape — book agent
-- [ ] P4.3 Update Part V (ch28–34) with future bootloader/flash (SDV, AI-native) — book agent
-- [ ] P4.4 Update ai_automation_opportunity_map.md — artefact agent
-- [ ] P4.5 Update solution_vs_gap_matrix.md (solution coverage) — artefact agent
+- [x] P4.2 Update Part IV (ch23–27) with bootloader/flash solution landscape — ch27 updated — book agent
+- [x] P4.3 Update Part V (ch28–34) with future bootloader/flash (SDV, AI-native) — ch31 updated — book agent
+- [x] P4.4 Update ai_automation_opportunity_map.md — artefact agent
+- [x] P4.5 Update solution_vs_gap_matrix.md (solution coverage) — artefact agent
 
 ### Phase 5 — Quality & validation (mode: review/automation)
 - [x] P5.1 Run coverage check (all W6 IDs present in KNOWLEDGE_INDEX) — tooling agent
-- [ ] P5.2 Run link check (all relative links resolve) — tooling agent
-- [ ] P5.3 Verify book INDEX lists all 45 chapters — review agent
+- [x] P5.2 Run link check (all relative links resolve; 0 broken) — tooling agent
+- [x] P5.3 Verify book INDEX lists all 45 chapters (45 chapter files present) — review agent
 - [ ] P5.4 Final review against Task.md §16 quality rules — review agent
 - [ ] P5.5 Commit + push integrated changes — orchestrator
 
