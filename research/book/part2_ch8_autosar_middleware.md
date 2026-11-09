@@ -4,7 +4,7 @@
 **Part:** II — Complete Automotive Software Lifecycle  
 **Chapter:** 8 — AUTOSAR and Middleware Engineering  
 **Source workstreams:** W2 (AUTOSAR & Middleware), W1 (Requirements & System Engineering), W4 (Toolchain & Standards), W5 (Skills & AI)  
-**Problem IDs in scope:** W2-001, W2-002, W2-003, W2-004, W2-005, W2-006, W2-007, W2-008, W2-009, W2-010, W2-011, W2-012, W2-013, W2-014, W2-015, W2-016, W2-017, W2-018, W2-019, W2-020, W1-010, W1-013, W1-018, W4-004, W4-005
+**Problem IDs in scope:** W2-001, W2-002, W2-003, W2-004, W2-005, W2-006, W2-007, W2-008, W2-009, W2-010, W2-011, W2-012, W2-013, W2-014, W2-015, W2-016, W2-017, W2-018, W2-019, W2-020, W1-010, W1-013, W1-018, W4-004, W4-005, W6-001..W6-030
 
 ---
 
@@ -103,9 +103,11 @@ Consolidating multiple ECUs onto HPC SoCs via hypervisors introduces certificati
 
 ---
 
-## 8.6 Bootloader, OTA, and software update (W2-010, W4-016)
+## 8.6 Bootloader, OTA, and software update (W2-010, W4-016, W6)
 
 AUTOSAR FOTA requires background installation without disturbing running software, activation only in vehicle safe-state, rollback across all affected ECUs on failure, and resumption after interruption (W2-010). The bootloader is out of AUTOSAR scope; bootloader upgradability conflicts with read-only security; most OEMs only OTA infotainment, not safety-critical ECUs (NHTSA 2020, flagged as stale — CROSS_CHECK C4). Cross-ECU campaign consistency is hard. UNECE R156 / ISO 24089 add software-update engineering complexity (W4-016). The NHTSA 2020 anchor is 6 years old and presented without staleness caveat in W2; OTA maturity may have advanced since.
+
+Because AUTOSAR excludes the bootloader, every OEM/Tier-1 implements its own. The dedicated workstream **W6 — Bootloader & Flash Programming** (W6-001..W6-030) expands this into 30 problem records covering: no standardized bootloader (W6-001), memory layout/partitioning (W6-002), secure boot chain-of-trust (W6-003), fast-boot timing (W6-004), anti-rollback (W6-005), dual-bank/A-B updates (W6-006), UDS flash protocol complexity (W6-007), power-transient reliability (W6-008), recovery/brick prevention (W6-009), bootloader/application interface contract (W6-010), bootloader testing coverage (W6-012), manufacturing/EOL flashing (W6-015), flash toolchain fragmentation (W6-023), V&V/ISO 26262 evidence (W6-024), OTA orchestration (W6-025), multi-ECU campaign consistency (W6-026), image integrity verification (W6-028), and late rework cost (W6-030). See `research/W6_bootloader_flash.md`.
 
 ---
 

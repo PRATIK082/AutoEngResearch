@@ -3,7 +3,7 @@
 **Book:** *The State of Automotive Software Engineering*  
 **Part:** III — Industry Problem Investigation  
 **Chapter:** 16 — Integration Problems  
-**Source workstreams:** W1, W2, W3, W4, W5, G1, G2, G3  
+**Source workstreams:** W1, W2, W3, W4, W5, W6, G1, G2, G3  
 
 ---
 

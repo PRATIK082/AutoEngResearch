@@ -3,7 +3,7 @@
 **Book:** *The State of Automotive Software Engineering*  
 **Part:** III — Industry Problem Investigation  
 **Chapter:** 14 — Technical Problems  
-**Source workstreams:** G1 (Semiconductor & Hardware), G2 (Vehicle Domains), G4 (Energy & Thermal), W1, W2, W3, W4  
+**Source workstreams:** G1 (Semiconductor & Hardware), G2 (Vehicle Domains), G4 (Energy & Thermal), W1, W2, W3, W4, W6 (Bootloader & Flash)  
 
 ---
 
@@ -19,6 +19,7 @@ This chapter collects the **technical** (physics-, silicon-, control-, and code-
 | Timing / real-time / network | W1-010, W1-018, W2-004, W2-006, W2-007, W2-008, W2-013, W2-014, W2-017 | 9 |
 | XiL / model fidelity | W3-001 … W3-016, W3-033, W3-035 | 18 |
 | Code-level quality | W4-008, W4-009, W4-010, W4-021 | 4 |
+| Bootloader & flash (W6) | W6-001..W6-030 | 30 |
 
 ---
 
@@ -228,6 +229,45 @@ These are technical rather than process problems: undecidable rules (W4-010) can
 3. **Model fidelity has no standard metric or gate** (W3-001, W3-012).
 4. **Interfaces (hardware, software, network) are not standardised** at the level needed for composition (G1-027, W3-007, W4-002).
 5. **Obsolescence propagates for decades** (G1-007, G1-008).
+
+---
+
+## 14.7 Bootloader and flash programming technical problems (W6)
+
+Bootloader and flash programming sit at the boundary between software and silicon: every release, calibration update and OTA campaign depends on a correctly functioning bootloader and a reliable flash process. AUTOSAR excludes the bootloader, so each OEM/Tier-1 implements its own. The dedicated workstream **W6 — Bootloader & Flash Programming** (W6-001..W6-030) covers:
+
+| ID | Title (short) |
+|---|---|
+| W6-001 | No standardized automotive bootloader (AUTOSAR out of scope) |
+| W6-002 | Bootloader memory layout and partitioning complexity |
+| W6-003 | Secure boot chain-of-trust implementation gaps |
+| W6-004 | Bootloader startup time and fast-boot constraints |
+| W6-005 | Anti-rollback and version monotonicity enforcement gaps |
+| W6-006 | Dual-bank / A-B update scheme complexity and flash cost |
+| W6-007 | UDS flash programming protocol complexity |
+| W6-008 | Flash programming reliability under power transients |
+| W6-009 | Bootloader recovery and brick prevention |
+| W6-010 | Application/bootloader interface contract gaps |
+| W6-012 | Bootloader testing coverage gaps |
+| W6-013 | Flash endurance and wear-leveling validation |
+| W6-014 | Power-loss and interrupted programming recovery testing |
+| W6-017 | Flash driver (MCAL) portability and abstraction gaps |
+| W6-018 | Bootloader security vs. upgradability conflict |
+| W6-020 | Bootloader size constraints and feature creep |
+| W6-021 | Bootloader integration with AUTOSAR BSW |
+| W6-022 | Reprogramming throughput (CAN vs. DoIP/Ethernet) |
+| W6-024 | Bootloader V&V evidence and ISO 26262 compliance |
+| W6-028 | Flash image integrity verification |
+
+**Key technical observations (W6):**
+
+1. **Standardisation gap is the root cause.** AUTOSAR excludes the bootloader, so every OEM/Tier-1 reinvents it, fragmenting tooling, skills and OTA reuse (W6-001).
+2. **Security vs. upgradability is the central tension.** Secure boot wants immutability; updates need a writable path; few designs resolve this cleanly (W6-003, W6-018).
+3. **Power and timing are hidden constraints.** Flash writes need stable power and strict timing; cold-crank and boot-time budgets conflict with security checks (W6-004, W6-008).
+4. **Testing is under-resourced.** Bootloader is safety-relevant (ASIL-D) but treated as infrastructure; coverage, fault injection and recovery testing are weak (W6-012, W6-014).
+5. **Late discovery is expensive.** Bootloader issues found late require hardware-dependent rework and re-certification (W6-030).
+
+See `research/W6_bootloader_flash.md` for full records.
 
 ---
 

@@ -788,4 +788,4 @@ This workstream complements W2 (AUTOSAR/middleware, W2-010 OTA/bootloader), W3 (
 *End of W6 report.*
 
 ---
-See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
+See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md) | Book: Part II ch8, ch13 §13.4; Part III ch14 §14.7, ch16, ch17, ch18, ch22

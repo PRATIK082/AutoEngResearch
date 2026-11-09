@@ -3,7 +3,7 @@
 **Book:** *The State of Automotive Software Engineering*  
 **Part:** III — Industry Problem Investigation  
 **Chapter:** 22 — Quality, Safety, and Cybersecurity Challenges  
-**Source workstreams:** W2, W3, W4, W5, G2, G3, G4  
+**Source workstreams:** W2, W3, W4, W5, W6, G2, G3, G4  
 
 ---
 

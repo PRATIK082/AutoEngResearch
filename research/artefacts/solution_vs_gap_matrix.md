@@ -1,7 +1,7 @@
 # Existing Solution versus Unresolved Gap Matrix
 
 **Source:** Problem records in `research/W1..W5.md` (fields: Existing solutions, Why insufficient, Potential improvement areas, Automation feasibility, AI applicability, Human approval).
-**Scope:** All 131 problem records.
+**Scope:** All 161 problem records.
 **Reading:** 'Existing solutions' summarises what the industry already uses; 'Why insufficient / residual gap' states why those solutions do not close the problem; 'Potential improvement areas' are the directions named in the source reports (not proposed products).
 
 ## Summary
@@ -13,6 +13,7 @@
 | W3 Testing & Validation | 38 | 38 | 38 | 38 |
 | W4 Toolchain & Standards | 30 | 30 | 30 | 30 |
 | W5 Human Skills & AI/Automation | 25 | 25 | 25 | 25 |
+| W6 Bootloader & Flash Programming | 30 | 30 | 30 | 30 |
 
 ## Solution landscape referenced across reports
 
@@ -185,6 +186,41 @@
 | W5-023 | Mentorship, knowledge capture. | Late start. | Succession planning; knowledge graphs; AI capture. | Medium (knowledge capture). | Medium-High. | N/A. |
 | W5-024 | Global sourcing, partnerships (S7). | Pay parity gap. | Internal SDV academies; global pipelines. | Low-Medium. | Medium. | Required. |
 | W5-025 | Internal policies (ad hoc). | Not standardized. | AI usage policy; verification gates; provenance; training. | Medium (governance tooling). | Medium. | Mandatory. |
+
+## W6 Bootloader & Flash Programming
+
+| ID | Existing solutions | Why insufficient / residual gap | Potential improvement areas | Automation feasibility | AI applicability | Human approval |
+|---|---|---|---|---|---|---|
+| W6-001 | AUTOSAR FOTA requirements (app-side), UCM (Adaptive), OEM bootloader families, OpenBL (research) | Bootloader remains outside standard; OEM-specific variation persists | Industry bootloader standard; reusable bootloader family | Low-Medium | Low | Mandatory (architecture) |
+| W6-002 | Linker-map validators, ARXML/memory descriptors, code generation | Not standardized; variant handling manual | Automated memory-map verification; boundary checks in CI | Medium-High | Low-Medium | Required (memory map) |
+| W6-003 | HSM-based secure boot, PKI, TPM, secure enclaves, code signing | Implementation quality varies; key lifecycle unmanaged | Standardized secure-boot reference; key provisioning automation | Low-Medium | Low | Mandatory |
+| W6-004 | Fast-boot modes, deferred verification, cached results, parallel init | Trade-offs with security; not standardized | Boot-time budgets per ECU; deferred verification safety case | Medium | Low | For safety-relevant boot paths |
+| W6-005 | OTP counters, secure versioning, HSM monotonic counters | Irreversible; error-prone; not standardized | Rollback policy standardization; counter exhaustion handling | Low-Medium | Low | Mandatory |
+| W6-006 | Dual-bank flash, compressed updates, external flash | Cost; not universal | Cost-benefit by ECU class; compressed single-bank safety | Low | Low | For architecture |
+| W6-007 | UDS conformance tests, DoIP, vendor flash tools | Extensions; timing not standardized enough | Standardized timing profiles; conformance beyond standard | Medium-High | Low-Medium | For safety-relevant changes |
+| W6-008 | Voltage monitoring, suspend/resume, dual-bank, power-fail recovery | Not standardized; hardware-dependent | Minimum voltage margin spec; recovery success benchmarking | Medium | Low | For safety limits |
+| W6-009 | Dual-bank, fallback bootloader, recovery mode, UART/SWD recovery | Not universal; hardware access needed | Standardized recovery paths; automated recovery testing | Medium | Low | Mandatory (safety) |
+| W6-010 | ICD, contract tests, shared headers | Not enforced; drifts | Automated contract verification in CI | High | Low-Medium | For interface changes |
+| W6-011 | XCP, calibration servers, version binding | Not standardized; manual | Automated calibration-image version binding | Medium | Low | For safety-relevant calibration |
+| W6-012 | Unit tests, HIL, fault injection, vECU | Not standardized; coverage gaps | Bootloader test plan template; coverage tracking | Medium-High | Medium (test generation) | For safety evidence |
+| W6-013 | Wear-leveling, EEPROM emulation, external NVM | Not universal; validation cost | Write-budget per ECU; accelerated test correlation | Medium | Low | For reliability targets |
+| W6-014 | Fault injection (W3-033), HIL power emulation | Coverage gaps; manual | Standardized power-fault test plan; automated injection | Medium-High | Medium (test optimization) | For safety |
+| W6-015 | Production programmers, EOL testers, PLM/ARXML integration | Integration gaps; manual glue | End-to-end traceability automation; throughput benchmarking | High | Low-Medium | For process changes |
+| W6-016 | UDS session control, DoIP, vendor docs | Timing not standardized | Standardized transition timing; cross-tool conformance | Medium | Low | For safety |
+| W6-017 | AUTOSAR MCAL flash driver, vendor HALs | Vendor variation; incomplete coverage | Reusable flash driver asset; MCAL abstraction | Medium | Low | For hardware changes |
+| W6-018 | Bootloader update via recovery, dual bootloader banks | Rare; high risk | Safe self-update design patterns; update policy | Low | Low | Mandatory |
+| W6-019 | HSM, PKI, secure provisioning, attestation | Not standardized; manual | End-to-end key lifecycle automation | Medium | Low | Mandatory |
+| W6-020 | Size optimization, linker scripts, compression | Trade-offs; not governed | Size budget governance; feature prioritization | Medium | Low | For budget changes |
+| W6-021 | AUTOSAR mode management, reset handling APIs | Bootloader not covered | Standardized bootloader/BSW interface | Medium | Low | For interface changes |
+| W6-022 | DoIP, compressed images, multicast | Infrastructure; security | Transport selection by ECU type; compression safety | Medium | Low | For network changes |
+| W6-023 | Universal flash tools (emerging); OEM tool suites | Not standardized | Universal flash tool interface | Medium | Low | For toolchain changes |
+| W6-024 | ISO 26262 processes, ASPICE, safety case tools | Burden; bootloader-specific gaps | Bootloader safety patterns; evidence automation | Medium | Low-Medium (doc automation) | Mandatory |
+| W6-025 | AUTOSAR FOTA, UCM, dual-bank, secure boot, HSM | Bootloader not standardized; safety-critical OTA rare | Standardized safe-state; OTA success rate benchmarking | Medium | Low-Medium (risk prediction) | Mandatory |
+| W6-026 | Campaign managers, per-ECU rollback, diagnostics | No end-to-end transaction | Campaign-level transaction feasibility | Medium | Low-Medium | Mandatory |
+| W6-027 | Dual bootloader banks, recovery mode | Rare; high risk | Safe self-update patterns; policy | Low | Low | Mandatory |
+| W6-028 | CRC, SHA, code signing, read-back verify | Not universal; performance trade-offs | Verification depth vs performance trade-off | High | Low | For safety |
+| W6-029 | Training programs, vendor courses, mentoring | Not scaled; cost | Standardized training curriculum; AI-assisted onboarding | Low-Medium | Low-Medium (assistive) | For training plans |
+| W6-030 | Shift-left, vECU, HIL, early reviews | Not standardized; fidelity gaps | Cost of late rework quantification; vECU acceptance | Medium | Low-Medium | For process |
 
 ## Cross-cutting observations
 

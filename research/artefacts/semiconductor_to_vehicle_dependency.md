@@ -161,7 +161,7 @@ This is the layer where silicon problems become schedule problems: even if softw
 
 The longest stage (15+ years). Dominated by:
 - **Obsolescence (G1-007):** semiconductor EOL <7 yr vs. vehicle 15+ yr → ECU redesign, LTB (G1-009), service/spare unavailability, blocked updates.
-- **OTA (W2-010, W4-016):** update engineering across heterogeneous ECU landscape; safe-state activation; rollback; bootloader (out of AUTOSAR scope).
+- **OTA (W2-010, W4-016, W6):** update engineering across heterogeneous ECU landscape; safe-state activation; rollback; bootloader (out of AUTOSAR scope). Bootloader & flash problems expanded in W6 (W6-001..W6-030): no standardized bootloader, secure boot, memory layout, UDS flash protocol, power transients, recovery/brick prevention, testing, manufacturing/EOL, toolchain, OTA orchestration.
 - **Recalls / warranty:** safety-critical; zero-defect pressure from L1 (G1-012) lands here.
 
 ---

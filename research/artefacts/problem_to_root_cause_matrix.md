@@ -1,7 +1,7 @@
 # Problem-to-Root-Cause Matrix
 
-**Source:** `research/W1_requirements_system.md`, `W2_autosar_middleware.md`, `W3_testing_validation.md`, `W4_toolchain_standards.md`, `W5_skills_ai.md` (problem records) and `research/KNOWLEDGE_INDEX.md`.
-**Scope:** All 131 problem records (W1: 18, W2: 20, W3: 38, W4: 30, W5: 25).
+**Source:** `research/W1_requirements_system.md`, `W2_autosar_middleware.md`, `W3_testing_validation.md`, `W4_toolchain_standards.md`, `W5_skills_ai.md`, `W6_bootloader_flash.md` (problem records) and `research/KNOWLEDGE_INDEX.md`.
+**Scope:** All 161 problem records (W1: 18, W2: 20, W3: 38, W4: 30, W5: 25, W6: 30).
 **Method:** Each row is one problem record. 'Primary root cause' is the root cause stated in the source report; 'Contributing factors and limitations' aggregates contributing factors, technical, tool, human-skill and process limitations.
 **Evidence tier:** Verify (Tier 2). Numerical claims are only those stated in source reports.
 
@@ -14,7 +14,8 @@
 | W3 Testing & Validation | 38 | MIL/SIL/PIL/HIL/vehicle, scenario coverage, traceability, compliance |
 | W4 Toolchain & Standards | 30 | Fragmentation, ARXML, compliance overhead, HIL, CI/CD, cost |
 | W5 Human Skills & AI/Automation | 25 | Talent gaps, knowledge loss, AI barriers, governance |
-| **Total** | **131** | |
+| W6 Bootloader & Flash Programming | 30 | Bootloader architecture, flash programming, integration, security, testing, manufacturing |
+| **Total** | **161** | |
 
 ## Column definitions
 
@@ -181,6 +182,43 @@
 | W5-023 | Human skills / Demographics / All | Sizable part of existing embedded workforce nearing retirement with few qualified replacements (S1); aging workforce compounds talent gap (S2). | Demographic shift; insufficient pipeline (S1, S2). | Tech: N/A.; Tool: N/A.; Human: Loss of senior expertise.; Process: No succession planning.; Contrib: Compensation disadvantage accelerates exits (S7). | Structural, worsening. | Knowledge loss; capacity. |
 | W5-024 | Human skills / SDV / Architecture, software, integration | New roles (SDV engineer, autonomous systems developer, data analytics specialist) require skills in central compute, service-oriented architecture, virtualization, OTA, cloud; scarce (S2, S7). | Technology shift faster than skill development; compensation disadvantage (S7). | Tech: Complex centralized systems.; Tool: New toolchains.; Human: SDV-specific stack.; Process: Organizational realignment.; Contrib: Global scarcity (China 0.38 supply-demand ratio for autonomous-driving engineers) (S7, S10). | Acute. | Program delays; compensation inflation. |
 | W5-025 | AI/automation / Governance / All | No established governance for AI use in safety-critical engineering: which tasks may use AI, required verification, approval gates, IP handling, audit trails (S9, S20). | AI adoption outpacing process definition; standards silent (S9). | Tech: N/A.; Tool: No governance tooling.; Human: AI literacy.; Process: Undefined policies.; Contrib: Productivity pressure. | Pervasive. | Audit findings; inconsistent quality. |
+
+## W6 Bootloader & Flash Programming
+
+Full problem records: `research/W6_bootloader_flash.md` (W6-001..W6-030). Compact index:
+
+| ID | Domain / Lifecycle stage | Problem (short) | Primary root cause (short) | Freq/Severity | Time/Cost impact |
+|---|---|---|---|---|---|
+| W6-001 | Bootloader architecture | No standardized automotive bootloader (AUTOSAR out of scope) | Standards exclude bootloader; OEM/Tier-1 reinvent | Pervasive | Duplicated impl; integration friction |
+| W6-002 | Bootloader / memory | Memory layout and partitioning complexity | Manual linker scripts; variant-specific sizes | Frequent (new platforms) | Late rework; bricking |
+| W6-003 | Bootloader security | Secure boot chain-of-trust gaps | HSM/crypto APIs vary; key provisioning late | High consequence | Rework; certification cost |
+| W6-004 | Bootloader / timing | Startup time and fast-boot constraints | Sequential init; crypto cost; no parallelization | All ECUs | Late optimization |
+| W6-005 | Bootloader security/update | Anti-rollback and version monotonicity gaps | Inconsistent version tracking; OTP fuse mgmt | High consequence | Field recovery |
+| W6-006 | Bootloader / update strategy | Dual-bank / A-B update complexity and flash cost | Flash cost; memory constraints | OTA-capable ECUs | Flash cost; risk |
+| W6-007 | Diagnostics / flash programming | UDS flash programming protocol complexity | Protocol complexity; vendor extensions | Frequent integration failures | Debugging; tool rework |
+| W6-008 | Flash programming / power | Reliability under power transients | Flash write timing vs power transients | High consequence | Field recovery; warranty |
+| W6-009 | Bootloader reliability | Recovery and brick prevention | Single boot path; no recovery partition | High consequence | Field recovery cost |
+| W6-010 | Integration | Application/bootloader interface contract gaps | Implicit interfaces; no contract tests | Frequent (multi-supplier) | Integration debug |
+| W6-011 | Calibration / flash | Calibration data and flash interaction | Separate toolchains; weak version binding | Common | Rework; wrong calibration |
+| W6-012 | Testing / bootloader | Bootloader testing coverage gaps | Test infra gaps; treated as infrastructure | Pervasive | Defect escape |
+| W6-013 | Flash memory / reliability | Flash endurance and wear-leveling validation | Underestimated write frequency; long tests | Long-life vehicles | Field failures late |
+| W6-014 | Testing / robustness | Power-loss and interrupted programming recovery testing | Test matrix size; power injection complexity | Rare but high consequence | Late defect discovery |
+| W6-015 | Manufacturing / EOL | Manufacturing/EOL flashing and traceability | Tooling mismatch; manual steps | Every vehicle | Line throughput; scrap |
+| W6-016 | Diagnostics / bootloader | Diagnostic session transitions to bootloader | Ambiguous timing; vendor extensions | Frequent service issues | Service time |
+| W6-017 | Flash driver / MCAL | Flash driver portability and abstraction gaps | Hardware-specific drivers; weak abstraction | Platform reuse | Porting cost |
+| W6-018 | Bootloader security | Security vs. upgradability conflict | Immutable design; no update path | High consequence | Security exposure |
+| W6-019 | Security / provisioning | Key and certificate management lifecycle | No standard key lifecycle; fragmented tooling | High consequence | Recovery; audit |
+| W6-020 | Bootloader / resources | Size constraints and feature creep | Feature growth; small flash | Common | Cost; complexity |
+| W6-021 | Integration / AUTOSAR | Bootloader integration with AUTOSAR BSW | Bootloader outside AUTOSAR; interface gaps | Frequent | Integration debug |
+| W6-022 | Flash programming / performance | Reprogramming throughput (CAN vs DoIP) | Transport bandwidth; protocol overhead | Large updates | Service time; OTA duration |
+| W6-023 | Toolchain | Flash toolchain fragmentation | Vendor lock-in; proprietary formats | Pervasive | Training; errors |
+| W6-024 | Functional safety / bootloader | Bootloader V&V evidence and ISO 26262 compliance | Treated as infrastructure; evidence gaps | High consequence | Certification cost |
+| W6-025 | OTA / bootloader | OTA and bootloader orchestration | Bootloader outside standard; OEM-specific safe-state | High (connected vehicles) | Field failure; warranty |
+| W6-026 | OTA / integration | Multi-ECU campaign consistency and partial failure | Heterogeneous bootloaders; no campaign transaction | High consequence | Field inconsistency |
+| W6-027 | Bootloader / update | Bootloader self-update complexity | Single boot path; recovery complexity | High consequence | Security exposure |
+| W6-028 | Security / reliability | Flash image integrity verification | Inconsistent verification; tool variation | High consequence | Field failures; security |
+| W6-029 | Human skills | Skill gaps in bootloader/flash/security | Specialized domain; few training paths | Structural | Onboarding; delays |
+| W6-030 | Process / lifecycle | Late bootloader rework cost | Treated as infrastructure; late testing | High cost | Major rework; schedule slip |
 
 ## Cross-cutting root-cause themes (consolidated)
 

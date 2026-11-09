@@ -4,7 +4,7 @@
 **Parent project:** THE STATE OF AUTOMOTIVE SOFTWARE ENGINEERING  
 **Date compiled:** 2026-11-05  
 **Scope:** Global automotive software industry — ICE, hybrid, EV, ADAS/ADS; Classic + Adaptive AUTOSAR; OEM/Tier-1/Tier-2 perspectives.  
-**Evidence basis:** Task.md §6 (Engineering Tools and Technology Landscape) + W4 (Toolchain & Standards, 30 records) + W1/W2/W3 cross-references + DOMAIN_MAP.md.
+**Evidence basis:** Task.md §6 (Engineering Tools and Technology Landscape) + W4 (Toolchain & Standards, 30 records) + W6 (Bootloader & Flash, 30 records) + W1/W2/W3 cross-references + DOMAIN_MAP.md.
 
 ---
 
@@ -112,7 +112,7 @@ Core thesis: **automotive programmes assemble 10–30+ specialised tools that we
 | Category | Representative tools | Strengths | Limitations | Problems |
 |---|---|---|---|---|
 | Build systems | Jenkins, GitLab CI, GitHub Actions, (safety-qualified variants) | Automation | Unsuitable for safety-critical embedded; tool qualification; reproducibility | W4-020 |
-| Flashing / programming | (vendor-specific) | ECU programming | Bootloader validation; OTA coordination | W2-010, W4-016 |
+| Flashing / programming | (vendor-specific), production programmers, debuggers (JTAG/SWD), UDS flash tools | ECU programming | Bootloader validation; OTA coordination; toolchain fragmentation; secure boot provisioning; throughput | W2-010, W4-016, W6-007, W6-015, W6-019, W6-022, W6-023, W6-028 |
 | EOL test | (manufacturing) | End-of-line verification | — | — |
 | OTA platforms | Mender, Redstone, (OEM-specific) | Delivery | Compliance evidence manual; update engineering | W4-016 |
 

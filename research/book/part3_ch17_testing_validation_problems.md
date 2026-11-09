@@ -3,7 +3,7 @@
 **Book:** *The State of Automotive Software Engineering*  
 **Part:** III — Industry Problem Investigation  
 **Chapter:** 17 — Testing and Validation Problems  
-**Source workstreams:** W3, W4, G1, G3, G4  
+**Source workstreams:** W3, W4, W6, G1, G3, G4  
 
 ---
 
