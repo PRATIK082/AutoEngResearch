@@ -86,7 +86,7 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done, `[!]` blocked.
 - [ ] P4.5 Update solution_vs_gap_matrix.md (solution coverage) — artefact agent
 
 ### Phase 5 — Quality & validation (mode: review/automation)
-- [ ] P5.1 Run coverage check (all problem IDs in workstreams appear in KNOWLEDGE_INDEX) — tooling agent
+- [x] P5.1 Run coverage check (all W6 IDs present in KNOWLEDGE_INDEX) — tooling agent
 - [ ] P5.2 Run link check (all relative links resolve) — tooling agent
 - [ ] P5.3 Verify book INDEX lists all 45 chapters — review agent
 - [ ] P5.4 Final review against Task.md §16 quality rules — review agent
