@@ -4,7 +4,7 @@
 
 **Owner (orchestrator):** PRATIK082  
 **Created:** 2026-11-09  
-**Status:** In progress — Phase 1 active  
+**Status:** Complete — all phases done (P3.3, P3.4, P5.4, P5.5 closed)  
 **Tracking:** This file is the single source of truth for integration work. Each agent updates its task rows.
 
 ---
@@ -90,7 +90,7 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done, `[!]` blocked.
 - [x] P5.2 Run link check (all relative links resolve; 0 broken) — tooling agent
 - [x] P5.3 Verify book INDEX lists all 45 chapters (45 chapter files present) — review agent
 - [x] P5.4 Final review against Task.md §16 quality rules — review agent (QUALITY_REVIEW.md) §16 quality rules — review agent
-- [~] P5.5 Commit + push integrated changes — orchestrator — orchestrator
+- [x] P5.5 Commit + push integrated changes — orchestrator (commit 0c39435 + follow-up) — orchestrator
 
 ---
 
@@ -106,7 +106,7 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done, `[!]` blocked.
 ## 4. Current branch / commit
 
 - Branch: `research/bootloader-flash`
-- Last commit: `35e74e0` (W6 workstream + index updates)
+- Last commit: `0c39435` (integration close-out) + follow-up plan finalization
 
 ---
 See also: [TASK_COVERAGE.md](./TASK_COVERAGE.md) | [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
