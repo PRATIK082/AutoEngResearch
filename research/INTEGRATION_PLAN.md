@@ -73,13 +73,13 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done, `[!]` blocked.
 - [ ] P2.5 Update CROSS_QUESTIONS.md with W6 unanswered questions — research agent
 
 ### Phase 3 — Issue tracking: old vs. current vs. future (mode: triage)
-- [ ] P3.1 Create ISSUE_TRACKER.md (old issues, current issues, status, owner, resolution) — issue agent
+- [x] P3.1 Create ISSUE_TRACKER.md (old issues, current issues, status, owner, resolution) — issue agent
 - [ ] P3.2 Tag each W6 problem as old/current/future — issue agent
 - [ ] P3.3 Map W6 to existing G1/G3/G4/W2 problems (dup/overlap) — review agent
 - [ ] P3.4 Resolve or defer each issue with rationale — issue agent
 
 ### Phase 4 — Solution design (future) (mode: design)
-- [ ] P4.1 Create SOLUTIONS_BOOTLOADER_FLASH.md (solution concepts, roadmap) — solution agent
+- [x] P4.1 Create SOLUTIONS_BOOTLOADER_FLASH.md (solution concepts, roadmap) — solution agent
 - [ ] P4.2 Update Part IV (ch23–27) with bootloader/flash solution landscape — book agent
 - [ ] P4.3 Update Part V (ch28–34) with future bootloader/flash (SDV, AI-native) — book agent
 - [ ] P4.4 Update ai_automation_opportunity_map.md — artefact agent
