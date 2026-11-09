@@ -102,6 +102,7 @@ Vehicle software is organised by **functional domain**. Historically each domain
 - **Cockpit/IVI** ↔ Adaptive/QNX/Linux, OTA infotainment, cybersecurity.
 - **Gateway/Connectivity** ↔ SOME/IP/DDS (W2-007/008), security (W4-014/015).
 - **HPC/Zonal** ↔ mixed-criticality (W1-016), hypervisors (W2-009), FFI (W2-004).
+- **Bootloader/Flash/OTA** � no standardized bootloader (W6-001), secure boot (W6-003), UDS flash (W6-007), power transients (W6-008), recovery (W6-009), testing (W6-012), manufacturing/EOL (W6-015), OTA orchestration (W6-025), toolchain (W6-023).
 
 ---
 

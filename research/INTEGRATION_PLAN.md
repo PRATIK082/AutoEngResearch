@@ -69,7 +69,7 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done, `[!]` blocked.
 - [ ] P2.1 Verify all W6 IDs resolve in KNOWLEDGE_INDEX (done) and book indices — review agent
 - [ ] P2.2 Repair broken relative links across research/ — tooling agent
 - [ ] P2.3 Add "See also" cross-links in W6 report to book chapters/artefacts — interlink agent
-- [ ] P2.4 Update DOMAIN_MAP domain→problem mapping (add bootloader/flash) — interlink agent
+- [x] P2.4 Update DOMAIN_MAP domain→problem mapping (add bootloader/flash) — interlink agent
 - [ ] P2.5 Update CROSS_QUESTIONS.md with W6 unanswered questions — research agent
 
 ### Phase 3 — Issue tracking: old vs. current vs. future (mode: triage)
