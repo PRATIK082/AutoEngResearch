@@ -14,6 +14,19 @@ Maps topics, problem IDs, book chapters, and artefacts.
 - G3 (cloud/fleet): Part III ch15/ch16/ch18, Part V ch28–ch29
 - G4 (energy/thermal): Part III ch14/ch21
 - W6 (bootloader/flash): Part II ch13, Part III ch14/ch15/ch18
+- W7 (ASIL/mixed-criticality/multicore): Part II ch8, Part III ch14/ch22
+- G5 (domain deep-dive): Part I ch3, Part III ch14
+
+## Wave cross-references (W7/G5)
+
+- W7-001..W7-030 ↔ G5-001..G5-004 (Middleware/COM separation and isolation)
+- W7-013/W7-015/W7-021 ↔ G2 domain survey (partitioning, watchdogs)
+- W7-004/W7-005/W7-012 ↔ W6-009/W6-024 (secure boot, HSM)
+- W7-022/W7-028 ↔ W6-011 (OTA/flashing safety)
+- G5-009..G5-012 (Powertrain) ↔ G1 (semiconductor/hardware)
+- G5-013..G5-016 (AD/ADAS) ↔ G3/G4 (cloud/fleet, energy/thermal)
+- G5-017..G5-020 (IVI) ↔ W5 (skills/AI)
+- G5-029..G5-032 (HPC) ↔ W2/W3 (middleware, testing/validation)
 
 ## Artefacts
 

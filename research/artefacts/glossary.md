@@ -14,17 +14,26 @@
 | ARXML (AUTOSAR XML) | XML-based standardized format for describing AUTOSAR systems, ECUs, software components, interfaces and configuration. |
 | ASAM (Association for Standardization of Automation and Measuring Systems) | Industry body defining standards for test and measurement (OpenSCENARIO, OpenDRIVE, XCP, etc.). |
 | ASIL (Automotive Safety Integrity Level) | Risk classification in ISO 26262 from A (lowest) to D (highest); QM for non-safety-relevant items. |
+| ASIL decomposition | Allocating a higher ASIL requirement to redundant independent lower-ASIL or QM elements whose combination satisfies the original ASIL, subject to justification of independence and freedom from interference. |
 | ASPICE (Automotive SPICE) | Process assessment model for automotive software development processes (VDA/ISO 15504-derived). |
 | Assumption-driven development | Developing based on unstated assumptions. |
 | AUTOSAR (AUTomotive Open System ARchitecture) | Standardized automotive software architecture and methodology; Classic Platform for deeply embedded real-time ECUs, Adaptive Platform for HPC/SDV. |
 | AUTOSAR Adaptive Platform (AP) | Service-oriented, POSIX/C++-based platform targeting high-performance and zonal/central compute; still evolving. |
 | AUTOSAR Classic Platform (CP) | Signal-based, static-config, OSEK/VDX-based platform for deeply embedded, hard real-time ECUs; supports up to ASIL-D. |
+| BCM (Body Control Module) | Body-domain ECU handling lighting, locks, windows, wipers and load control; consolidation target in zonal architectures. |
 | Binding time | Point in the lifecycle at which a variant or configuration decision is fixed (system design, code generation, pre-compile, link, post-build). |
 | Board Support Package (BSP) | Software layer providing hardware abstraction and initialization for a specific board/SoC. |
 | Bootloader | Software responsible for starting the ECU and (often) performing firmware updates; usually outside AUTOSAR scope. |
 | Bootloader validation | Verifying bootloader functionality. |
 | Anti-rollback | Mechanism preventing downgrade to older (potentially vulnerable) firmware via monotonic counters/fuses. |
 | A/B (dual-bank) update | Firmware update scheme keeping two copies (active/standby) for safe rollback; doubles flash usage. |
+| Dependent-failure analysis (DFA) | Analysis of cascading and common-cause failures that could defeat independence claims between redundant elements or partitions. |
+| End-to-end (E2E) protection | AUTOSAR library-based protection of data exchange (CRC, sequence counters) allowing the receiver to detect corruption, loss, repetition or delay. |
+| gPTP (generalized Precision Time Protocol) | Time-synchronisation protocol (IEEE 802.1AS) distributing a common time base over Ethernet/TSN for deterministic communication, fusion timestamps and logging. |
+| HPC (High-Performance Computing) platform | Central vehicle computer consolidating functions of several domains on a shared SoC, typically using virtualization and service-oriented middleware. |
+| HUD (Head-Up Display) | Display projecting information into the driver's field of view; treated as a safety actuator when consolidating cluster/HUD functions. |
+| Lockstep execution | Redundant dual-core execution with cycle-level comparison to detect random hardware faults; used in MCUs targeting ASIL-C/D. |
+| OS-Application (AUTOSAR OS-Application) | Classic AUTOSAR OS object grouping tasks, ISRs and alarms with memory-partitioning properties (trusted vs non-trusted) and defined restart behaviour. |
 | Secure boot | Boot process verifying cryptographic signatures of each software layer (ROM -> bootloader -> application). |
 | Recovery mode | Bootloader fallback path allowing re-flashing of a bricked ECU via debug/serial interface. |
 | Brick / bricking | ECU rendered non-functional (unbootable) due to corrupt firmware or interrupted programming. |
@@ -159,8 +168,11 @@
 | Software release approval | Approving software for release. |
 | Software versioning | Tracking software versions. |
 | SOME/IP | Automotive middleware protocol for service-oriented communication over IP. |
+| SOME/IP (Scalable service-Oriented MiddlewarE over IP) | AUTOSAR service-oriented middleware protocol for discovery, subscription and data exchange over Ethernet. |
 | SOME/IP-SD | Service discovery protocol for SOME/IP. |
 | SOTIF (Safety of the Intended Functionality, ISO 21448) | Safety of system behavior in absence of faults, including unknown unsafe scenarios. |
+| Space partitioning | Memory isolation between partitions so that one partition cannot access or corrupt another partition's address space. |
+| Spinlock | Multicore synchronisation primitive using busy-waiting; misordered acquisition across cores causes deadlock and timing interference. |
 | Static analysis | Analyzing code without execution (MISRA/CERT checks). |
 | Stress testing | Testing beyond normal operating limits. |
 | Supplier tiers (Tier-1/Tier-2) | Supplier hierarchy in automotive supply chain. |
@@ -173,12 +185,15 @@
 | TDM (Test Data Management) | Versioning and correlation of test data/artifacts across XiL levels. |
 | Technical debt | Cost of rework caused by suboptimal design/implementation. |
 | Telematics | Vehicle connectivity and data services. |
+| Telltale | Safety-relevant dashboard indicator (e.g. brake, airbag) subject to ASIL-B display-integrity and rendering-deadline requirements. |
 | Test fleet management | Managing vehicles used for validation campaigns. |
 | Test oracle | Mechanism determining expected test outcomes. |
 | Test prioritization | Selecting/ordering tests by risk/value. |
 | Test track | Controlled environment testing. |
+| Time partitioning | Guaranteeing each partition a bounded share of execution time (schedule slots, budgets) so that overrun in one partition cannot starve another. |
 | Timing analysis | Determining whether software meets timing constraints (WCET, schedulability). |
 | Toolchain | Set of tools used to develop, build, test and release software. |
+| Torque monitoring | ASIL-C/D powertrain safety monitor comparing demanded versus actual torque and triggering safe states on deviation, interacting with OBD. |
 | Traceability (vertical/horizontal) | Vertical: requirements to tests; horizontal: across XiL levels. |
 | TSN (Time-Sensitive Networking) | Ethernet standards providing deterministic, low-latency communication. |
 | Type approval | Regulatory certification that a vehicle meets standards. |
@@ -189,6 +204,7 @@
 | V-model | Development process with verification/validation paired to design stages. |
 | Variant explosion | Combinatorial growth of product variants. |
 | Variant management | Handling product variants (hardware, software, region, regulation). |
+| vCPU/pCPU pinning | Binding virtual CPUs to physical cores to bound interference and obtain analysable timing for mixed-criticality guests. |
 | vECU (virtual ECU) | Software emulation of an ECU for SIL testing; levels 0-4. |
 | Vehicle testing | Testing on full vehicles. |
 | Vehicle-in-the-Loop (VIL) | Testing with a real vehicle in a virtual environment. |
@@ -198,6 +214,7 @@
 | WCET (Worst-Case Execution Time) | Maximum time a task can take to execute. |
 | XiL (X-in-the-Loop) | Umbrella for MIL/SIL/PIL/HIL/VIL. |
 | Zonal architecture | Vehicle architecture organized by physical zones with zonal controllers. |
+| Zonal E/E architecture | Vehicle architecture grouping I/O, power distribution and compute into a few zonal controllers connected by high-speed backbone to central compute. |
 
 *Total terms: 187.*
 

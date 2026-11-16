@@ -3,7 +3,7 @@
 **Book:** *The State of Automotive Software Engineering*  
 **Part:** III — Industry Problem Investigation  
 **Chapter:** 22 — Quality, Safety, and Cybersecurity Challenges  
-**Source workstreams:** W2, W3, W4, W5, W6, G2, G3, G4  
+**Source workstreams:** W2, W3, W4, W5, W6, G2, G3, G4, G5  
 
 ---
 
@@ -72,7 +72,7 @@ This chapter collects problems of software quality, functional safety (ISO 26262
 
 ---
 
-## 22.5 Safety-critical vehicle domains (G2-007, G2-008, G2-027, G4-024)
+## 22.5 Safety-critical vehicle domains (G2-007, G2-008, G2-027, G4-024, G5)
 
 - **G2-007 — Braking and brake-by-wire: safety-critical redundancy and feel.**
 - **G2-008 — Steering and steer-by-wire: fault tolerance and driver feel.**
@@ -80,6 +80,8 @@ This chapter collects problems of software quality, functional safety (ISO 26262
 - **G4-024 — Functional safety (ASIL) of charging and BMS software.**
 
 **Root cause:** brake-by-wire and steer-by-wire raise fault-tolerance and haptics problems that are safety-critical and hard to validate; mixed criticality requires proven isolation.
+
+The workstream **G5 — Domain Deep-Dive** grounds these safety-critical concerns per domain (G5-005..G5-032): body consolidation and access/power-state timing (G5-005..G5-008); powertrain torque-path coordination, ASIL-C/D monitoring and calibration protection (G5-009..G5-012); AD/ADAS perception pipelines, SOTIF plus ASIL-D motion control and ML/map update discipline (G5-013..G5-016); IVI SoC coexistence, telltale integrity and release-cadence discipline (G5-017..G5-020); cockpit consolidation, ASIL-B telltales and display-pipeline integrity (G5-021..G5-024); zonal mixed-criticality FFI evidence and packaging/rollback (G5-025..G5-028); and HPC consolidation, shared-SoC interference evidence and fleet rollout (G5-029..G5-032). See `research/G5_domain_deep_dive.md`.
 
 ---
 

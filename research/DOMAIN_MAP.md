@@ -4,7 +4,7 @@
 **Parent project:** THE STATE OF AUTOMOTIVE SOFTWARE ENGINEERING  
 **Date compiled:** 2026-11-05  
 **Scope:** Global automotive software industry — ICE, hybrid, EV, ADAS/ADS; Classic + Adaptive AUTOSAR; OEM/Tier-1/Tier-2 perspectives.  
-**Evidence basis:** Task.md (research master prompt) + workstreams W1–W6 problem reports.
+**Evidence basis:** Task.md (research master prompt) + workstreams W1–W7 plus G5 domain deep-dive problem reports.
 
 ---
 
@@ -103,6 +103,9 @@ Vehicle software is organised by **functional domain**. Historically each domain
 - **Gateway/Connectivity** ↔ SOME/IP/DDS (W2-007/008), security (W4-014/015).
 - **HPC/Zonal** ↔ mixed-criticality (W1-016), hypervisors (W2-009), FFI (W2-004).
 - **Bootloader/Flash/OTA** � no standardized bootloader (W6-001), secure boot (W6-003), UDS flash (W6-007), power transients (W6-008), recovery (W6-009), testing (W6-012), manufacturing/EOL (W6-015), OTA orchestration (W6-025), toolchain (W6-023).
+
+- **Safety / mixed-criticality / multicore (W7)** � ASIL-A/B/C/D implication sets (W7-001..W7-004), FFI memory/timing/execution (W7-006..W7-008), SWC partitioning (W7-010), multicore allocation/scheduling/verification (W7-014..W7-017), partitions and hypervisor (W7-018..W7-020), RTE/BSW/MCAL integration (W7-022..W7-030).
+- **Vehicle domain deep-dives (G5)** � Middleware/COM separation (G5-001..G5-004), Body (G5-005..G5-008), Powertrain/torque path (G5-009..G5-012), AD/ADAS (G5-013..G5-016), IVI/QM-ASIL coexistence (G5-017..G5-020), Cockpit/telltales (G5-021..G5-024), Zonal (G5-025..G5-028), HPC (G5-029..G5-032).
 
 ---
 

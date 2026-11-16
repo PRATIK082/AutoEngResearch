@@ -134,7 +134,7 @@ Feedback loops run from every later stage back to Stage 1 (requirements) and Sta
 | Stakeholders | OEM system architects, Tier-1 systems engineers, safety/cybersecurity engineers. |
 | Tool categories | MBSE (Cameo/SysML, Rhapsody, Enterprise Architect, PREEvision, SystemWeaver), network tools (CANoe, CANalyzer), architecture tools. |
 | Standards | ISO 26262 (Part 3/4 concept & system), ASPICE (SYS.1–SYS.4), ISO/SAE 21434, AUTOSAR methodology. |
-| Problems | W1-007 (unstable interfaces), W1-008 (inconsistent architecture), W1-009 (MBSE barriers), W1-010 (timing unsolved), W1-011 (variant explosion), W1-016 (zonal/central transition), W1-017 (change visibility), W1-018 (network timing), W2-009 (hypervisors), W2-016 (Classic→Adaptive migration), W2-018 (ASIL gap), W4-012 (safety case maintenance), W5-007 (system skills). |
+| Problems | W1-007 (unstable interfaces), W1-008 (inconsistent architecture), W1-009 (MBSE barriers), W1-010 (timing unsolved), W1-011 (variant explosion), W1-016 (zonal/central transition), W1-017 (change visibility), W1-018 (network timing), W2-009 (hypervisors), W2-016 (Classic→Adaptive migration), W2-018 (ASIL gap), W4-012 (safety case maintenance), W5-007 (system skills)., W7-001..W7-005, W7-010, W7-014, W7-018, W7-019, G5-001, G5-002, G5-026, G5-029, G5-030, G5-032 |
 | Duration | Months; architecture frozen relatively early but evolves. |
 
 **Critical unsolved problem:** Timing analysis for AUTOSAR software remains "important and still largely unsolved" (TU Munich); AUTOSAR standard lacks timing aspects (TU Braunschweig). Timing violations surface at integration, not design.
@@ -152,7 +152,7 @@ Feedback loops run from every later stage back to Stage 1 (requirements) and Sta
 | Stakeholders | Embedded developers, model-based developers, BSW engineers, driver engineers (OEM/Tier-1/Tier-2/ESPs). |
 | Tool categories | IDEs (Eclipse, Visual Studio), compilers (IAR, Green Hills, GCC), model tools (MATLAB/Simulink), static analysis (QAC/PRQA, Parasoft, LDRA, Polyspace), version control (Git). |
 | Standards | MISRA C/C++, CERT C/C++, AUTOSAR C++14, ISO 26262 Part 6 (software), ASPICE SWE.3/SWE.4. |
-| Problems | W2-001 (ARXML config complexity), W2-005 (vendor lock-in), W2-006 (multicore distribution), W2-012 (RTE contract), W2-013 (Classic OS limits), W2-014 (Adaptive dynamic memory), W4-003 (manual ARXML editing), W4-008 (static-analysis false positives), W4-009 (MISRA version churn), W4-010 (undecidable rules), W5-001 (embedded shortage), W5-002 (AUTOSAR skills), W5-010 (HW/SW co-design). |
+| Problems | W2-001 (ARXML config complexity), W2-005 (vendor lock-in), W2-006 (multicore distribution), W2-012 (RTE contract), W2-013 (Classic OS limits), W2-014 (Adaptive dynamic memory), W4-003 (manual ARXML editing), W4-008 (static-analysis false positives), W4-009 (MISRA version churn), W4-010 (undecidable rules), W5-001 (embedded shortage), W5-002 (AUTOSAR skills), W5-010 (HW/SW co-design)., W7-010..W7-013, W7-022, W7-026, W7-028..W7-030, G5-005, G5-009, G5-013, G5-017, G5-021, G5-025 |
 | Duration | Months–years (dominant development effort). |
 
 ---
@@ -168,7 +168,7 @@ Feedback loops run from every later stage back to Stage 1 (requirements) and Sta
 | Stakeholders | Configuration engineers, system integrators, toolchain managers. |
 | Tool categories | AUTOSAR configurators (DaVinci Developer/Configurator, EB tresos Studio, SystemDesk), ARXML editors (AutoSAR.io, arxml-cli), MATLAB AUTOSAR Blockset. |
 | Standards | AUTOSAR ARXML Serialization Rules, AUTOSAR Methodology & Templates. |
-| Problems | W1-011 (variant explosion), W1-013 (ARXML interoperability/drift), W2-001 (ARXML complexity), W2-011 (variant binding), W2-012 (RTE contract), W2-015 (ARXML VCS friction), W4-002 (ARXML version/dialect), W4-003 (manual editing), W4-004 (tool lock-in), W4-005 (diff/merge). |
+| Problems | W1-011 (variant explosion), W1-013 (ARXML interoperability/drift), W2-001 (ARXML complexity), W2-011 (variant binding), W2-012 (RTE contract), W2-015 (ARXML VCS friction), W4-002 (ARXML version/dialect), W4-003 (manual editing), W4-004 (tool lock-in), W4-005 (diff/merge)., W7-023, W7-024, W7-027, G5-003, G5-007, G5-023, G5-027, G5-031 |
 | Duration | Continuous; peaks at integration. |
 
 **Key fact:** ARXML is the central engineering data format; a single ECU's configuration can reach hundreds of MB; tag reordering by different tools makes diffs meaningless (W2-015, W4-003).
@@ -186,7 +186,7 @@ Feedback loops run from every later stage back to Stage 1 (requirements) and Sta
 | Stakeholders | Integration engineers (OEM/Tier-1), supplier integration teams, system engineers. |
 | Tool categories | Integration frameworks, network analysers (CANoe, CANalyzer), debuggers, HIL (early). |
 | Standards | ISO 26262 Part 4 (system integration), ASPICE SYS.5/SWE.5. |
-| Problems | W1-006 (incomplete specs → integration as discovery), W1-007 (interface governance), W1-017 (change visibility), W2-002 (Classic/Adaptive interop & gateways), W2-007 (SOME/IP discovery/jitter), W2-008 (DDS determinism), W2-009 (hypervisors), W2-012 (RTE consistency), W5-008 (integration skills). |
+| Problems | W1-006 (incomplete specs → integration as discovery), W1-007 (interface governance), W1-017 (change visibility), W2-002 (Classic/Adaptive interop & gateways), W2-007 (SOME/IP discovery/jitter), W2-008 (DDS determinism), W2-009 (hypervisors), W2-012 (RTE consistency), W5-008 (integration skills)., W7-020..W7-022, W7-025, W7-026, G5-001, G5-004, G5-008, G5-012, G5-016, G5-020, G5-024, G5-028, G5-032 |
 | Duration | Weeks–months; often the critical path. |
 
 **Pattern:** "Incomplete requirements + no system-level architecture + no interface governance = integration as discovery" (W1 cross-cutting). This is the single most cited root cause of late integration surprises.
@@ -204,7 +204,7 @@ Feedback loops run from every later stage back to Stage 1 (requirements) and Sta
 | Stakeholders | Test engineers, developers, quality/safety managers, testing service providers. |
 | Tool categories | Unit/component (VectorCAST, Tessy, GoogleTest/GoogleMock, Parasoft), MIL/SIL (MATLAB/Simulink, dSPACE), HIL (dSPACE, NI, OPAL-RT, AVL), test management (Polarion, Codebeamer). |
 | Standards | ISO 26262 Part 4/5/6, ASPICE SWE.4–SWE.6, ASAM XIL, ISO 29119. |
-| Problems | W3-001..W3-038 (38 records), W4-018 (HIL scarcity), W4-019 (vECU fidelity), W4-020 (CI/CD suitability), W4-021 (build times), W4-029 (test tool interop). |
+| Problems | W3-001..W3-038 (38 records), W4-018 (HIL scarcity), W4-019 (vECU fidelity), W4-020 (CI/CD suitability), W4-021 (build times), W4-029 (test tool interop)., W7-015, W7-017, W7-025, G5-006, G5-010, G5-014, G5-018, G5-022 |
 | Duration | **Dominant cost:** up to ~50% of total software development cost (Boehm/Basili 2001, cited in ISO 26262 context); V&V is the most time-consuming activity (47% of ~600 professionals, Perforce 2024). |
 
 **Key metrics (sourced):**
@@ -228,7 +228,7 @@ Feedback loops run from every later stage back to Stage 1 (requirements) and Sta
 | Stakeholders | Validation engineers, test drivers, homologation teams, safety engineers, OEMs. |
 | Tool categories | Test fleet management (CONiX.tfs), data loggers, scenario databases, track instrumentation. |
 | Standards | Euro NCAP, UNECE R10/R155/R156, ISO 26262, SOTIF (ISO 21448), regional type approval. |
-| Problems | W3-017 (proving-ground scope explosion), W3-018 (ADAS scenario coverage/completeness), W3-019 (simulation flakiness), W3-020 (scenario reuse unsafe), W3-021 (environmental/EMC/durability physical), W3-022 (test fleet/data inefficiency), W4-017 (SOTIF doesn't scale), W4-015 (UNECE R155). |
+| Problems | W3-017 (proving-ground scope explosion), W3-018 (ADAS scenario coverage/completeness), W3-019 (simulation flakiness), W3-020 (scenario reuse unsafe), W3-021 (environmental/EMC/durability physical), W3-022 (test fleet/data inefficiency), W4-017 (SOTIF doesn't scale), W4-015 (UNECE R155)., G5-010, G5-014, G5-015 |
 | Duration | Months–years; track availability and weather dependent. |
 
 ---
@@ -244,7 +244,7 @@ Feedback loops run from every later stage back to Stage 1 (requirements) and Sta
 | Stakeholders | Safety engineers, cybersecurity engineers, quality managers, auditors, regulators. |
 | Tool categories | Safety tools (medini analyze, PREEvision, SCADE), TARA tools (ThreatGet), ALM traceability, compliance reporting. |
 | Standards | ISO 26262, ISO/SAE 21434, ISO 21448 (SOTIF), ISO 24089, ASPICE, UNECE R155/R156/R10, MISRA Compliance:2020, tool qualification (ISO 26262 Part 8). |
-| Problems | W1-014 (standards fragmentation), W3-025 (compliance doc burden for testing), W3-034 (safety validation statistical evidence), W4-011 (ISO 26262 overhead), W4-012 (safety case maintenance), W4-013 (ASPICE overhead), W4-014 (ISO/SAE 21434 integration), W4-015 (UNECE R155), W4-026 (standards/regional fragmentation). |
+| Problems | W1-014 (standards fragmentation), W3-025 (compliance doc burden for testing), W3-034 (safety validation statistical evidence), W4-011 (ISO 26262 overhead), W4-012 (safety case maintenance), W4-013 (ASPICE overhead), W4-014 (ISO/SAE 21434 integration), W4-015 (UNECE R155), W4-026 (standards/regional fragmentation)., W7-001..W7-009, W7-013, W7-024, G5-011, G5-015, G5-026, G5-030 |
 | Duration | Continuous; peaks before release. |
 
 ---
@@ -260,7 +260,7 @@ Feedback loops run from every later stage back to Stage 1 (requirements) and Sta
 | Stakeholders | Release managers, manufacturing engineers, quality, suppliers. |
 | Tool categories | Build systems (Jenkins/GitLab/GitHub Actions, safety-qualified variants), flashing tools, EOL test rigs, PLM. |
 | Standards | ISO 26262 Part 7 (production), IATF 16949, UNECE R156 (SUMS), ISO 24089. |
-| Problems | W2-010 (OTA/FOTA complexity seeds here), W4-016 (UNECE R156/ISO 24089 update engineering), W4-020 (CI/CD unsuitable for safety-critical), W4-021 (long build times), W6-001..W6-030 (bootloader & flash programming: standardisation, secure boot, memory layout, UDS flash, power transients, recovery, testing, manufacturing/EOL, toolchain, OTA orchestration). |
+| Problems | W2-010 (OTA/FOTA complexity seeds here), W4-016 (UNECE R156/ISO 24089 update engineering), W4-020 (CI/CD unsuitable for safety-critical), W4-021 (long build times), W6-001..W6-030 (bootloader & flash programming: standardisation, secure boot, memory layout, UDS flash, power transients, recovery, testing, manufacturing/EOL, toolchain, OTA orchestration)., W7-024, W7-027, G5-003, G5-007, G5-011, G5-027, G5-031 |
 | Duration | Weeks–months per release; multiple releases per program. |
 
 ---
@@ -276,7 +276,7 @@ Feedback loops run from every later stage back to Stage 1 (requirements) and Sta
 | Stakeholders | Field service, OTA engineers, quality, cybersecurity, OEMs. |
 | Tool categories | OTA platforms, telematics, field data analytics, diagnostics (UDS/DoIP). |
 | Standards | UNECE R156, ISO 24089, ISO/SAE 21434, UNECE R155. |
-| Problems | G1-007 (lifecycle mismatch / obsolescence), G1-035 (chip shortages delay validation), W2-010 (OTA/FOTA complexity), W4-016 (update engineering complexity). |
+| Problems | G1-007 (lifecycle mismatch / obsolescence), G1-035 (chip shortages delay validation), W2-010 (OTA/FOTA complexity), W4-016 (update engineering complexity)., G5-003, G5-011, G5-015, G5-019, G5-031 |
 | Duration | Vehicle lifetime (15+ years) — the longest stage. |
 
 **Structural mismatch:** Vehicle service life is 15+ years while semiconductors reach EOL in <7 years (G1-007). Obsolescence, last-time buys, and ECU redesigns dominate this stage.
@@ -288,7 +288,7 @@ Feedback loops run from every later stage back to Stage 1 (requirements) and Sta
 | Concern | Affected stages | Key problems |
 |---|---|---|
 | Traceability (req → code → tests → safety) | 1–9 | W1-003, W3-023, W4-007 |
-| Variant management | 1, 2, 4, 6, 7 | W1-011, W2-011, W3-011, W4-005 |
+| Variant management | 1, 2, 4, 6, 7, 9, 10 | W1-011, W2-011, W3-011, W4-005, W7-024, G5-003, G5-007, G5-027, G5-031 |
 | Change management / late changes | 1–10 | W1-005, W1-017, W4-012 |
 | Compliance / standards | 1–10 | W1-014, W3-025, W4-011, W4-013, W4-014, W4-026 |
 | Toolchain fragmentation | 1–10 | W4-001, W4-023, W4-028 |

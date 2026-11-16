@@ -3,7 +3,7 @@
 **Book:** *The State of Automotive Software Engineering*  
 **Part:** III — Industry Problem Investigation  
 **Chapter:** 15 — Architecture Problems  
-**Source workstreams:** W1, W2, G1, G2, G3  
+**Source workstreams:** W1, W2, G1, G2, G3, W7  
 
 ---
 
@@ -37,7 +37,7 @@ The industry runs two AUTOSAR platforms with incompatible communication models.
 
 ---
 
-## 15.2 Mixed-criticality consolidation and hypervisors (W2-009, G2-027, G1-016, G1-024)
+## 15.2 Mixed-criticality consolidation and hypervisors (W2-009, G2-027, G1-016, G1-024, W7)
 
 Consolidating multiple criticality levels onto one SoC/HPC is the SDV architectural bet, but it is not yet routine.
 
@@ -47,6 +47,8 @@ Consolidating multiple criticality levels onto one SoC/HPC is the SDV architectu
 - **G1-024 — ECU hardware architecture: mixed-criticality consolidation, thermal, power, redundancy:** hardware consolidation multiplies thermal and power-management problems.
 
 **Root cause:** hypervisor certification evidence and tooling lag the hardware; "freedom from interference" is a property to be proven per platform, not inherited from the hypervisor vendor.
+
+The workstream **W7 — ASIL / Mixed-Criticality / Multicore** deepens the software-architecture side of this consolidation bet (W7-011..W7-020): runnable-to-task mapping under ASIL constraints (W7-011), data consistency across ASIL boundaries (W7-012), end-to-end protection (W7-013), multicore core allocation, scheduling/timing analysis, inter-core communication and spinlocks, and timing verification (W7-014..W7-017), OS-application partitions (W7-018), hypervisor guests for mixed-criticality (W7-019), and inter-partition communication gateways (W7-020). See `research/W7_asil_mixed_criticality_multicore.md`.
 
 ---
 

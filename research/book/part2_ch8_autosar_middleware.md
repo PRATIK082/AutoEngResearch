@@ -4,7 +4,7 @@
 **Part:** II — Complete Automotive Software Lifecycle  
 **Chapter:** 8 — AUTOSAR and Middleware Engineering  
 **Source workstreams:** W2 (AUTOSAR & Middleware), W1 (Requirements & System Engineering), W4 (Toolchain & Standards), W5 (Skills & AI)  
-**Problem IDs in scope:** W2-001, W2-002, W2-003, W2-004, W2-005, W2-006, W2-007, W2-008, W2-009, W2-010, W2-011, W2-012, W2-013, W2-014, W2-015, W2-016, W2-017, W2-018, W2-019, W2-020, W1-010, W1-013, W1-018, W4-004, W4-005, W6-001..W6-030
+**Problem IDs in scope:** W2-001, W2-002, W2-003, W2-004, W2-005, W2-006, W2-007, W2-008, W2-009, W2-010, W2-011, W2-012, W2-013, W2-014, W2-015, W2-016, W2-017, W2-018, W2-019, W2-020, W1-010, W1-013, W1-018, W4-004, W4-005, W6-001..W6-030, G5-001..G5-032
 
 ---
 
@@ -83,7 +83,7 @@ Classic is signal-based (CAN/LIN/FlexRay, static config); Adaptive is service-ba
 
 ---
 
-## 8.4 Middleware: SOME/IP and DDS (W2-007, W2-008, W1-018)
+## 8.4 Middleware: SOME/IP and DDS (W2-007, W2-008, W1-018, G5)
 
 ### SOME/IP (W2-007)
 
@@ -94,6 +94,8 @@ SOME/IP-SD subscription latency depends on TTL, repetitions, and multicast; wors
 DDS is a complex multi-threaded middleware (dispatch, listen, liveliness, GC threads) with implementation-specific queuing. Achieving real-time guarantees requires careful thread scheduling; latency bounds are hard to prove. DDS-to-SOME/IP bridge adds conversion overhead (~440 µs median on PC, ~4700 µs on Jetson at 256 KB) (MDPI 2025). DDS QoS is rich but configuration is complex; memory footprint is high for low-end ECUs. Academic latency-bounding methods (ECRTS 2023) are not mainstream (W2-008).
 
 Network architecture and timing across bus/Ethernet is a system-level problem (W1-018) that neither SOME/IP nor DDS resolves alone.
+
+Middleware behaviour is increasingly defined per vehicle domain rather than once globally. The dedicated workstream **G5 — Domain Deep-Dive** (G5-001..G5-032) expands this into 32 problem records, four per domain: middleware gateway correctness, time synchronisation, service versioning and integration-contract lessons (G5-001..G5-004); body consolidation, access/power-state timing, variants and quiet-domain lessons (G5-005..G5-008); powertrain torque-path coordination, ASIL-C/D monitoring, calibration protection and torque/calibration contracts (G5-009..G5-012); AD/ADAS perception pipelines, SOTIF plus ASIL-D motion control, ML/map updates and shared-resource safety cases (G5-013..G5-016); IVI head-unit SoC coexistence, telltale integrity, app-store cadence and QM-exuberance lessons (G5-017..G5-020); cockpit consolidation, ASIL-B telltales, HMI variants and display-as-actuator lessons (G5-021..G5-024); zonal I/O consolidation, mixed-criticality FFI evidence, zonal packaging/rollback and domain-collision lessons (G5-025..G5-028); and HPC consolidation/virtualisation, shared-SoC interference evidence, container/VM rollout and convergence lessons (G5-029..G5-032). See `research/G5_domain_deep_dive.md`.
 
 ---
 
