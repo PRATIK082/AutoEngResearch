@@ -23,6 +23,13 @@
 | Board Support Package (BSP) | Software layer providing hardware abstraction and initialization for a specific board/SoC. |
 | Bootloader | Software responsible for starting the ECU and (often) performing firmware updates; usually outside AUTOSAR scope. |
 | Bootloader validation | Verifying bootloader functionality. |
+| Anti-rollback | Mechanism preventing downgrade to older (potentially vulnerable) firmware via monotonic counters/fuses. |
+| A/B (dual-bank) update | Firmware update scheme keeping two copies (active/standby) for safe rollback; doubles flash usage. |
+| Secure boot | Boot process verifying cryptographic signatures of each software layer (ROM -> bootloader -> application). |
+| Recovery mode | Bootloader fallback path allowing re-flashing of a bricked ECU via debug/serial interface. |
+| Brick / bricking | ECU rendered non-functional (unbootable) due to corrupt firmware or interrupted programming. |
+| Flash endurance | Number of erase/write cycles a flash cell can sustain before failure. |
+| Flash programming (UDS) | ECU reprogramming via ISO 14229 diagnostic services (0x34/0x36/0x37/0x31). |
 | Boundary testing | Testing at input boundaries. |
 | BSW (Basic Software) | AUTOSAR layered software (services, ECU abstraction, MCAL) below the RTE. |
 | Bus factor | Risk that critical knowledge is held by a single individual whose departure would block work. |

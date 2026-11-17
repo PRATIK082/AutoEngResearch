@@ -150,6 +150,10 @@ W1-001, W1-003, W1-007, W1-008, W1-009, W1-010, W1-011, W1-017; W2-001, W2-002, 
 
 ---
 
+## 27.x Bootloader and flash programming (W6)
+
+Existing solutions for bootloader/flash (production programmers, UDS flash tools, dual-bank schemes, secure boot/HSM, OTA platforms) remain fragmented: no standardized bootloader (W6-001), toolchain fragmentation (W6-023), testing coverage gaps (W6-012), and manufacturing/EOL traceability gaps (W6-015). Solution concepts are outlined in `research/SOLUTIONS_BOOTLOADER_FLASH.md` (SC-1..SC-8).
+
 *End of Chapter 27. End of Part IV.*
 
 ---

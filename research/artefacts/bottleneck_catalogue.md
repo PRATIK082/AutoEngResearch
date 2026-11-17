@@ -194,6 +194,18 @@ Numerical values are sourced estimates, not audited facts (see DATA_VERIFY.md).
 
 ---
 
+## 7. Bootloader & flash programming bottlenecks
+
+| BN-ID | Bottleneck | Lifecycle / Domain | Primary problem IDs | Impact | Frequency/Severity | Existing-solution limitation | Automation feasibility |
+|---|---|---|---|---|---|---|---|
+| BN-134 | No standardized automotive bootloader | Architecture | W6-001 | Fragmented tooling/skills; OTA reuse blocked | Pervasive | AUTOSAR excludes bootloader | Low-Medium |
+| BN-135 | Secure boot implementation complexity | Security | W6-003, W6-018, W6-019 | Exploitable boot path; bricking risk | High consequence | HSM/crypto vendor variation | Low-Medium |
+| BN-136 | UDS flash programming protocol friction | Diagnostics/flash | W6-007, W6-016 | Integration failures; service downtime | Frequent | Vendor extensions; timing ambiguity | Medium-High |
+| BN-137 | Flash programming under power transients | Power/flash | W6-008, W6-014 | Bricking; field recovery | High consequence | Hardware-dependent; no standard | Medium |
+| BN-138 | Bootloader testing and recovery gaps | Validation | W6-009, W6-012, W6-013 | Defect escape; late rework | Pervasive | HIL cost; coverage gaps | Medium-High |
+| BN-139 | Manufacturing/EOL flashing throughput and traceability | Manufacturing | W6-015, W6-023 | Line throughput; scrap; audit | Every vehicle | Tool fragmentation; manual glue | High |
+| BN-140 | OTA/bootloader orchestration and multi-ECU consistency | Cloud/fleet | W6-025, W6-026, W6-027 | Field inconsistency; safety risk | High (connected) | No campaign-level transaction | Medium |
+
 ## 8. Summary statistics
 
 | Category | Count (BN-IDs) | Range |
@@ -204,7 +216,8 @@ Numerical values are sourced estimates, not audited facts (see DATA_VERIFY.md).
 | Toolchain, data & compliance | 29 | BN-67 … BN-95 |
 | Human skills, workforce & AI adoption | 25 | BN-96 … BN-120 |
 | Hardware, semiconductor & vehicle domains | 13 | BN-121 … BN-133 |
-| **Total** | **133** | BN-01 … BN-133 |
+| Bootloader & flash programming | 7 | BN-134 � BN-140 |
+| **Total** | **140** | BN-01 � BN-140 |
 
 **Note:** BN-IDs are artefact-local and map to problem IDs; they are not a replacement for the canonical problem catalogue (part6_ch35). Testing/validation and toolchain dominate the count, consistent with the finding that testing is the dominant cost/schedule driver (up to 50% of development cost) and tool fragmentation is a root cause (KNOWLEDGE_INDEX cross-cutting themes 8, 2).
 

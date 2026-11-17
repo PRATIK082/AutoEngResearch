@@ -1,8 +1,8 @@
 # Knowledge Index — Automotive Software Engineering Problem Catalogue
 
-**Source reports:** `research/W1_requirements_system.md`, `W2_autosar_middleware.md`, `W3_testing_validation.md`, `W4_toolchain_standards.md`, `W5_skills_ai.md`
-**Compiled:** 2026-11-05
-**Total problem records:** 131 (W1: 18, W2: 20, W3: 38, W4: 30, W5: 25)
+**Source reports:** `research/W1_requirements_system.md`, `W2_autosar_middleware.md`, `W3_testing_validation.md`, `W4_toolchain_standards.md`, `W5_skills_ai.md`, `W6_bootloader_flash.md`
+**Compiled:** 2026-11-07
+**Total problem records:** 161 (W1: 18, W2: 20, W3: 38, W4: 30, W5: 25, W6: 30)
 
 ---
 
@@ -15,6 +15,7 @@
 | W3 Testing & Validation | 38 | MIL/SIL/PIL/HIL/vehicle, scenario coverage, traceability, compliance |
 | W4 Toolchain & Standards | 30 | Fragmentation, ARXML, compliance overhead, HIL, CI/CD, cost |
 | W5 Human Skills & AI/Automation | 25 | Talent gaps, knowledge loss, AI barriers, governance |
+| W6 Bootloader & Flash Programming | 30 | Bootloader architecture, flash programming, integration, security, testing, manufacturing |
 
 ---
 
@@ -176,6 +177,41 @@
 | W5-024 | SDV / centralized computing skill gap | Human skills / SDV |
 | W5-025 | Absence of AI governance in engineering workflows | AI/automation / governance |
 
+### W6 — Bootloader & Flash Programming
+
+| ID | Title | Domain |
+|---|---|---|
+| W6-001 | No standardized automotive bootloader (AUTOSAR out of scope) | Bootloader architecture |
+| W6-002 | Bootloader memory layout and partitioning complexity | Bootloader / memory |
+| W6-003 | Secure boot chain-of-trust implementation gaps | Bootloader security |
+| W6-004 | Bootloader startup time and fast-boot constraints | Bootloader / timing |
+| W6-005 | Anti-rollback and version monotonicity enforcement gaps | Bootloader security / update |
+| W6-006 | Dual-bank / A-B update scheme complexity and flash cost | Bootloader / update strategy |
+| W6-007 | UDS flash programming protocol complexity | Diagnostics / flash programming |
+| W6-008 | Flash programming reliability under power transients | Flash programming / power |
+| W6-009 | Bootloader recovery and brick prevention | Bootloader reliability |
+| W6-010 | Application/bootloader interface contract gaps | Integration |
+| W6-011 | Calibration data and flash interaction | Calibration / flash |
+| W6-012 | Bootloader testing coverage gaps | Testing / bootloader |
+| W6-013 | Flash endurance and wear-leveling validation | Flash memory / reliability |
+| W6-014 | Power-loss and interrupted programming recovery testing | Testing / robustness |
+| W6-015 | Manufacturing/EOL flashing and production programming traceability | Manufacturing / EOL |
+| W6-016 | Diagnostic session transitions to bootloader | Diagnostics / bootloader |
+| W6-017 | Flash driver (MCAL) portability and abstraction gaps | Flash driver / MCAL |
+| W6-018 | Bootloader security vs. upgradability conflict | Bootloader security |
+| W6-019 | Key and certificate management lifecycle | Security / provisioning |
+| W6-020 | Bootloader size constraints and feature creep | Bootloader / resources |
+| W6-021 | Bootloader integration with AUTOSAR BSW | Integration / AUTOSAR |
+| W6-022 | Reprogramming throughput (CAN vs. DoIP/Ethernet) | Flash programming / performance |
+| W6-023 | Flash toolchain fragmentation | Toolchain |
+| W6-024 | Bootloader V&V evidence and ISO 26262 compliance | Functional safety / bootloader |
+| W6-025 | OTA and bootloader orchestration | OTA / bootloader |
+| W6-026 | Multi-ECU campaign consistency and partial-failure recovery | OTA / integration |
+| W6-027 | Bootloader self-update complexity | Bootloader / update |
+| W6-028 | Flash image integrity verification | Security / reliability |
+| W6-029 | Human skill gaps in bootloader/flash/security expertise | Human skills |
+| W6-030 | Late bootloader rework cost | Process / lifecycle |
+
 ---
 
 ## 3. Domain index
@@ -205,7 +241,10 @@ W2-007, W2-008
 W2-009, W1-016
 
 ### OTA / bootloader / software update
-W2-010, W4-016
+W2-010, W4-016, W6-001..W6-030
+
+### Bootloader / flash programming
+W6-001..W6-030
 
 ### Testing & validation (general)
 W3-001..W3-038 (all), W4-018, W4-019, W4-029
@@ -288,6 +327,7 @@ W5-012, W5-013, W5-014, W5-022, W5-023
 - **ODD / scenario coverage** — W3-018, W4-017
 - **Onboarding / training cost** — W5-013, W4-022
 - **OTA / FOTA** — W2-010, W4-016
+- **Bootloader / flash programming** — W6-001..W6-030
 - **Proving ground** — W3-017
 - **Regression testing** — W3-028
 - **Requirements traceability** — W1-003, W4-007

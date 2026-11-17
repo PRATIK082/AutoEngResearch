@@ -35,8 +35,25 @@ It is the stage where engineering decisions meet the fleet: a release is not com
 - **G1-026** — power management standardisation gap at vehicle level (flash programming requires stable power; cold-crank and low-battery conditions).
 - **G1-025** — power management complexity (PMIC, cold crank, EMI, thermal) (flash programming reliability under power transients).
 - **G1-012** — zero-defect (ppm) pressure and screening cost (flashing defects must be caught before shipment).
+- **W6-001** — no standardized automotive bootloader (AUTOSAR out of scope); every OEM/Tier-1 implements its own.
+- **W6-002** — bootloader memory layout and partitioning complexity (PFLASH/DFLASH/NVM/calibration boundaries).
+- **W6-003** — secure boot chain-of-trust implementation gaps (HSM, crypto, key management).
+- **W6-006** — dual-bank / A-B update scheme complexity and flash cost.
+- **W6-007** — UDS flash programming protocol complexity (0x34/0x36/0x37/0x31, block size, timing).
+- **W6-008** — flash programming reliability under power transients (cold crank, low battery).
+- **W6-009** — bootloader recovery and brick prevention (fallback, safe mode).
+- **W6-010** — application/bootloader interface contract gaps (reset vector, shared data).
+- **W6-012** — bootloader testing coverage gaps (unit/integration/HIL, negative tests).
+- **W6-015** — manufacturing/EOL flashing and production programming traceability.
+- **W6-016** — diagnostic session transitions to bootloader (10 02/03, NRC 0x78).
+- **W6-022** — reprogramming throughput (CAN vs. DoIP/Ethernet).
+- **W6-024** — bootloader V&V evidence and ISO 26262 compliance.
+- **W6-025** — OTA and bootloader orchestration (safe-state, rollback, resumption).
+- **W6-026** — multi-ECU campaign consistency and partial-failure recovery.
+- **W6-028** — flash image integrity verification (checksums, signatures).
+- **W6-030** — late bootloader rework cost.
 
-**Key gap:** bootloader is not standardised (AUTOSAR does not cover it); safe-state definition is OEM-specific; rollback orchestration is bespoke; most OEMs OTA only infotainment, not safety-critical ECUs (G3-018).
+**Key gap:** bootloader is not standardised (AUTOSAR does not cover it); safe-state definition is OEM-specific; rollback orchestration is bespoke; most OEMs OTA only infotainment, not safety-critical ECUs (G3-018). W6 expands this into 30 dedicated problem records (W6-001..W6-030) covering development, integration, security, testing, manufacturing and OTA.
 
 ## 13.5 OTA deployment (field updates)
 
@@ -151,11 +168,11 @@ It is the stage where engineering decisions meet the fleet: a release is not com
 
 ## 13.14 Problem ID index for this chapter
 
-W2-010, W2-011, W3-022, W3-030, W4-005, W4-007, W4-011, W4-012, W4-013, W4-014, W4-015, W4-016, W4-023, W4-024, W4-027, W4-028, W5-004, G1-001, G1-005, G1-007, G1-008, G1-009, G1-012, G1-025, G1-026, G1-032, G2-022, G2-023, G3-001, G3-002, G3-003, G3-004, G3-005, G3-006, G3-007, G3-008, G3-009, G3-011, G3-012, G3-013, G3-016, G3-017, G3-018, G3-019, G3-020, G3-021, G3-022, G3-023, G3-025, G3-026, G3-027, G3-028.
+W2-010, W2-011, W3-022, W3-030, W4-005, W4-007, W4-011, W4-012, W4-013, W4-014, W4-015, W4-016, W4-023, W4-024, W4-027, W4-028, W5-004, G1-001, G1-005, G1-007, G1-008, G1-009, G1-012, G1-025, G1-026, G1-032, G2-022, G2-023, G3-001, G3-002, G3-003, G3-004, G3-005, G3-006, G3-007, G3-008, G3-009, G3-011, G3-012, G3-013, G3-016, G3-017, G3-018, G3-019, G3-020, G3-021, G3-022, G3-023, G3-025, G3-026, G3-027, G3-028, W6-001, W6-002, W6-003, W6-006, W6-007, W6-008, W6-009, W6-010, W6-012, W6-015, W6-016, W6-022, W6-024, W6-025, W6-026, W6-028, W6-030.
 
 ---
 
-*Sources: research/W2_autosar_middleware.md, W3_testing_validation.md, W4_toolchain_standards.md, W5_skills_ai.md, G1_semiconductor_hardware.md, G2_vehicle_domains.md, G3_cloud_fleet.md, CROSS_QUESTIONS.md, DATA_VERIFY.md, KNOWLEDGE_INDEX.md.*
+*Sources: research/W2_autosar_middleware.md, W3_testing_validation.md, W4_toolchain_standards.md, W5_skills_ai.md, W6_bootloader_flash.md, G1_semiconductor_hardware.md, G2_vehicle_domains.md, G3_cloud_fleet.md, CROSS_QUESTIONS.md, DATA_VERIFY.md, KNOWLEDGE_INDEX.md.*
 
 ---
 See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)

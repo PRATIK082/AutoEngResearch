@@ -29,7 +29,7 @@ Traceability in automotive software is mandated by ISO 26262, Automotive SPICE, 
 | L7 | Source code / models (C/C++, Simulink, Rust) | Developers | Git, IDEs, MATLAB/Simulink | W4-008, W4-009, W4-010, W4-020, W4-021 |
 | L8 | Tests (unit, component, integration, system, vehicle) | Test engineering | Tessy, VectorCAST, Parasoft, LDRA, GoogleTest | W3-023, W3-024, W3-026, W3-030, W3-032, W3-036, W4-029 |
 | L9 | Safety / cybersecurity evidence | Safety & security engineering | Safety case tools, FMEA tools | W4-011, W4-012, W4-014, W4-015, W5-003, W5-004 |
-| L10 | Build / release artefacts (flash image, OTA package) | Release engineering | Build systems, bootloader tooling | W2-010, W4-016, W4-020, W3-030 |
+| L10 | Build / release artefacts (flash image, OTA package) | Release engineering | Build systems, bootloader tooling | W2-010, W4-016, W4-020, W3-030, W6-001, W6-002, W6-007, W6-010, W6-015, W6-024, W6-028, W6-030 |
 | L11 | Field evidence (telemetry, DTCs, OTA status) | Fleet / service | Cloud platforms, diagnostics | G3-012, G3-017, G3-021, G4-029 |
 
 **Key gap:** No single tool enforces semantic consistency across L0–L11; links are stored but not validated for correctness (W1-002, W1-003, W4-001, W4-007).

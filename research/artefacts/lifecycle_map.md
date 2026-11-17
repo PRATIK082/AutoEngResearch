@@ -260,7 +260,7 @@ Feedback loops run from every later stage back to Stage 1 (requirements) and Sta
 | Stakeholders | Release managers, manufacturing engineers, quality, suppliers. |
 | Tool categories | Build systems (Jenkins/GitLab/GitHub Actions, safety-qualified variants), flashing tools, EOL test rigs, PLM. |
 | Standards | ISO 26262 Part 7 (production), IATF 16949, UNECE R156 (SUMS), ISO 24089. |
-| Problems | W2-010 (OTA/FOTA complexity seeds here), W4-016 (UNECE R156/ISO 24089 update engineering), W4-020 (CI/CD unsuitable for safety-critical), W4-021 (long build times). |
+| Problems | W2-010 (OTA/FOTA complexity seeds here), W4-016 (UNECE R156/ISO 24089 update engineering), W4-020 (CI/CD unsuitable for safety-critical), W4-021 (long build times), W6-001..W6-030 (bootloader & flash programming: standardisation, secure boot, memory layout, UDS flash, power transients, recovery, testing, manufacturing/EOL, toolchain, OTA orchestration). |
 | Duration | Weeks–months per release; multiple releases per program. |
 
 ---

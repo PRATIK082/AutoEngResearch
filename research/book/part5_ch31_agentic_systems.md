@@ -122,6 +122,10 @@ W1-001, W1-003, W1-005, W1-007; W2-001; W3-023, W3-024, W3-026, W3-037; W4-001, 
 
 ---
 
+## 31.x Agentic automation for bootloader/flash (W6)
+
+Future agentic systems can target bootloader/flash workflows: automated memory-map verification (W6-002), UDS flash conformance checks (W6-007), power-fault test generation (W6-014), manufacturing/EOL traceability (W6-015), and image-integrity verification (W6-028). See `research/SOLUTIONS_BOOTLOADER_FLASH.md`.
+
 *End of Chapter 31.*
 
 ---
