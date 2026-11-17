@@ -54,7 +54,7 @@ Core thesis: **automotive programmes assemble 10–30+ specialised tools that we
 | Network design / analysis | Vector CANoe, CANalyzer, CANape, ETAS INCA | Bus simulation, measurement, calibration | Manual; tool-specific; network timing not captured in AUTOSAR | W1-018, W2-007 |
 | Safety analysis | medini analyze, PREEvision, SCADE | HARA, FMEA, safety case drafting | Manual data entry; evidence assembly manual | W4-011, W4-012 |
 | Cybersecurity analysis | ThreatGet, TARA tools | Threat modelling | Immature integration with ALM; manual workshops | W4-014, W4-015 |
-| Timing analysis | Symtavision, AUTOSAR timing extensions | Timing modelling | Research-stage; not integrated into standard toolchains; not certified | W1-010, W2-004 |
+| Timing analysis | Symtavision, AUTOSAR timing extensions | Timing modelling | Research-stage; not integrated into standard toolchains; not certified | W1-010, W2-004, W7-015, W7-017 |
 
 ### 2.3 Software design & development tools (Stage 3)
 
@@ -73,7 +73,7 @@ Core thesis: **automotive programmes assemble 10–30+ specialised tools that we
 | AUTOSAR configurators (Classic) | DaVinci Developer/Configurator (Vector), EB tresos Studio (Elektrobit), SystemDesk (dSPACE) | Deep BSW config; code generation | Lock-in; proprietary project formats; high licence cost; vendor-specific | W4-004, W2-005 |
 | AUTOSAR authoring (Adaptive) | EB corbos, Vector MICROSAR Adaptive, Adaptive toolchains | Service-oriented config | Less mature than Classic; vendor divergence | W2-003, W2-020 |
 | ARXML editors / parsers | AutoSAR.io, arxml-cli, AutosarFactory, ParseX, ARForge, IAV Kedu | Schema-aware editing; compare | Immature; limited semantic validation; version migration unsupported | W4-002, W4-003, W4-005 |
-| Variant management | PLM variant modules, MATLAB variant blocks, AUTOSAR EvaluatedVariantSet | Variant binding | Tool-specific; no cross-tool consistency checking | W1-011, W2-011, W4-005 |
+| Variant management | PLM variant modules, MATLAB variant blocks, AUTOSAR EvaluatedVariantSet | Variant binding | Tool-specific; no cross-tool consistency checking | W1-011, W2-011, W4-005, W7-024, G5-007 |
 | RTE generation | Vendor RTE generators (Vector, EB, dSPACE) | Per-ECU RTE generation | Batch; contract phase manual; errors surface late | W2-012 |
 | PLM / PDM | Siemens Teamcenter, PTC Windchill, Dassault ENOVIA | Product data, BOM, change management | Covers product data not engineering semantics (ARXML); integration gaps | W4-024 |
 
@@ -83,7 +83,7 @@ Core thesis: **automotive programmes assemble 10–30+ specialised tools that we
 |---|---|---|---|---|
 | Network analysis / simulation | Vector CANoe, CANalyzer, CANape, ETAS INCA | Multi-bus simulation, measurement | Manual; timing not captured in AUTOSAR | W1-018, W2-007 |
 | Integration frameworks | (vendor-specific) | ECU integration | Tool fragmentation; manual data transformation | W4-001, W4-028 |
-| Gateway configuration | Vector, PREEvision, SystemDesk | Signal↔service mapping | Manual; gateway becomes bottleneck/SPOF | W2-002 |
+| Gateway configuration | Vector, PREEvision, SystemDesk | Signal↔service mapping | Manual; gateway becomes bottleneck/SPOF | W2-002, G5-001 |
 
 ### 2.6 Testing & validation tools (Stage 6)
 
@@ -92,7 +92,7 @@ Core thesis: **automotive programmes assemble 10–30+ specialised tools that we
 | Unit / component testing | VectorCAST, Tessy, Parasoft C/C++test, GoogleTest/GoogleMock, LDRA | Automated unit tests; coverage | Informal strategies; weak evidence; tool-specific | W3-032, W4-029 |
 | MIL / SIL | MATLAB/Simulink, dSPACE, MathWorks AUTOSAR Blockset | Model-based testing; early validation | Model fidelity; feature restrictions; test reuse gaps | W3-001..009 |
 | PIL | Embedded Coder, target compilers | Reveals compiler/processor faults | Slow; hardware-dependent; not parallelizable | W3-008, W3-009 |
-| HIL | dSPACE (SCALEXIO), NI (VeriStand), OPAL-RT, AVL, Speedgoat | Real-time ECU validation | Cost ~$50k+; ~100–200 tests/day; not parallelizable; setup weeks; scarcity | W3-010..016, W4-018 |
+| HIL | dSPACE (SCALEXIO), NI (VeriStand), OPAL-RT, AVL, Speedgoat | Real-time ECU validation | Cost ~$50k+; ~100–200 tests/day; not parallelizable; setup weeks; scarcity | W3-010..016, W4-018, G5-006, G5-010, G5-014, G5-018, G5-022 |
 | vECU / virtual validation | dSPACE VEOS, MathWorks Virtual ECU, Synopsys Silver, QEMU, Renode | Shift-left; early validation | Fidelity gaps; integration friction; no standard | W3-004, W3-007, W4-019 |
 | Test management / traceability | Polarion, Codebeamer, Jama, ALM suites | Requirement-to-test links | Horizontal (MIL↔SIL↔HIL) traceability lacking | W3-023, W4-007 |
 | Scenario databases / simulation | CARLA, MetaDrive, ASAM OpenSCENARIO, OpenDRIVE, OSI | ADAS/ADS scenario testing | Nondeterminism (43.6% flaky in CARLA); scenario reuse unsafe; coverage unknown | W3-018, W3-019, W3-020, W4-017 |
@@ -112,7 +112,7 @@ Core thesis: **automotive programmes assemble 10–30+ specialised tools that we
 | Category | Representative tools | Strengths | Limitations | Problems |
 |---|---|---|---|---|
 | Build systems | Jenkins, GitLab CI, GitHub Actions, (safety-qualified variants) | Automation | Unsuitable for safety-critical embedded; tool qualification; reproducibility | W4-020 |
-| Flashing / programming | (vendor-specific), production programmers, debuggers (JTAG/SWD), UDS flash tools | ECU programming | Bootloader validation; OTA coordination; toolchain fragmentation; secure boot provisioning; throughput | W2-010, W4-016, W6-007, W6-015, W6-019, W6-022, W6-023, W6-028 |
+| Flashing / programming | (vendor-specific), production programmers, debuggers (JTAG/SWD), UDS flash tools | ECU programming | Bootloader validation; OTA coordination; toolchain fragmentation; secure boot provisioning; throughput | W2-010, W4-016, W6-007, W6-015, W6-019, W6-022, W6-023, W6-028, G5-027, G5-031 |
 | EOL test | (manufacturing) | End-of-line verification | — | — |
 | OTA platforms | Mender, Redstone, (OEM-specific) | Delivery | Compliance evidence manual; update engineering | W4-016 |
 
@@ -228,7 +228,7 @@ Stage 10 Field          : UDS/DoIP diagnostics, telematics, OTA platforms, field
 
 ---
 
-## 8. Problem-to-toolchain mapping (W-series → tool limitations)
+## 8. Problem-to-toolchain mapping (W/G-series → tool limitations)
 
 | Problem | Tool limitation implicated |
 |---|---|
@@ -278,6 +278,68 @@ Stage 10 Field          : UDS/DoIP diagnostics, telematics, OTA platforms, field
 | W4-028 (glue work) | Manual data transformation |
 | W4-029 (test tool interop) | Fragmented test chain |
 | W4-030 (AI tooling trust) | Confidentiality, IP, hallucination, certification |
+| W7-001 (ASIL-A implication set) | ALM templates default to QM or ASIL-D with no ASIL-A profile; trace tools do not flag ASIL-dependent method gaps. |
+| W7-002 (ASIL-B implication set) | Safety-analysis tools compute metrics but do not validate architectural assumption coverage. |
+| W7-003 (ASIL-C implication set) | Requirements/design tools do not enforce independence (author vs. reviewer vs. tester separation). |
+| W7-004 (ASIL-D implication set) | Unqualified tools in D toolchain; coverage tools themselves untrusted. |
+| W7-005 (QM components: obligations, limits, and misuse) | Component catalogues carry QM/ASIL labels but not interference-relevance metadata. |
+| W7-006 (Freedom from interference: memory interference) | Static configuration checks exist but cross-tool MPU consistency (BSW vs. app vs. bootloader) rarely verified |
+| W7-007 (Freedom from interference: timing interference) | Timing tools model single-core well, multicore/shared-interconnect poorly. |
+| W7-008 (Freedom from interference: execution / control-flow) | OS configuration tools generate access masks but rarely verify least-privilege completeness. |
+| W7-009 (QM–ASIL coupling through shared libraries and common-cause) | DFA tools model hardware coupling; software coupling captured in prose, if at all. |
+| W7-010 (SWC partitioning by ASIL) | Architecture tools show functional decomposition, not ASIL-homogeneity heatmaps. |
+| W7-011 (Runnable-to-task mapping under ASIL constraints) | RTE/mapping tools optimise for CPU load, not ASIL separation or preemption analysis. |
+| W7-012 (Data consistency across ASIL boundaries) | RTE generators emit configured mechanism correctly but do not flag safety-relevant data left unprotected. |
+| W7-013 (End-to-end protection) | E2E generators configure chosen profile but do not verify end-to-end coverage across gateways and repacking. |
+| W7-014 (Multicore core allocation for mixed-criticality) | Allocation tools balance load and affinity; none enforce ASIL-to-core capability rules. |
+| W7-015 (Multicore scheduling and timing analysis gaps) | Single-core WCET and schedule simulation mature; multicore contention and cross-core blocking modelled poorly or not at |
+| W7-016 (Inter-core communication and spinlocks) | Spinlock call-graph and lock-order extraction is manual; RTE/IOC generators emit code without blocking-time budgets or |
+| W7-017 (Multicore timing verification) | Timing tools model single-core well but multicore contention analysis and worst-case alignment generation are immature; |
+| W7-018 (OS-Applications and memory partitions) | OS configuration tools generate regions but lack cross-checks against the ASIL allocation and least-privilege |
+| W7-019 (Hypervisor guests for mixed-criticality) | Guest-interference analysis tooling is immature; virtio data-flow and shared-page tracking across guest images lacks |
+| W7-020 (Inter-partition communication gateways) | Gateway configuration tools check routability, not per-flow ASIL contracts, quota sufficiency, or information-flow |
+| W7-021 (Mode management across partitions) | BswM/EcuM configuration tools validate per-partition rules, not cross-partition mode coherence or request-arbitration |
+| W7-022 (SWC to RTE to OS integration chain) | RTE generators diff poorly across versions; contract-vs-generated consistency checkers exist but are rarely run in CI |
+| W7-023 (COM and signal-service mapping under ASIL) | Bus-configuration tools optimise load and pack signals; cross-layer freshness-budget and atomicity verification is |
+| W7-024 (Variant and calibration binding in mixed-criticality builds) | Variant tools manage code switches or calibration labels, rarely the cross-product binding with ASIL qualification |
+| W7-025 (Application integration testing across ASILs) | SiL/HiL fault-injection and interference-generation tooling exists but is rig-specific and unqualified; coverage |
+| W7-026 (BSW module integration under ASIL) | BSW generators compose modules without checking cross-module ASIL compatibility or exclusive-area conflicts. |
+| W7-027 (BSW configuration consistency) | Config tools validate syntax per module, not cross-module semantic consistency or ASIL-relevant constraint violations. |
+| W7-028 (RTE/BSW contract gaps) | RTE generators wire ports without checking state-dependent call legality or NvM/Dem error-path coverage. |
+| W7-029 (MCAL portability and verification burden) | MCAL configuration tools migrate parameters across derivatives without flagging safety-relevant semantic changes. |
+| W7-030 (MCU driver safety challenges) | Driver generators produce initialisation code without checking window, timing, or redundancy semantics against the |
+| G5-001 (Middleware: signal↔service gateway correctness and timing) | Gateway config generation exists but end-to-end timing verification across signal+service legs is manual. |
+| G5-002 (Middleware: time synchronisation and deterministic) | Lab jitter figures (e.g. TSN 17.12 µs in lab, W2-007) do not transfer to loaded vehicle networks; monitoring tooling |
+| G5-003 (Middleware: service接口 versioning and mixed-version fleet) | ARXML/service-registry tooling checks single-release consistency, not N-version compatibility. |
+| G5-004 (Middleware: cross-domain lesson — middleware as the) | No single contract dashboard; consistency checks per-tool only. |
+| G5-005 (Body: BCM consolidation, I/O abstraction and load control) | Pin-mapping tables and BCM configurators check single-build consistency, not cross-trim I/O equivalence or load-budget |
+| G5-006 (Body: access/security vs safety and power-state timing) | Security testing (fuzz, penetration) and safety timing analysis run in separate tools with no combined |
+| G5-007 (Body: variant explosion across trims and personalization) | Variant-management tooling (W4) checks buildability, not post-OTA or post-replacement configuration correctness per VIN. |
+| G5-008 (Body: cross-domain lesson — the quiet domain that stalls) | Domain HIL rigs stub body as ideal power and wake; vehicle-level wake/power dashboards arrive late. |
+| G5-009 (Powertrain: EMS/TCM/aftertreatment coordination and the) | Per-controller MIL/SIL rigs validate local torque logic; cross-controller arbitration tested only at late powertrain |
+| G5-010 (Powertrain: ASIL-C/D torque monitoring and OBD interplay) | Safety FTA/FMEDA tooling and OBD certification tooling do not cross-check reaction conflicts or shared-sensor |
+| G5-011 (Powertrain: emission-relevant calibration protection and) | Calibration-diff tooling shows value changes, not emission-relevance rulings; RXSWIN/version reporting per UN-R156 |
+| G5-012 (Powertrain: cross-domain lesson — torque and calibration as) | Domain SIL/HIL rigs emulate torque consumers with ideal models; no vehicle-level torque-consumer compatibility check. |
+| G5-013 (AD/ADAS: perception/fusion/planning pipeline and sensor) | Sensor models and fusion simulators validate algorithms, not production calibration drift or loaded-network timing. |
+| G5-014 (AD/ADAS: SOTIF + ASIL-D motion control, ODD exits, and) | Timing analysis tools cover single ECU/schedule; SOTIF scenario tools lack coverage argument linkage. |
+| G5-015 (AD/ADAS: ML model, map-data, and calibration updates vs) | Model registries track weights, not behavioural regression coverage; map-version compatibility checks immature. |
+| G5-016 (AD/ADAS: cross-domain lesson — ADAS turns every shared) | No cross-domain arbitration test harness standard; interference-inclusive HIL rare. |
+| G5-017 (IVI/Infotainment: head-unit SoC with audio/nav stacks) | Android/Linux profiling tools diagnose lab builds, not production multi-guest contention (cf. W2-009). |
+| G5-018 (IVI/Infotainment: QM–ASIL coexistence and telltale/display) | FFI testing for GPU/display/audio paths immature; fault-injection coverage ad hoc. |
+| G5-019 (IVI/Infotainment: app-store cadence vs vehicle release) | Package managers (UCM-style) install updates but do not prove N-version compatibility or regression coverage. |
+| G5-020 (IVI/Infotainment: cross-domain lesson — QM exuberance must) | No shared-footprint dashboard (bus load + power + diagnostic rate) attributed per domain. |
+| G5-021 (Cockpit: cluster/HUD/driver-monitoring consolidation on) | SoC timing/interference analysis tooling models CPU well but GPU and display-pipeline contention poorly. |
+| G5-022 (Cockpit: ASIL-B telltales, display-pipeline integrity, and) | HMI test tools verify appearance, not pipeline fault coverage or deadline compliance under fault injection. |
+| G5-023 (Cockpit: HMI personalization and variants vs) | HMI authoring tools preview appearance but do not enforce safety-layout constraints or check all variant combinations. |
+| G5-024 (Cockpit: cross-domain lesson — the display is a safety) | No cross-domain warning-path dashboard; per-domain tests assume a perfect display. |
+| G5-025 (Zonal: I/O consolidation, power distribution, and network) | Pin/power/network configured in separate tools; cross-budget (current vs thermal vs timing) consistency unchecked. |
+| G5-026 (Zonal: mixed-criticality up to ASIL-D on one controller and) | FFI analysis tooling covers memory well but timing/execution interference under worst-case I/O storms is measured ad |
+| G5-027 (Zonal: software packaging, partial updates, and rollback) | Package managers verify single-ECU images, not cross-zone dependency and rollback graphs. |
+| G5-028 (Zonal: cross-domain lesson — the zone is where domains) | Domain tools verify domain functions; no zone-level conflict dashboard spans power, timing, safety, and update coupling. |
+| G5-029 (HPC: central-compute consolidation, virtualization) | Hypervisor configuration and Adaptive manifest tooling check single-VM consistency, not fleet-wide allocation |
+| G5-030 (HPC: mixed-criticality up to ASIL-D on shared SoC,) | Lab FFI figures do not transfer to loaded production configurations; interference-measurement tooling is |
+| G5-031 (HPC: container/VM image updates, atomic fleet rollout, and) | UCM/package tooling validates single-vehicle install, not fleet-wide campaign atomicity, rollback coverage, or |
+| G5-032 (HPC: cross-domain lesson — HPC as the convergence point) | No unified HPC dashboard combining allocation, FFI, timing, compatibility, and campaign health. |
 
 ---
 
@@ -285,6 +347,7 @@ Stage 10 Field          : UDS/DoIP diagnostics, telematics, OTA platforms, field
 
 - Task.md §6 (Engineering Tools and Technology Landscape) and §3D (lifecycle stages).
 - W4 (Toolchain & Standards) — 30 records W4-001..W4-030.
+- W7 (ASIL & Mixed-Criticality) - 30 records W7-001..W7-030; G5 (Vehicle-Domain Deep Dive) - 32 records G5-001..G5-032.
 - W1, W2, W3 — cross-referenced tool limitations.
 - DOMAIN_MAP.md (domains, ECUs, networks, standards, stakeholders).
 - Vendor documentation: dSPACE, Vector, ETAS, Elektrobit, MathWorks, Parasoft, LDRA, Perforce/PRQA, PTC, Siemens, IBM, MathWorks, Synopsys, IPG, AVL, OPAL-RT, NI, Aliaro, Renault.

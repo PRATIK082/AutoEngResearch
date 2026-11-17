@@ -46,4 +46,43 @@
 **PASS — publish-ready for the W6 integration wave.** All blocking checks (counts, IDs, links, artefacts, book index, stray files) pass. Manual caveats are pre-existing, cross-cutting concerns tracked in CROSS_CHECK.md and do not block this wave.
 
 ---
-See also: [INTEGRATION_PLAN.md](./INTEGRATION_PLAN.md) | [TASK_COVERAGE.md](./TASK_COVERAGE.md) | [CROSS_CHECK.md](./CROSS_CHECK.md)
+
+## 5. W7/G5 review (Phase D5, run 2026-11-16)
+
+**Scope:** Research corpus after W7/G5 integration wave (branch `research/asil-mixedcriticality-domains`). D1–D4 delivered uncommitted in the working tree; this review (D5) re-runs the §1 blocking checks with W7/G5 expectations.
+
+### 5.1. Automated checks
+
+| # | Check | Result |
+|---|---|---|
+| 1 | W7 problem records present (W7-001..W7-030) + G5 records present (G5-001..G5-032) | **PASS** — 30 + 32 unique IDs |
+| 2 | All W7/G5 IDs resolvable in KNOWLEDGE_INDEX.md | **PASS** — 0 missing; total 223 records (W1: 18, W2: 20, W3: 38, W4: 30, W5: 25, W6: 30, W7: 30, G5: 32) |
+| 3 | Book chapter files present | **PASS** — 45 chapters (`research/book/part*_ch*.md`) |
+| 4 | Book INDEX lists all 45 chapters | **PASS** (parts I–VII cover ch1–ch45; unchanged by W7/G5) |
+| 5 | Relative links resolve across `research/**/*.md` | **PASS** — 0 broken links (183 checked, incl. new OVERLAP_ANALYSIS_W7_G5.md) |
+| 6 | Artefacts updated with W7/G5 content | **PASS** — problem_to_root_cause_matrix 30 W7 + 32 G5 new rows; solution_vs_gap_matrix 30 W7 + 32 G5 new rows; bottleneck_catalogue BN-141..BN-152 (12 new); glossary 17 new terms (211 total); lifecycle_map + toolchain_map mention W7/G5 |
+| 7 | Stray files (e.g., SKILL.md) | **PASS** — none at repo root; change set confined to `research/` (18 modified + 1 new file, no deletions) |
+| 8 | Book scope-lines updated | **PASS** — part2_ch7, part2_ch8, part3_ch15, part3_ch16, part3_ch22 carry W7/G5 scope lines + cross-refs |
+| 9 | ISSUE_TRACKER.md W7/G5 rows | **PASS** — 62 new rows (30 W7 + 32 G5) with resolution rationale (Phase D4); W7-029 Open → Deferred |
+
+### 5.2. Manual checks
+
+| # | Rule | Result | Notes |
+|---|---|---|---|
+| 10 | Problem-record schema consistency | **PASS (with caveats)** | W7/G5 follow the W6-harmonised field set. Pre-existing field-name drift across W1–W5 remains (see §2, item 9); not introduced by W7/G5. |
+| 11 | ID uniqueness and no duplicates | **PASS** | No duplicate W7/G5 IDs; overlap analysis (OVERLAP_ANALYSIS_W7_G5.md) found no full duplicates, 1 duplicate-ish (W7-029 → G1-020/021 canonical via W6-017). |
+| 12 | Cross-reference integrity (See also) | **PASS** | W7/G5 reports cite prior waves in evidence bases; CROSS_REFERENCE_INDEX Wave cross-references (W7/G5) section added; CROSS_QUESTIONS gained CQ-W7-01..07 + CQ-G5-01..07. |
+| 13 | Resolution-rationale discipline | **PASS** | Phase D4 table mirrors Phase 3.4 precedent (Keep open default; Deferred only for future-horizon/duplicate-ish: W7-019/020/029, G5-015/019/025–032). |
+
+### 5.3. Open items (carried forward, not blocking)
+
+1. **Artefact parity** — `ai_automation_opportunity_map.md`, `requirements_to_release_traceability.md`, `semiconductor_to_vehicle_dependency.md` mention W6 but not yet W7/G5 (D3 covered 6 artefacts + glossary). Follow-up pass.
+2. **Evidence-tier column, schema harmonisation, stakeholders/book-structure tracking** — pre-existing items from §3, unchanged by W7/G5.
+3. **Evidence merge for W7-029** (and pending W6-017/W6-023) into G1-020/021 and W4-001 canonical records — optional future pass.
+
+### 5.4. Verdict
+
+**PASS — publish-ready for the W7/G5 integration wave.** All blocking checks pass. Open items are non-blocking follow-ups.
+
+---
+See also: [INTEGRATION_PLAN.md](./INTEGRATION_PLAN.md) | [TASK_COVERAGE.md](./TASK_COVERAGE.md) | [CROSS_CHECK.md](./CROSS_CHECK.md) | [OVERLAP_ANALYSIS_W7_G5.md](./OVERLAP_ANALYSIS_W7_G5.md)

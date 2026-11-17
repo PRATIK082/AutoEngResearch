@@ -92,6 +92,14 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done, `[!]` blocked.
 - [x] P5.4 Final review against Task.md §16 quality rules — review agent (QUALITY_REVIEW.md) §16 quality rules — review agent
 - [x] P5.5 Commit + push integrated changes — orchestrator (commit 0c39435 + follow-up) — orchestrator
 
+### Phase D — Register W7/G5 across indexes (mode: interlink)
+
+- [x] D1 Register W7 (30 records, W7-001..W7-030) + G5 (32 records, G5-001..G5-032) in KNOWLEDGE_INDEX, CROSS_REFERENCE_INDEX, DOMAIN_MAP, TASK_COVERAGE — interlink agent — DONE
+- [x] D2 Book integration (ch7, ch8, ch15, ch16, ch22 problem-ID indices + cross-refs for W7/G5) — book agent — DONE
+- [x] D3 Artefact integration (matrices 62+62 rows, BN-141..152, glossary 17 terms/211 total, maps; issue tracking 62 rows) + CROSS_QUESTIONS — artefact agent — DONE
+- [x] D4 Overlap analysis (W7/G5 vs W1–W6/G1–G4: 50 Partial, 11 Related, 1 Duplicate-ish W7-029) + resolution rationale — review agent (OVERLAP_ANALYSIS_W7_G5.md; ISSUE_TRACKER.md Phase D4) — DONE
+- [x] D5 Quality & validation (blocking checks PASS: 223 records, 62 tracker rows, 0 broken links/183, 45 chapters, no stray files) — review/tooling agent (QUALITY_REVIEW.md §5) — DONE
+
 ---
 
 ## 3. Execution notes

@@ -3,7 +3,7 @@
 **Book:** *The State of Automotive Software Engineering*  
 **Part:** III — Industry Problem Investigation  
 **Chapter:** 16 — Integration Problems  
-**Source workstreams:** W1, W2, W3, W4, W5, W6, G1, G2, G3  
+**Source workstreams:** W1, W2, W3, W4, W5, W6, W7, G1, G2, G3  
 
 ---
 
@@ -40,11 +40,13 @@ The single most cited root cause of late integration surprises: OEMs deliver inc
 
 ---
 
-## 16.2 RTE generation contract gaps (W2-012)
+## 16.2 RTE generation contract gaps (W2-012, W7)
 
 - **W2-012 — RTE generation contract phase and consistency validation gaps:** consistency validation between generated RTE and SWC expectations is weak; mismatches surface at integration, not at generation time.
 
 **Root cause:** RTE generation is treated as a build step, not as a verified contract; there is no automated equivalence check between SWC expectations and generated RTE.
+
+The workstream **W7 — ASIL / Mixed-Criticality / Multicore** frames these contract gaps as ASIL-driven integration problems (W7-001..W7-010, W7-021..W7-030): per-ASIL implication sets and QM obligations (W7-001..W7-005) set the evidence bar the contract must meet; interference and coupling analysis (W7-006..W7-009) and SWC partitioning discipline (W7-010) define what the contract must protect; mode management across partitions (W7-021), the SWC-to-RTE-to-OS integration chain (W7-022), COM/signal-service mapping (W7-023), variant/calibration binding (W7-024) and cross-ASIL integration testing (W7-025) are where contract mismatches surface; BSW integration, configuration consistency and RTE/BSW contract gaps (W7-026..W7-028) and MCAL portability/driver safety (W7-029..W7-030) complete the stack. See `research/W7_asil_mixed_criticality_multicore.md`.
 
 ---
 

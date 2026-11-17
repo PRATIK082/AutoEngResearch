@@ -206,6 +206,23 @@ Numerical values are sourced estimates, not audited facts (see DATA_VERIFY.md).
 | BN-139 | Manufacturing/EOL flashing throughput and traceability | Manufacturing | W6-015, W6-023 | Line throughput; scrap; audit | Every vehicle | Tool fragmentation; manual glue | High |
 | BN-140 | OTA/bootloader orchestration and multi-ECU consistency | Cloud/fleet | W6-025, W6-026, W6-027 | Field inconsistency; safety risk | High (connected) | No campaign-level transaction | Medium |
 
+## 7b. ASIL, mixed-criticality and domain bottlenecks (W7/G5)
+
+| BN-ID | Bottleneck | Lifecycle / Domain | Primary problem IDs | Impact | Frequency/Severity | Existing-solution limitation | Automation feasibility |
+|---|---|---|---|---|---|---|---|
+| BN-141 | Per-ASIL implication and tailoring gaps (A/B/C/D, QM misuse) | Functional safety | W7-001-W7-005 | Audit findings; systematic-gap recalls or 2-3x overspend | Pervasive | ISO tables state what not how much; no team-level checklists | Medium-High |
+| BN-142 | Freedom-from-interference evidence (memory, timing, execution; QM-ASIL coupling) | Safety/architecture | W7-006-W7-009 | Safety-case gaps; assessment failure | High (safety-relevant) | Analysis tools compute metrics but do not prove absence of interference | Low-Medium |
+| BN-143 | SWC partitioning, runnable-to-task mapping and data consistency across ASILs | Software design | W7-010-W7-013 | Late rework; E2E data faults | High | Contract checks manual; E2E configuration error-prone | Medium |
+| BN-144 | Multicore allocation, scheduling and timing analysis for mixed-criticality | Architecture/timing | W7-014-W7-017 | Unsafe timing estimates; late violations | High (safety-relevant) | Single-core tooling mature; contention analysis immature | Medium |
+| BN-145 | Partitioning mechanisms (OS-Applications, hypervisors, IPC gateways, mode management) | Architecture/integration | W7-018-W7-021 | Containment failure; mode confusion | High | Hypervisor certification gaps; gateway testing per-leg not end-to-end | Low-Medium |
+| BN-146 | SWC-RTE-OS / COM / variant / BSW / MCAL integration chain under ASIL | Integration | W7-022-W7-030 | Integration debug; porting cost; re-verification | High | Multi-tool configurations; hardware-specific drivers | Medium |
+| BN-147 | Signal-to-service gateways, time-sync and service versioning (middleware) | Middleware | G5-001-G5-004 | Timing violations; fleet incompatibility | High | Per-leg verification; sync configured but not monitored | Medium-High |
+| BN-148 | Body domain consolidation (BCM I/O, access/security vs power timing, variant explosion) | Body | G5-005-G5-008 | Stalled vehicle; trim/personalization errors | Medium-High | Variant tooling fragmented; power-state timing manual | Medium |
+| BN-149 | Powertrain coordination (torque path, ASIL-C/D monitoring, calibration protection) | Powertrain | G5-009-G5-012 | Safety and regulator exposure | High | Calibration protection manual; torque/OBD interplay | Medium |
+| BN-150 | AD/ADAS pipeline (perception/fusion/planning, SOTIF and ASIL-D latency, ML/map updates) | AD/ADAS | G5-013-G5-016 | Safety-case gaps; homologation block | High (ASIL-D) | Scenario coverage unknown; updates vs homologation unresolved | Low-Medium |
+| BN-151 | IVI and cockpit consolidation (QM-ASIL coexistence, telltales, HMI variants) | IVI/Cockpit | G5-017-G5-024 | Display-integrity failure; release-cadence clash | High | Rendering-pipeline verification gaps; cadence mismatch | Medium |
+| BN-152 | Zonal and HPC consolidation (mixed-criticality to ASIL-D, FFI, virtualization, updates) | Zonal/HPC | G5-025-G5-032 | Interference faults; update risk; virtualization overhead | Emerging (high) | Hypervisor qualification gaps; image-update safety unproven | Low-Medium |
+
 ## 8. Summary statistics
 
 | Category | Count (BN-IDs) | Range |
@@ -216,8 +233,9 @@ Numerical values are sourced estimates, not audited facts (see DATA_VERIFY.md).
 | Toolchain, data & compliance | 29 | BN-67 … BN-95 |
 | Human skills, workforce & AI adoption | 25 | BN-96 … BN-120 |
 | Hardware, semiconductor & vehicle domains | 13 | BN-121 … BN-133 |
+| ASIL, mixed-criticality & domains | 12 | BN-141 - BN-152 |
 | Bootloader & flash programming | 7 | BN-134 � BN-140 |
-| **Total** | **140** | BN-01 � BN-140 |
+| **Total** | **152** | BN-01 � BN-152 |
 
 **Note:** BN-IDs are artefact-local and map to problem IDs; they are not a replacement for the canonical problem catalogue (part6_ch35). Testing/validation and toolchain dominate the count, consistent with the finding that testing is the dominant cost/schedule driver (up to 50% of development cost) and tool fragmentation is a root cause (KNOWLEDGE_INDEX cross-cutting themes 8, 2).
 

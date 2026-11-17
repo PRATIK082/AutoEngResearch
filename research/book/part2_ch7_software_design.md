@@ -4,7 +4,7 @@
 **Part:** II — Complete Automotive Software Lifecycle  
 **Chapter:** 7 — Software Design and Development  
 **Source workstreams:** W2 (AUTOSAR & Middleware), W3 (Testing & Validation), W4 (Toolchain & Standards), W5 (Skills & AI)  
-**Problem IDs in scope:** W2-006, W2-013, W2-014, W2-019, W3-001, W3-002, W3-032, W4-008, W4-009, W4-010, W4-020, W4-021, W4-028, W5-001, W5-005, W5-008, W5-009, W5-010, W5-011, W5-013, W5-015, W5-019, W5-021, W5-022, W5-023, W5-024
+**Problem IDs in scope:** W2-006, W2-013, W2-014, W2-019, W3-001, W3-002, W3-032, W4-008, W4-009, W4-010, W4-020, W4-021, W4-028, W5-001, W5-005, W5-008, W5-009, W5-010, W5-011, W5-013, W5-015, W5-019, W5-021, W5-022, W5-023, W5-024, W7-001..W7-030
 
 ---
 
@@ -70,9 +70,11 @@ Rust is increasingly discussed for automotive safety-critical code, but the rese
 
 ---
 
-## 7.3 Multicore and scheduling (W2-006, W2-013)
+## 7.3 Multicore and scheduling (W2-006, W2-013, W7)
 
 Multicore ECUs are increasingly common, but Classic AUTOSAR's static, partitioned scheduling model makes distribution manual and error-prone (W2-006). Optimisation is typically done late, after integration, with no automated distribution tooling. Classic OS scheduling limits (W2-013) force hypervisor/multi-OS complexity when consolidating feature sets. These problems compound as zonal/centralised architectures increase core counts (Chapter 6, W1-016).
+
+Software-component partitioning by ASIL, runnable-to-task mapping, and multicore allocation are now first-order design decisions rather than late integration optimisations. The dedicated workstream **W7 — ASIL / Mixed-Criticality / Multicore** (W7-001..W7-030) expands this into 30 problem records covering: per-ASIL design/test/evidence implication sets A–D plus QM obligations (W7-001..W7-005), freedom from interference (memory, timing, execution) and QM–ASIL coupling (W7-006..W7-009), SWC partitioning, runnable mapping, cross-ASIL data consistency and end-to-end protection (W7-010..W7-013), multicore core allocation, scheduling/timing analysis, inter-core communication and spinlocks, and timing verification (W7-014..W7-017), OS-application partitions, hypervisor guests, inter-partition gateways and mode management (W7-018..W7-021), SWC-to-RTE-to-OS integration, COM/signal-service mapping, variant/calibration binding and cross-ASIL integration testing (W7-022..W7-025), BSW module integration, configuration consistency and RTE/BSW contract gaps (W7-026..W7-028), and MCAL portability and MCU driver safety (W7-029..W7-030). See `research/W7_asil_mixed_criticality_multicore.md`.
 
 ---
 

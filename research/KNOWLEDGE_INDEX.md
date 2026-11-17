@@ -1,8 +1,8 @@
 # Knowledge Index — Automotive Software Engineering Problem Catalogue
 
-**Source reports:** `research/W1_requirements_system.md`, `W2_autosar_middleware.md`, `W3_testing_validation.md`, `W4_toolchain_standards.md`, `W5_skills_ai.md`, `W6_bootloader_flash.md`
+**Source reports:** `research/W1_requirements_system.md`, `W2_autosar_middleware.md`, `W3_testing_validation.md`, `W4_toolchain_standards.md`, `W5_skills_ai.md`, `W6_bootloader_flash.md`, `W7_asil_mixed_criticality_multicore.md`, `G5_domain_deep_dive.md`
 **Compiled:** 2026-11-07
-**Total problem records:** 161 (W1: 18, W2: 20, W3: 38, W4: 30, W5: 25, W6: 30)
+**Total problem records:** 223 (W1: 18, W2: 20, W3: 38, W4: 30, W5: 25, W6: 30, W7: 30, G5: 32)
 
 ---
 
@@ -16,6 +16,8 @@
 | W4 Toolchain & Standards | 30 | Fragmentation, ARXML, compliance overhead, HIL, CI/CD, cost |
 | W5 Human Skills & AI/Automation | 25 | Talent gaps, knowledge loss, AI barriers, governance |
 | W6 Bootloader & Flash Programming | 30 | Bootloader architecture, flash programming, integration, security, testing, manufacturing |
+| W7 ASIL & Mixed-Criticality / Multicore | 30 | ASIL-A/B/C/D implications, FFI, SWC partitioning, multicore, multi-partition, SWC-BSW-MCAL integration |
+| G5 Vehicle Domain Deep-Dive | 32 | Middleware, Body, Powertrain, AD/ADAS, IVI, Cockpit, Zonal, HPC (4 records each) |
 
 ---
 
@@ -212,6 +214,78 @@
 | W6-029 | Human skill gaps in bootloader/flash/security expertise | Human skills |
 | W6-030 | Late bootloader rework cost | Process / lifecycle |
 
+### W7 — ASIL & Mixed-Criticality / Multicore
+
+| ID | Title | Domain |
+|---|---|---|
+| W7-001 | ASIL-A implication set (design, process, testing, evidence) | Functional safety / ASIL-A |
+| W7-002 | ASIL-B implication set (design, process, testing, evidence) | Functional safety / ASIL-B |
+| W7-003 | ASIL-C implication set (design, process, testing, evidence) | Functional safety / ASIL-C |
+| W7-004 | ASIL-D implication set (design, process, testing, evidence) | Functional safety / ASIL-D |
+| W7-005 | QM components: obligations, limits, and misuse | Functional safety / QM |
+| W7-006 | Freedom from interference: memory interference | Mixed-criticality / FFI |
+| W7-007 | Freedom from interference: timing interference | Mixed-criticality / FFI |
+| W7-008 | Freedom from interference: execution / control-flow interference | Mixed-criticality / FFI |
+| W7-009 | QM-ASIL coupling through shared libraries and common-cause paths | Mixed-criticality / dependent failure |
+| W7-010 | SWC partitioning by ASIL (granularity, allocation, interface discipline) | SW component design / mixed-criticality |
+| W7-011 | Runnable-to-task mapping under ASIL constraints | SW component design / AUTOSAR OS |
+| W7-012 | Data consistency across ASIL boundaries | Mixed-criticality / RTE communication |
+| W7-013 | End-to-end protection (E2E profiles, CRC/sequence) | Safety communication / E2E |
+| W7-014 | Multicore core allocation for mixed-criticality | Multicore architecture / mixed-criticality |
+| W7-015 | Multicore scheduling and timing analysis gaps | Multicore timing / AUTOSAR OS |
+| W7-016 | Inter-core communication and spinlocks (shared-memory hazards, lock ordering, deadlock) | Multicore / mixed-criticality |
+| W7-017 | Multicore timing verification (contention, cache effects, measurement vs analysis) | Multicore timing / V&V |
+| W7-018 | OS-Applications and memory partitions (trusted vs untrusted, restart, containment) | Multi-partition / OS separation |
+| W7-019 | Hypervisor guests for mixed-criticality (ASIL guest beside QM Linux/Android) | Virtualization / mixed-criticality |
+| W7-020 | Inter-partition communication gateways (I/O routing, FFI boundary, covert channels) | Multi-partition communication / mixed-criticality |
+| W7-021 | Mode management across partitions (ECU modes, partition requests, inconsistent assumptions) | Multi-partition / mode management |
+| W7-022 | SWC to RTE to OS integration chain (contract vs execution phase, generation mismatch) | Application/BSW integration / RTE contract |
+| W7-023 | COM and signal-service mapping under ASIL (grouping, atomicity, gateway timing) | Communication / mixed-criticality integration |
+| W7-024 | Variant and calibration binding in mixed-criticality builds (post-build variants, sprawl, wrong-variant flashing) | Variants / calibration / production |
+| W7-025 | Application integration testing across ASILs (SiL/HiL coverage, fault injection, robustness) | Integration testing / mixed-criticality V&V |
+| W7-026 | BSW module integration under ASIL (mixed-ASIL stacking, scheduler, ownership) | BSW stack integration / mixed-criticality |
+| W7-027 | BSW configuration consistency (ECUC parameters, multi-tool, post-build loadables) | BSW configuration / integration |
+| W7-028 | RTE/BSW contract gaps (BswM/EcuM states, NvM job results, Dem discipline) | RTE/BSW contracts / state and fault handling |
+| W7-029 | MCAL portability and verification burden (MCU change, re-verification, safety-manual assumptions) | MCAL / hardware-software interface |
+| W7-030 | MCU driver safety challenges (watchdog, GPT, ADC, DMA, HSI and lockstep/EDC interaction) | MCAL drivers / safety mechanisms |
+
+### G5 — Vehicle Domain Deep-Dive
+
+| ID | Title | Domain |
+|---|---|---|
+| G5-001 | Middleware: signal-service gateway correctness and timing | Middleware |
+| G5-002 | Middleware: time synchronisation and deterministic communication | Middleware |
+| G5-003 | Middleware: service versioning and mixed-version fleet coexistence | Middleware |
+| G5-004 | Middleware: cross-domain lesson - middleware as the integration contract | Middleware (cross-domain) |
+| G5-005 | Body: BCM consolidation, I/O abstraction and load control | Body |
+| G5-006 | Body: access/security vs safety and power-state timing | Body |
+| G5-007 | Body: variant explosion across trims and personalization data | Body |
+| G5-008 | Body: cross-domain lesson - the quiet domain that stalls the vehicle | Body (cross-domain) |
+| G5-009 | Powertrain: EMS/TCM/aftertreatment coordination and the torque path | Powertrain |
+| G5-010 | Powertrain: ASIL-C/D torque monitoring and OBD interplay | Powertrain |
+| G5-011 | Powertrain: emission-relevant calibration protection and field updates under regulation | Powertrain |
+| G5-012 | Powertrain: cross-domain lesson - torque and calibration as vehicle contracts | Powertrain (cross-domain) |
+| G5-013 | AD/ADAS: perception/fusion/planning pipeline and sensor integration | AD/ADAS |
+| G5-014 | AD/ADAS: SOTIF + ASIL-D motion control, ODD exits, and latency budgets | AD/ADAS |
+| G5-015 | AD/ADAS: ML model, map-data, and calibration updates vs homologation | AD/ADAS |
+| G5-016 | AD/ADAS: cross-domain lesson - ADAS turns every shared resource into a safety case | AD/ADAS (cross-domain) |
+| G5-017 | IVI/Infotainment: head-unit SoC with audio/nav stacks beside safety | IVI/Infotainment |
+| G5-018 | IVI/Infotainment: QM-ASIL coexistence and telltale/display integrity | IVI/Infotainment |
+| G5-019 | IVI/Infotainment: app-store cadence vs vehicle release discipline | IVI/Infotainment |
+| G5-020 | IVI/Infotainment: cross-domain lesson - QM exuberance must not sink ASIL neighbours | IVI/Infotainment (cross-domain) |
+| G5-021 | Cockpit: cluster/HUD/driver-monitoring consolidation on shared SoC | Cockpit |
+| G5-022 | Cockpit: ASIL-B telltales, display-pipeline integrity, and rendering deadlines | Cockpit |
+| G5-023 | Cockpit: HMI personalization and variants vs safety-constrained configuration | Cockpit |
+| G5-024 | Cockpit: cross-domain lesson - the display is a safety actuator | Cockpit (cross-domain) |
+| G5-025 | Zonal: I/O consolidation, power distribution, and network bridging in one controller | Zonal |
+| G5-026 | Zonal: mixed-criticality up to ASIL-D on one controller and FFI evidence | Zonal |
+| G5-027 | Zonal: software packaging, partial updates, and rollback for zonal controllers | Zonal |
+| G5-028 | Zonal: cross-domain lesson - the zone is where domains collide | Zonal (cross-domain) |
+| G5-029 | HPC: central-compute consolidation, virtualization strategy, and SOA deployment | HPC |
+| G5-030 | HPC: mixed-criticality up to ASIL-D on shared SoC, hypervisor qualification, and interference evidence | HPC |
+| G5-031 | HPC: container/VM image updates, atomic fleet rollout, and data-driven logging pipelines | HPC |
+| G5-032 | HPC: cross-domain lesson - HPC as the convergence point | HPC (cross-domain) |
+
 ---
 
 ## 3. Domain index
@@ -235,16 +309,25 @@ W2-001, W2-005, W2-006, W2-012, W2-013
 W2-002, W2-003, W2-004, W2-014, W2-016, W2-017, W2-018, W2-020
 
 ### Middleware (SOME/IP, DDS)
-W2-007, W2-008
+W2-007, W2-008, G5-001..G5-004
 
 ### Virtualization / hypervisors
 W2-009, W1-016
 
 ### OTA / bootloader / software update
-W2-010, W4-016, W6-001..W6-030
+W2-010, W4-016, W6-001..W6-030, W7-024, G5-027, G5-031
 
 ### Bootloader / flash programming
 W6-001..W6-030
+
+### ASIL / mixed-criticality
+W7-001..W7-030
+
+### Multicore / multi-partition
+W7-014..W7-021
+
+### Vehicle domains (deep-dive)
+G5-001..G5-032
 
 ### Testing & validation (general)
 W3-001..W3-038 (all), W4-018, W4-019, W4-029
@@ -298,7 +381,7 @@ W5-012, W5-013, W5-014, W5-022, W5-023
 
 ## 4. Key terms index (term → problem IDs)
 
-- **ADAS/ADS** — W1-004, W3-017, W3-018, W3-019, W3-020, W4-017, W5-005
+- **ADAS/ADS** — W1-004, W3-017, W3-018, W3-019, W3-020, W4-017, W5-005, G5-013..G5-016
 - **Ambiguity (requirements)** — W1-001, W1-005, W5-006
 - **ARXML** — W1-013, W2-001, W2-015, W4-002, W4-003, W4-005
 - **ASPICE** — W1-014, W3-025, W3-032, W4-013
@@ -312,10 +395,10 @@ W5-012, W5-013, W5-014, W5-022, W5-023
 - **DDS** — W2-008
 - **Fault injection** — W3-033
 - **Flakiness / nondeterminism** — W3-003, W3-019, W3-029
-- **Functional safety (ISO 26262)** — W2-004, W2-018, W3-034, W4-011, W4-012, W5-003, W5-019
+- **Functional safety (ISO 26262)** — W2-004, W2-018, W3-034, W4-011, W4-012, W5-003, W5-019, W7-001..W7-030
 - **Hallucination (LLM)** — W5-017, W5-020
 - **HIL** — W3-010..W3-016, W4-018
-- **Hypervisor / virtualization** — W2-009, W1-016
+- **Hypervisor / virtualization** — W2-009, W1-016, W7-019, G5-030
 - **Integration (multi-ECU)** — W5-008, W1-006, W1-007
 - **Interface governance** — W1-007, W1-008
 - **Knowledge silos / turnover** — W5-012, W5-023, W4-022
@@ -323,11 +406,12 @@ W5-012, W5-013, W5-014, W5-022, W5-023
 - **MIL/SIL/PIL** — W3-001..W3-009
 - **MISRA/CERT** — W4-008, W4-009, W4-010
 - **ML/AI requirements** — W1-004
-- **Multicore** — W2-006
+- **Multicore** — W2-006, W7-014..W7-017
+- **Mixed-criticality / FFI** — W7-006..W7-009, W7-018..W7-021, G5-026, G5-030
 - **ODD / scenario coverage** — W3-018, W4-017
 - **Onboarding / training cost** — W5-013, W4-022
-- **OTA / FOTA** — W2-010, W4-016
-- **Bootloader / flash programming** — W6-001..W6-030
+- **OTA / FOTA** — W2-010, W4-016, W7-024, G5-027, G5-031
+- **Bootloader / flash programming** — W6-001..W6-030, W7-024
 - **Proving ground** — W3-017
 - **Regression testing** — W3-028
 - **Requirements traceability** — W1-003, W4-007
@@ -348,7 +432,7 @@ W5-012, W5-013, W5-014, W5-022, W5-023
 - **vECU** — W3-004, W3-007, W4-019
 - **Variant explosion** — W1-011, W2-011, W3-011
 - **Vendor lock-in** — W2-005, W4-004
-- **Zonal / centralised architecture** — W1-016, W2-009, W5-024
+- **Zonal / centralised architecture** — W1-016, W2-009, W5-024, G5-025..G5-032
 
 ---
 

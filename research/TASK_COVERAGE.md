@@ -7,6 +7,8 @@ Maps Task.md sections to research artifacts.
 - Cloud/fleet: G3 (28 problem records)
 - Energy/thermal: G4 (32 problem records)
 - Bootloader/flash programming: W6 (30 problem records, W6-001..W6-030)
+- ASIL/mixed-criticality/multicore: W7 (30 problem records, W7-001..W7-030)
+- Vehicle domain deep-dives: G5 (32 problem records, G5-001..G5-032)
 - 3.C Architecture/middleware: W2
 - 3.D Lifecycle: W1-W6 (partial)
 - 4 Cross-industry: CROSS_CHECK
@@ -26,6 +28,8 @@ Maps Task.md sections to research artifacts.
 Gaps to fill: semiconductor/hardware, vehicle domains detail, cloud/backend, architecture metrics, stakeholders.
 - G4 energy/thermal: research/G4_energy_thermal.md (32 problem records, G4-001..G4-032).
 - W6 bootloader/flash: research/W6_bootloader_flash.md (30 problem records, W6-001..W6-030).
+- W7 ASIL/mixed-criticality/multicore: research/W7_asil_mixed_criticality_multicore.md (30 problem records, W7-001..W7-030).
+- G5 vehicle domain deep-dive: research/G5_domain_deep_dive.md (32 problem records, G5-001..G5-032).
 
 ---
 See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
