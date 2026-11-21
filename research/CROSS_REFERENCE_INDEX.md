@@ -15,6 +15,8 @@ Maps topics, problem IDs, book chapters, and artefacts.
 - G4 (energy/thermal): Part III ch14/ch21
 - W6 (bootloader/flash): Part II ch13, Part III ch14/ch15/ch18
 - W7 (ASIL/mixed-criticality/multicore): Part II ch8, Part III ch14/ch22
+- G6 (semiconductor CDD hardware): Part II ch8, Part III ch14/ch22
+- G7 (vehicle domain deep-dive): Part I ch3, Part III ch14
 - G5 (domain deep-dive): Part I ch3, Part III ch14
 
 ## Wave cross-references (W7/G5)
@@ -27,6 +29,22 @@ Maps topics, problem IDs, book chapters, and artefacts.
 - G5-013..G5-016 (AD/ADAS) ↔ G3/G4 (cloud/fleet, energy/thermal)
 - G5-017..G5-020 (IVI) ↔ W5 (skills/AI)
 - G5-029..G5-032 (HPC) ↔ W2/W3 (middleware, testing/validation)
+
+## Wave cross-references (G6–G11)
+
+- G6-001..G6-008 ↔ G5-001..G5-004 (Middleware/COM separation/isolation)
+- G6-009..G6-012 ↔ W6-009/W6-024 (secure boot, HSM)
+- G6-013..G6-015 ↔ G2-001 (partitioning, watchdogs)
+- G6-016..G6-022 ↔ W2-002/007/008/010 (semiconductor/hardware binding constraints)
+- G6-023..G6-030 ↔ W3-015/029 (testing/validation evidence)
+- G6-031..G6-045 ↔ W4-015/030 (toolchain/standards)
+- G7-001..G7-003 ↔ G2-016 (SWC partitioning, multicore scheduling)
+- G7-004..G7-006 ↔ W5-001..W5-011 (human skills, AI/automation)
+- G7-007..G7-010 ↔ W4-001..W4-014 (toolchain/standards, coding standards)
+- G8-001..G8-006 ↔ G1-001..G1-006 (semiconductor/hardware)
+- G9-001..G9-004 ↔ W2-009 (middleware)
+- G10-001..G10-005 ↔ W3-001..W3-005 (testing/validation)
+- G11-001..G11-008 ↔ W5-015..W5-024 (skills/AI, human approval)
 
 ## Artefacts
 

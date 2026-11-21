@@ -1,12 +1,14 @@
-# Part II — Chapter 7: Software Design and Development
+﻿# Part II — Chapter 7: Software Design and Development
 
-**Book:** *The State of Automotive Software Engineering*  
-**Part:** II — Complete Automotive Software Lifecycle  
-**Chapter:** 7 — Software Design and Development  
-**Source workstreams:** W2 (AUTOSAR & Middleware), W3 (Testing & Validation), W4 (Toolchain & Standards), W5 (Skills & AI)  
+**Book:** *The State of Automotive Software Engineering*
+**Part:** II — Complete Automotive Software Lifecycle
+**Chapter:** 7 — Software Design and Development
+**Source workstreams:** W2 (AUTOSAR & Middleware), W3 (Testing & Validation), W4 (Toolchain & Standards), W5 (Skills & AI)
 **Problem IDs in scope:** W2-006, W2-013, W2-014, W2-019, W3-001, W3-002, W3-032, W4-008, W4-009, W4-010, W4-020, W4-021, W4-028, W5-001, W5-005, W5-008, W5-009, W5-010, W5-011, W5-013, W5-015, W5-019, W5-021, W5-022, W5-023, W5-024, W7-001..W7-030
 
 ---
+
+**G6-G11** scope-header range `(G6-G11)` — **G6 — CDI Bootloader & Flash Programming** (G6-001..G6-045) See `research/G6_bootloader_flash.md`, **G7 — SWC partitioning & multicore** (G7-001..G7-010) See `research/G7_swc_partitioning.md`, **G8 — Body & comfort deep-dive** (G8-001..G8-024) See `research/G8_body_comfort.md`, **G9 — Powertrain & EV deep-dive** (G9-001..G9-006) See `research/G9_powertrain_ev.md`, **G10 — AD/ADAS domain deep-dive** (G10-001..G10-015) See `research/G10_adadas.md`, **G11 — Infotainment & Cockpit deep-dive** (G11-001..G11-008) See `research/G11_infotainment.md`
 
 ## 7.0 Chapter purpose and problem map
 
@@ -74,7 +76,7 @@ Rust is increasingly discussed for automotive safety-critical code, but the rese
 
 Multicore ECUs are increasingly common, but Classic AUTOSAR's static, partitioned scheduling model makes distribution manual and error-prone (W2-006). Optimisation is typically done late, after integration, with no automated distribution tooling. Classic OS scheduling limits (W2-013) force hypervisor/multi-OS complexity when consolidating feature sets. These problems compound as zonal/centralised architectures increase core counts (Chapter 6, W1-016).
 
-Software-component partitioning by ASIL, runnable-to-task mapping, and multicore allocation are now first-order design decisions rather than late integration optimisations. The dedicated workstream **W7 — ASIL / Mixed-Criticality / Multicore** (W7-001..W7-030) expands this into 30 problem records covering: per-ASIL design/test/evidence implication sets A–D plus QM obligations (W7-001..W7-005), freedom from interference (memory, timing, execution) and QM–ASIL coupling (W7-006..W7-009), SWC partitioning, runnable mapping, cross-ASIL data consistency and end-to-end protection (W7-010..W7-013), multicore core allocation, scheduling/timing analysis, inter-core communication and spinlocks, and timing verification (W7-014..W7-017), OS-application partitions, hypervisor guests, inter-partition gateways and mode management (W7-018..W7-021), SWC-to-RTE-to-OS integration, COM/signal-service mapping, variant/calibration binding and cross-ASIL integration testing (W7-022..W7-025), BSW module integration, configuration consistency and RTE/BSW contract gaps (W7-026..W7-028), and MCAL portability and MCU driver safety (W7-029..W7-030). See `research/W7_asil_mixed_criticality_multicore.md`.
+Software-component partitioning by ASIL, runnable-to-task mapping, and multicore allocation are now first-order design decisions rather than late integration optimisations. The dedicated workstream **W7 — ASIL / Mixed-Criticality / Multicore** (W7-001..W7-030) expands this into 30 problem records covering: per-ASIL design/test/evidence implication sets A–D plus QM obligations (W7-001..W7-005), freedom from interference (memory, timing, execution) and QM–ASIL coupling (W7-006..W7-009), SWC partitioning, runnable mapping, cross-ASIL data consistency and end-to-end protection (W7-010..W7-013), multicore core allocation, scheduling/timing analysis, inter-core communication and spinlocks, and timing verification (W7-014..W7-017), OS-application partitions, hypervisor guests, inter-partition gateways, and mode management (W7-018..W7-021), SWC-to-RTE-to-OS integration, COM/signal-service mapping, variant/calibration binding and cross-ASIL integration testing (W7-022..W7-025), BSW module integration, configuration consistency and RTE/BSW contract gaps (W7-026..W7-028), and MCAL portability and MCU driver safety (W7-029..W7-030). See `research/W7_asil_mixed_criticality_multicore.md`.
 
 ---
 
@@ -106,7 +108,7 @@ Unit testing in automotive is often informal, with weak strategies and poor evid
 
 The research record documents a structural talent shortage across embedded software, AUTOSAR, functional safety, cybersecurity, AI/ML, systems, integration, testing, hardware/software co-design, and toolchain (W5-001, W5-005, W5-008, W5-009, W5-010, W5-011, W5-024). Contributing factors include compensation disadvantage vs. tech-native rivals (W5-015), long training/onboarding time (W5-013, 12–24 months inferred for ASIL B ownership), education pipeline mismatch (W5-022), aging workforce/retirement cliff (W5-023), and legacy skills obsolescence (W5-021).
 
-AI-generated code safety and certification gaps (W5-019) are particularly relevant to this chapter: LLMs can generate code and tests, but there is no safety case or certification precedent for AI-generated safety-critical code, and hallucination risk (W5-017) makes verification mandatory. AI applicability is therefore high for non-safety scaffolding and low for safety-critical code.
+AI-generated code safety and certification gaps (W5-019) are particularly relevant to this chapter: LLMs can generate code and tests, but there is no safety case or certification precedent for AI-generated safety-critical code, and hallucination risk (W5-017) makes verification mandatory. AI applicability is therefore high for non-scaffolding and low for safety-critical code.
 
 ---
 
@@ -145,5 +147,5 @@ AI-generated code safety and certification gaps (W5-019) are particularly releva
 *End of Chapter 7.*
 
 ---
-See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)
 
+See also: [CROSS_REFERENCE_INDEX.md](../CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](../KNOWLEDGE_INDEX.md)

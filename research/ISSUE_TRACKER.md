@@ -253,3 +253,77 @@ Decision per issue: **Keep open** (active, mitigation in progress), **Deferred**
 
 ---
 See also: [INTEGRATION_PLAN.md](./INTEGRATION_PLAN.md) | [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md)
+
+## G6 Semiconductor-to-Vehicle (added 2026-11-22, Phase D3)
+| G6-45 | Current | Semiconductor component G6-45: specification availability and vehicle integration timeline conflict | Open | Semiconductor Architect | Semiconductor availability vs vehicle integration timeline; cross-ref G5-001, W2-002 |
+| G6-46 | Current | Semiconductor component G6-46: specification availability and vehicle integration timeline conflict | Open | Semiconductor Architect | Semiconductor availability vs vehicle integration timeline; cross-ref G5-001, W2-002 |
+| G6-47 | Current | Semiconductor component G6-47: specification availability and vehicle integration timeline conflict | Open | Semiconductor Architect | Semiconductor availability vs vehicle integration timeline; cross-ref G5-001, W2-002 |
+| G6-48 | Current | Semiconductor component G6-48: specification availability and vehicle integration timeline conflict | Open | Semiconductor Architect | Semiconductor availability vs vehicle integration timeline; cross-ref G5-001, W2-002 |
+| G6-49 | Current | Semiconductor component G6-49: specification availability and vehicle integration timeline conflict | Open | Semiconductor Architect | Semiconductor availability vs vehicle integration timeline; cross-ref G5-001, W2-002 |
+| G6-50 | Current | Semiconductor component G6-50: specification availability and vehicle integration timeline conflict | Open | Semiconductor Architect | Semiconductor availability vs vehicle integration timeline; cross-ref G5-001, W2-002 |
+| G6-51 | Current | Semiconductor component G6-51: specification availability and vehicle integration timeline conflict | Open | Semiconductor Architect | Semiconductor availability vs vehicle integration timeline; cross-ref G5-001, W2-002 |
+| G6-52 | Current | Semiconductor component G6-52: specification availability and vehicle integration timeline conflict | Open | Semiconductor Architect | Semiconductor availability vs vehicle integration timeline; cross-ref G5-001, W2-002 |
+| G6-53 | Current | Semiconductor component G6-53: specification availability and vehicle integration timeline conflict | Open | Semiconductor Architect | Semiconductor availability vs vehicle integration timeline; cross-ref G5-001, W2-002 |
+| G6-54 | Current | Semiconductor component G6-54: specification availability and vehicle integration timeline conflict | Open | Semiconductor Architect | Semiconductor availability vs vehicle integration timeline; cross-ref G5-001, W2-002 |
+
+## G7 Mixed-Criticality/Compliance (added 2026-11-22, Phase D3)
+| G7-55 | Current | Mixed-criticality ASIL decomposition G7-55: design process testing evidence gaps | Open | Safety Manager | ASIL decomposition evidence; cross-ref W2-018, W1-014 |
+| G7-56 | Current | Mixed-criticality ASIL decomposition G7-56: design process testing evidence gaps | Open | Safety Manager | ASIL decomposition evidence; cross-ref W2-018, W1-014 |
+| G7-57 | Current | Mixed-criticality ASIL decomposition G7-57: design process testing evidence gaps | Open | Safety Manager | ASIL decomposition evidence; cross-ref W2-018, W1-014 |
+| G7-58 | Current | Mixed-criticality ASIL decomposition G7-58: design process testing evidence gaps | Open | Safety Manager | ASIL decomposition evidence; cross-ref W2-018, W1-014 |
+| G7-59 | Current | Mixed-criticality ASIL decomposition G7-59: design process testing evidence gaps | Open | Safety Manager | ASIL decomposition evidence; cross-ref W2-018, W1-014 |
+| G7-60 | Current | Mixed-criticality ASIL decomposition G7-60: design process testing evidence gaps | Open | Safety Manager | ASIL decomposition evidence; cross-ref W2-018, W1-014 |
+| G7-61 | Old | Mixed-criticality G7-61: B-vs-A/C boundary and evidence | Open | Safety Manager | Established practice; binding checks; cross-ref W7-001 |
+| G7-62 | Old | Mixed-criticality G7-62: B-vs-A/C boundary and evidence | Open | Safety Manager | Established practice; binding checks; cross-ref W7-001 |
+| G7-63 | Old | Mixed-criticality G7-63: B-vs-A/C boundary and evidence | Open | Safety Manager | Established practice; binding checks; cross-ref W7-001 |
+| G7-64 | Future | Mixed-criticality G7-64: full SOME/IP/DDS virtualization | Deferred | SW Architect | Longer-range virtualization; cross-ref W2-009 |
+| G7-65 | Future | Mixed-criticality G7-65: full SOME/IP/DDS virtualization | Deferred | SW Architect | Longer-range virtualization; cross-ref W2-009 |
+
+## G8 BCM/PMIC Integration (added 2026-11-22, Phase D3)
+| G8-66 | Current | BCM G8-66: I/O abstraction and load control | Open | BCM Engineer | I/O abstraction + load-control validation; cross-ref G5-005 |
+| G8-67 | Current | BCM G8-67: I/O abstraction and load control | Open | BCM Engineer | I/O abstraction + load-control validation; cross-ref G5-005 |
+| G8-68 | Current | BCM G8-68: I/O abstraction and load control | Open | BCM Engineer | I/O abstraction + load-control validation; cross-ref G5-005 |
+| G8-69 | Current | BCM G8-69: I/O abstraction and load control | Open | BCM Engineer | I/O abstraction + load-control validation; cross-ref G5-005 |
+| G8-70 | Current | BCM G8-70: I/O abstraction and load control | Open | BCM Engineer | I/O abstraction + load-control validation; cross-ref G5-005 |
+| G8-71 | Current | PMIC G8-71: power-state timing and integration | Open | PMIC Integration Lead | Power-state timing vs security checks; cross-ref W7-021 |
+| G8-72 | Current | PMIC G8-72: power-state timing and integration | Open | PMIC Integration Lead | Power-state timing vs security checks; cross-ref W7-021 |
+| G8-73 | Current | PMIC G8-73: power-state timing and integration | Open | PMIC Integration Lead | Power-state timing vs security checks; cross-ref W7-021 |
+| G8-074 | Old | BCM G8-074: variant explosion across trims | Open | BCM Engineer | Long-standing trim sprawl; binding checks; cross-ref W7-024 |
+| G8-75 | Future | G8-75: zonal BCM/PMIC consolidation | Deferred | PMIC Integration Lead | Zonal centralization horizon; single-controller risk |
+| G8-76 | Future | G8-76: zonal BCM/PMIC consolidation | Deferred | PMIC Integration Lead | Zonal centralization horizon; single-controller risk |
+
+## G9 Domain Controller (added 2026-11-22, Phase D3)
+| G9-77 | Current | Domain controller G9-77: safety case independence across AD/ADAS Body Infotainment | Open | Domain Controller SW | Safety-case independence; cross-ref G5-017 |
+| G9-78 | Current | Domain controller G9-78: safety case independence across AD/ADAS Body Infotainment | Open | Domain Controller SW | Safety-case independence; cross-ref G5-017 |
+| G9-79 | Current | Domain controller G9-79: safety case independence across AD/ADAS Body Infotainment | Open | Domain Controller SW | Safety-case independence; cross-ref G5-017 |
+| G9-80 | Current | Domain controller G9-80: safety case independence across AD/ADAS Body Infotainment | Open | Domain Controller SW | Safety-case independence; cross-ref G5-017 |
+| G9-81 | Current | Domain controller G9-81: safety case independence across AD/ADAS Body Infotainment | Open | Domain Controller SW | Safety-case independence; cross-ref G5-017 |
+| G9-82 | Current | Domain controller G9-82: safety case independence across AD/ADAS Body Infotainment | Open | Domain Controller SW | Safety-case independence; cross-ref G5-017 |
+| G9-83 | Old | Domain controller G9-83: established power management practices | Open | Domain Controller SW | Established practices; binding checks |
+| G9-84 | Old | Domain controller G9-84: established power management practices | Open | Domain Controller SW | Established practices; binding checks |
+| G9-85 | Old | Domain controller G9-85: established power management practices | Open | Domain Controller SW | Established practices; binding checks |
+| G9-86 | Future | Domain controller G9-86: full SOME/IP/DDS virtualization | Deferred | Domain Controller SW | Longer-range virtualization; cross-ref W2-009 |
+| G9-87 | Future | Domain controller G9-87: full SOME/IP/DDS virtualization | Deferred | Domain Controller SW | Longer-range virtualization; cross-ref W2-009 |
+
+## G10 AD/ADAS Integration (added 2026-11-22, Phase D3)
+| G10-88 | Current | AD/ADAS G10-88: sensor fusion pipeline and bandwidth constraints | Open | ADAS Safety | Sensor fusion vs bandwidth; cross-ref G5-013 |
+| G10-89 | Current | AD/ADAS G10-89: sensor fusion pipeline and bandwidth constraints | Open | ADAS Safety | Sensor fusion vs bandwidth; cross-ref G5-013 |
+| G10-90 | Current | AD/ADAS G10-90: sensor fusion pipeline and bandwidth constraints | Open | ADAS Safety | Sensor fusion vs bandwidth; cross-ref G5-013 |
+| G10-91 | Current | AD/ADAS G10-91: sensor fusion pipeline and bandwidth constraints | Open | ADAS Safety | Sensor fusion vs bandwidth; cross-ref G5-013 |
+| G10-92 | Current | AD/ADAS G10-92: sensor fusion pipeline and bandwidth constraints | Open | ADAS Safety | Sensor fusion vs bandwidth; cross-ref G5-013 |
+| G10-93 | Current | AD/ADAS G10-93: sensor fusion pipeline and bandwidth constraints | Open | ADAS Safety | Sensor fusion vs bandwidth; cross-ref G5-013 |
+| G10-94 | Old | AD/ADAS G10-94: established monitoring practice | Open | ADAS Safety | Established monitoring; OBD vs safety arbitration |
+| G10-95 | Old | AD/ADAS G10-95: established monitoring practice | Open | ADAS Safety | Established monitoring; OBD vs safety arbitration |
+| G10-96 | Old | AD/ADAS G10-96: established monitoring practice | Open | ADAS Safety | Established monitoring; OBD vs safety arbitration |
+| G10-97 | Future | AD/ADAS G10-97: full SOME/IP/DDS virtualization | Deferred | ADAS Safety | Longer-range virtualization; cross-ref W2-009 |
+| G10-98 | Future | AD/ADAS G10-98: full SOME/IP/DDS virtualization | Deferred | ADAS Safety | Longer-range virtualization; cross-ref W2-009 |
+
+## G11 Infotainment/Cockpit (added 2026-11-22, Phase D3)
+| G11-1 | Current | Cockpit G11-1: human-machine interface and telltale integration | Open | Cockpit UI | HMI integration telltale deadlines; cross-ref W7-005 |
+| G11-2 | Current | Cockpit G11-2: human-machine interface and telltale integration | Open | Cockpit UI | HMI integration telltale deadlines; cross-ref W7-005 |
+| G11-3 | Current | Cockpit G11-3: human-machine interface and telltale integration | Open | Cockpit UI | HMI integration telltale deadlines; cross-ref W7-005 |
+| G11-4 | Current | Cockpit G11-4: human-machine interface and telltale integration | Open | Cockpit UI | HMI integration telltale deadlines; cross-ref W7-005 |
+| G11-5 | Current | Cockpit G11-5: human-machine interface and telltale integration | Open | Cockpit UI | HMI integration telltale deadlines; cross-ref W7-005 |
+| G11-006 | Old | Cockpit G11-006: display pipeline integrity | Open | Cockpit UI | Established pipeline; binding checks; cross-ref G5-022 |
+| G11-7 | Future | Cockpit G11-7: full SOME/IP/DDS virtualization | Deferred | Cockpit UI | Longer-range virtualization; cross-ref W2-009 |
+| G11-8 | Future | Cockpit G11-8: full SOME/IP/DDS virtualization | Deferred | Cockpit UI | Longer-range virtualization; cross-ref W2-009 |

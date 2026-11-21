@@ -1,4 +1,4 @@
-# CROSS_QUESTIONS — Cross-Domain Research Questions
+﻿# CROSS_QUESTIONS — Cross-Domain Research Questions
 
 **Purpose:** A comprehensive set of questions whose answers require evidence from **two or more** of the five research workstreams (W1 Requirements/System Engineering, W2 AUTOSAR/Middleware, W3 Testing/Validation, W4 Toolchain/Standards, W5 Skills/AI). Answering these is necessary to complete the research book "THE STATE OF AUTOMOTIVE SOFTWARE ENGINEERING" and to build the cross-domain dependency maps, problem-to-root-cause matrices, and consolidated findings (Parts III, VI, VII).
 
@@ -656,3 +656,65 @@ Total: 18+31+23 = 72. Good.
 ---
 See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)
 
+## G6 Semiconductor-to-Vehicle — cross-domain questions (added 2026-11-22, Phase D3)
+
+- CQ-G6-01 — How does semiconductor component specification and availability interact with vehicle-level integration timelines (G6-001..G6-005)? What is the quantified risk of semiconductor single-source dependency across vehicle domains?
+- CQ-G6-02 — How does silicon bring-up timing interact with ECU flash programming and vehicle assembly scheduling (G6-011..G6-015, W6-011)? What is the critical path between silicon bring-up and vehicle production readiness?
+- CQ-G6-03 — What automotive-grade qualification flow ensures semiconductor compliance across temperature, vibration, and lifespan domains (G6-016..G6-020, G1-020/021)? How does qual flow interact with ASIL decomposition?
+- CQ-G6-04 — How does erratum/workaround management for automotive SoCs affect ASIL decomposition and FFI claims (G6-021..G6-025, W7-006..009)? What workaround documentation suffices for safety assessors?
+- CQ-G6-05 — What is the end-of-life and obsolescence management strategy for semiconductor components in safety-critical vehicle domains (G6-026..G6-030, W4-015)? How is lifecycle risk tracked across fleet?
+- CQ-G6-06 — How does semiconductor-to-vehicle mapping interact with zonal architecture consolidation and central compute (G6-031..G6-035, G5-025/G5-029)? What binding constraints emerge when silicon meets domains?
+
+## G7 Mixed-Criticality/Compliance — cross-domain questions (added 2026-11-22, Phase D3)
+
+- CQ-G7-01 — How is ASIL decomposition evidence structured when multiple criticality levels share a single SoC (G7-001..G7-005, W7-006..009)? What FFI suffices for independent ASIL assessment across partitions?
+- CQ-G7-02 — How do scheduling and allocation decisions interact with OTA certification and safety-case maintenance (G7-011..G7-015, W6-025)? What evidence survives OTA across criticality boundaries?
+- CQ-G7-03 — What interference quantification methods validate freedom-from-interference on consolidated multicore platforms (G7-016..G7-020, W7-014..017)? Which measured interference rates suffices for ASIL-D certification?
+- CQ-G7-04 — How do mixed-criticality integration choices interact with bootloader and safety evidence (G7-021..G7-025, W6-003, W6-009, W6-017)? What joint safe-state plus safe-update argument covers ASIL software and its bootloader?
+- CQ-G7-05 — What validation framework validates ASIL-D on shared SoC with QM Linux/Android guests (G7-026..G7-030, W7-019)? What fault-injection testing still has to prove?
+- CQ-G7-06 — How does the skill gap in mixed-criticality SW development bind across domains from silicon through cockpit (binding-constraint-G7)? What training and mentorship pathways close the gap?
+
+## G8 BCM/PMIC Integration — cross-domain questions (added 2026-11-22, Phase D3)
+
+- CQ-G8-01 — How does BCM I/O abstraction layer interact with PMIC power-state timing and domain power collapse (G8-001..G8-005, G5-006)? What is the power-state timing trade-off?
+- CQ-G8-02 — What is the access-security vs safety/power-state timing trade-off for BCM-controlled vehicle functions (G8-006..G8-010, W7-021)? How are security checks ordered relative to safety checks?
+- CQ-G8-03 — How do trim variant and personalization data bindings interact with BCM calibration across vehicle configurations (G8-011..G8-015, G5-007)? What is the variant explosion binding constraint?
+- CQ-G8-04 — What quiet-domain lesson applies to BCM/PMIC integration when stalls occur during vehicle integration (G8-016..G8-020, G5-008)? How is early integration slot mapping maintained?
+- CQ-G8-05 — How does PMIC power-sequence validation interact with secure boot and key lifecycle (G8-021..G8-025, W6-003, G1-032)? What power-seq evidence suffices for safety case?
+- CQ-G8-06 — What is the BCM/PMIC integration lesson for zonal architecture consolidation (G8-026..G8-030, G5-025)? How does single-controller risk manifest in BCM/PMIC domains?
+
+## G9 Domain Controller — cross-domain questions (added 2026-11-22, Phase D3)
+
+- CQ-G9-01 — How does single-domain controller architecture affect safety-case independence across AD/ADAS, Body, and Infotainment functions (G9-001..G9-005)? What is the independence boundary per domain?
+- CQ-G9-02 — What is the domain controller SW virtualization strategy for consolidating multiple workloads on one controller (G9-006..G9-010, G5-029)? What hypervisor qualification suffices?
+- CQ-G9-03 — How does OTA update coordination work across domain controllers with partitioned safety domains (G9-011..G9-015, G3-018)? What is the fleet-wide update consistency argument?
+- CQ-G9-04 — What is the domain controller fault-injection and HiL validation framework (G9-016..G9-020, W3)? What test coverage suffices for safety-case claims?
+- CQ-G9-05 — How does domain controller power management interact with safety-task deadlines and ASIL timing requirements (G9-021..G9-025, W7-011)? What is the power-management vs deadline trade-off?
+- CQ-G9-06 — What is the domain controller SW update rollback and rollforward strategy across fleet (G9-026..G9-030, G3-018)? How is atomic fleet rollout maintained across partitioned domains?
+
+## G10 AD/ADAS Integration — cross-domain questions (added 2026-11-22, Phase D3)
+
+- CQ-G10-01 — How does AD/ADAS sensor fusion pipeline integrate with vehicle controller area network and Ethernet bandwidth constraints (G10-001..G10-005)? What is the bandwidth-binding constraint?
+- CQ-G10-02 — What is the SOTIF compliance argument for AD/ADAS perception latency budgets ODD exit verification (G10-006..G10-010, W4-017, W1-010)? How is latency budget sufficiency proven?
+- CQ-G10-03 — How do ML model updates versus homologation requirements interact for AD/ADAS field updates (G10-011..G10-015, G5-015, W5-016)? What is the update-vs-homologation tension resolution?
+- CQ-G10-04 — What is the end-to-end timing verification flow from sensor to actuator for ASIL-D motion control (G10-016..G10-020, W7-003/004)? What is the critical path from perception to actuation?
+- CQ-G10-05 — How do AD/ADAS safety constraints interact with real-time Ethernet TSN and time-sync requirements (G10-021..G10-025, G5-002)? What is the time-sync binding constraint?
+- CQ-G10-06 — What is the cross-domain integration lesson when AD/ADAS shares SoC with IVI or cockpit functions (G10-026..G10-030, G5-017/G5-018)? How is safety-case integrity maintained under SoC sharing?
+
+## G11 Infotainment/Cockpit — cross-domain questions (added 2026-11-22, Phase D3)
+
+- CQ-G11-01 — How does cockpit human-machine interface integration interact with safety telltale and pipeline deadline requirements (G11-001..G11-005, W7-005/008)? What is the telltale-deadline binding constraint?
+- CQ-G11-02 — What is the QM-ASIL coexistence evidence strategy when cockpit and safety functions share an SoC (G11-006..G11-010, G5-018, W7-005)? How is QM-ASIL boundary maintained?
+- CQ-G11-03 — How is display pipeline integrity evidenced when QM graphics share hardware with ASIL-B telltales (G11-011..G11-015, G5-022/024)? What is the pipeline-integrity binding constraint?
+- CQ-G11-04 — What is the cockpit personalization vs safety configuration fence strategy for variant data (G11-016..G11-020, G5-023, W7-024)? How is personalization fenced from safety?
+- CQ-G11-05 — How does infotainment app-store cadence clash with vehicle release discipline and homologation (G11-021..G11-025, G5-019, W4-016)? What is the cadence-binding constraint?
+- CQ-G11-06 — What is the cockpit UI convergence lesson for zonal-domain architecture with centralized compute (G11-026..G11-030, G5-032)? How does zonal consolidation affect cockpit UI?
+
+## G6-G11 Cross-Workstream Binding Constraints — cross-domain questions (added 2026-11-22, Phase D3)
+
+- CQ-G6G11-01 — What is the common silicon-to-vehicle integration constraint that binds across G6 semiconductor mapping, G7 compliance, G8 BCM/PMIC, G9 domain control, G10 AD/ADAS, and G11 cockpit (binding-constraint-01)?
+- CQ-G6G11-02 — How does the AUTOSAR Adaptive / Classic migration path bind across G6-G11 workstreams (binding-constraint-02)? What is the migration binding constraint?
+- CQ-G6G11-03 — What is the OTA/rollback orchestration requirement that spans semiconductor qualification through domain-level deployment (binding-constraint-03)? How is fleet-wide consistency maintained?
+- CQ-G6G11-04 — How does time synchronization and deterministic networking bind across all G6-G11 domains (binding-constraint-04)? What is the time-sync binding constraint?
+- CQ-G6G11-05 — What is the ASIL decomposition and FFI evidence boundary that must be maintained across G6-G11 consolidated platforms (binding-constraint-05)? Where are the FFI boundaries?
+- CQ-G6G11-06 — How does the skill gap in mixed-criticality SW development bind across G6-G11 from silicon through cockpit UI (binding-constraint-06)? What training and mentorship pathways close the gap?
