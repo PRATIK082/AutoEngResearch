@@ -104,8 +104,26 @@ Vehicle software is organised by **functional domain**. Historically each domain
 - **HPC/Zonal** ↔ mixed-criticality (W1-016), hypervisors (W2-009), FFI (W2-004).
 - **Bootloader/Flash/OTA** � no standardized bootloader (W6-001), secure boot (W6-003), UDS flash (W6-007), power transients (W6-008), recovery (W6-009), testing (W6-012), manufacturing/EOL (W6-015), OTA orchestration (W6-025), toolchain (W6-023).
 
-- **Safety / mixed-criticality / multicore (W7)** � ASIL-A/B/C/D implication sets (W7-001..W7-004), FFI memory/timing/execution (W7-006..W7-008), SWC partitioning (W7-010), multicore allocation/scheduling/verification (W7-014..W7-017), partitions and hypervisor (W7-018..W7-020), RTE/BSW/MCAL integration (W7-022..W7-030).
+- **Semiconductor CDD (G6)** — 45 records: SBC/PMIC (G6-001..G6-015), transceivers/eFuses (G6-016..G6-030), memory/security (G6-031..G6-045). Maps: SBC→BCM, PMIC→Zonal/EV, transceivers→Body/IVI/Ethernet, eFuses→Power distribution, memory→TCU/Adaptive, security→HSM/TPM.
+
+- **SWC partitioning & multicore (G7)** — 10 records: G7-001..G7-003 (ASIL decomposition by core), G7-004..G7-006 (time/space partitioning, dependable scheduling), G7-007..G7-010 (RTE/BSW/MCAL cross-core isolation, depend on G2-016).
+
+- **Body & comfort deep-dive (G8)** — 24 records: G8-001..G8-008 (MSDI, GPIO, switch debounce, actuator drivers), G8-009..G8-016 (smart switches, load drivers, eFuses), G8-017..G8-024 (LED drivers, matrix lighting, interior/exterior).
+
+- **Powertrain & EV deep-dive (G9)** — 6 records: G9-001..G9-003 (inverter, OBC, on-board charger), G9-004..G9-006 (BMS, thermal management, charging systems).
+
+- **AD/ADAS domain deep-dive (G10)** — 15 records: G10-001..G10-005 (perception: radar/lidar/camera), G10-006..G10-010 (fusion, localisation, planning), G10-011..G10-015 (vehicle control, actuation, cybersecurity).
+
+- **Infotainment & Cockpit deep-dive (G11)** — 8 records: G11-001..G11-004 (display, HUD, instrument cluster), G11-005..G11-008 (infotainment: IVI, media, voice, OTA).
+
+- **Safety / mixed-criticality / multicore (W7) / ** � ASIL-A/B/C/D implication sets (W7-001..W7-004), FFI memory/timing/execution (W7-006..W7-008), SWC partitioning (W7-010), multicore allocation/scheduling/verification (W7-014..W7-017), partitions and hypervisor (W7-018..W7-020), RTE/BSW/MCAL integration (W7-022..W7-030).
 - **Vehicle domain deep-dives (G5)** � Middleware/COM separation (G5-001..G5-004), Body (G5-005..G5-008), Powertrain/torque path (G5-009..G5-012), AD/ADAS (G5-013..G5-016), IVI/QM-ASIL coexistence (G5-017..G5-020), Cockpit/telltales (G5-021..G5-024), Zonal (G5-025..G5-028), HPC (G5-029..G5-032).
+- **Semiconductor CDD (G6)** — 45 records: SBC/PMIC (G6-001..G6-015), transceivers/eFuses (G6-016..G6-030), memory/security (G6-031..G6-045). Maps: SBC→BCM, PMIC→Zonal/EV, transceivers→Body/IVI/Ethernet, eFuses→Power distribution, memory→TCU/Adaptive, security→HSM/TPM.
+- **SWC partitioning & multicore (G7)** — 10 records: G7-001..G7-003 (ASIL decomposition by core), G7-004..G7-006 (time/space partitioning, dependable scheduling), G7-007..G7-010 (RTE/BSW/MCAL cross-core isolation, depend on G2-016).
+- **Body & comfort deep-dive (G8)** — 24 records: G8-001..G8-008 ( MSDI, GPIO, switch debounce, actuator drivers), G8-009..G8-016 (smart switches, load drivers, eFuses), G8-017..G8-024 (LED drivers, matrix lighting, interior/exterior).
+- **Powertrain & EV deep-dive (G9)** — 6 records: G9-001..G9-003 (inverter, OBC, on-board charger), G9-004..G9-006 (BMS, thermal management, charging systems).
+- **AD/ADAS domain deep-dive (G10)** — 15 records: G10-001..G10-005 (perception: radar/lidar/camera), G10-006..G10-010 (fusion, localisation, planning), G10-011..G10-015 (vehicle control, actuation, cybersecurity).
+- **Infotainment & Cockpit deep-dive (G11)** — 8 records: G11-001..G11-004 (display, HUD, instrument cluster), G11-005..G11-008 (infotainment: IVI, media, voice, OTA).
 
 ---
 

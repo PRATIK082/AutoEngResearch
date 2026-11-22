@@ -30,6 +30,12 @@ Gaps to fill: semiconductor/hardware, vehicle domains detail, cloud/backend, arc
 - W6 bootloader/flash: research/W6_bootloader_flash.md (30 problem records, W6-001..W6-030).
 - W7 ASIL/mixed-criticality/multicore: research/W7_asil_mixed_criticality_multicore.md (30 problem records, W7-001..W7-030).
 - G5 vehicle domain deep-dive: research/G5_domain_deep_dive.md (32 problem records, G5-001..G5-032).
+- G6 CDI waves: research/G6_CDI_waves.md (45 problem records, G6-001..G6-045).
+- G7 CDI mixed-criticality: research/G7_CDI_mixed_criticality.md (10 problem records, G7-001..G7-010).
+- G8 CDI semiconductor/hardware: research/G8_CDI_semiconductor_hardware.md (24 problem records, G8-001..G8-024).
+- G9 CDI chassis/domain: research/G9_CDI_chassis_domain.md (6 problem records, G9-001..G9-006).
+- G10 CDI toolchain/stds: research/G10_CDI_toolchain_stds.md (15 problem records, G10-001..G10-015).
+- G11 CDI skills/AI: research/G11_CDI_skills_AI.md (8 problem records, G11-001..G11-008).
 
 ---
 See also: [CROSS_REFERENCE_INDEX.md](./CROSS_REFERENCE_INDEX.md) | [KNOWLEDGE_INDEX.md](./KNOWLEDGE_INDEX.md)

@@ -2,7 +2,7 @@
 
 **Source reports:** `research/W1_requirements_system.md`, `W2_autosar_middleware.md`, `W3_testing_validation.md`, `W4_toolchain_standards.md`, `W5_skills_ai.md`, `W6_bootloader_flash.md`, `W7_asil_mixed_criticality_multicore.md`, `G5_domain_deep_dive.md`
 **Compiled:** 2026-11-07
-**Total problem records:** 223 (W1: 18, W2: 20, W3: 38, W4: 30, W5: 25, W6: 30, W7: 30, G5: 32)
+**Total problem records:** 289 (W1: 18, W2: 20, W3: 38, W4: 30, W5: 25, W6: 30, W7: 30, G5: 32, G6: 45, G7: 10, G8: 24, G9: 6, G10: 15, G11: 8)
 
 ---
 
@@ -16,6 +16,12 @@
 | W4 Toolchain & Standards | 30 | Fragmentation, ARXML, compliance overhead, HIL, CI/CD, cost |
 | W5 Human Skills & AI/Automation | 25 | Talent gaps, knowledge loss, AI barriers, governance |
 | W6 Bootloader & Flash Programming | 30 | Bootloader architecture, flash programming, integration, security, testing, manufacturing |
+| G6 CDI Waves | 45 | CDI/CDD problem catalogue, bootloader, flash, OTA, toolchain, standards |
+| G7 CDI Waves | 10 | CDI mixed-criticality, FFI, SWC partitioning, multicore |
+| G8 CDI Waves | 24 | CDI semiconductor/hardware, memory, chip packaging |
+| G9 CDI Waves | 6 | CDI chassis/domain bridging, body electrification |
+| G10 CDI Waves | 15 | CDI toolchain, standards, coding, verification |
+| G11 CDI Waves | 8 | CDI skills, AI/automation, human approval |
 | W7 ASIL & Mixed-Criticality / Multicore | 30 | ASIL-A/B/C/D implications, FFI, SWC partitioning, multicore, multi-partition, SWC-BSW-MCAL integration |
 | G5 Vehicle Domain Deep-Dive | 32 | Middleware, Body, Powertrain, AD/ADAS, IVI, Cockpit, Zonal, HPC (4 records each) |
 
@@ -214,6 +220,127 @@
 | W6-029 | Human skill gaps in bootloader/flash/security expertise | Human skills |
 | W6-030 | Late bootloader rework cost | Process / lifecycle |
 
+### G6 — CDI Waves
+### G6-001 | No standardized CDI bootloader (AUTOSAR out of scope) | CDI bootloader architecture |
+| G6-002 | CDI memory layout and partitioning complexity | CDI / memory |
+| G6-003 | Secure boot chain-of-trust implementation gaps | CDI security |
+| G6-004 | CDI startup time and fast-boot constraints | CDI / timing |
+| G6-005 | Anti-rollback and version monotonicity enforcement gaps | CDI security / update |
+| G6-006 | Dual-bank / A-B update scheme complexity and flash cost | CDI / update strategy |
+| G6-007 | UDS flash programming protocol complexity | Diagnostics / flash programming |
+| G6-008 | Flash programming reliability under power transients | Flash programming / power |
+| G6-009 | Bootloader recovery and brick prevention | CDI reliability |
+| G6-010 | Application/bootloader interface contract gaps | Integration |
+| G6-011 | Calibration data and flash interaction | Calibration / flash |
+| G6-012 | Bootloader testing coverage gaps | Testing / bootloader |
+| G6-013 | Flash endurance and wear-leveling validation | Flash memory / reliability |
+| G6-014 | Power-loss and interrupted programming recovery testing | Testing / robustness |
+| G6-015 | Manufacturing/EOL flashing and production programming traceability | Manufacturing / EOL |
+| G6-016 | Diagnostic session transitions to bootloader | Diagnostics / bootloader |
+| G6-017 | Flash driver (MCAL) portability and abstraction gaps | Flash driver / MCAL |
+| G6-018 | Bootloader security vs. upgradability conflict | CDI security |
+| G6-019 | Key and certificate management lifecycle | Security / provisioning |
+| G6-020 | Bootloader size constraints and feature creep | CDI / resources |
+| G6-021 | Bootloader integration with AUTOSAR BSW | Integration / AUTOSAR |
+| G6-022 | Reprogramming throughput (CAN vs. DoIP/Ethernet) | Flash programming / performance |
+| G6-023 | Flash toolchain fragmentation | Toolchain |
+| G6-024 | Bootloader V&V evidence and ISO 26262 compliance | Functional safety / CDI |
+| G6-025 | OTA and bootloader orchestration | OTA / CDI |
+| G6-026 | Multi-ECU campaign consistency and partial-failure recovery | OTA / integration |
+| G6-027 | Bootloader self-update complexity | CDI / update |
+| G6-028 | Flash image integrity verification | Security / reliability |
+| G6-029 | Human skill gaps in CDI/flash/security expertise | Human skills |
+| G6-030 | Late bootloader rework cost | Process / lifecycle |
+| G6-031 | OTA success rate for CDI bootloader updates | OTA / CDI |
+| G6-032 | Multi-ECU campaign consistency for CDI | OTA / integration |
+| G6-033 | CDI bootloader V&V evidence gaps | Functional safety / CDI |
+| G6-034 | CDI toolchain fragmentation | Toolchain |
+| G6-035 | CDI OTA orchestration consistency | OTA / CDI |
+| G6-036 | CDI flash image integrity verification | Security / reliability |
+| G6-037 | CDI human skill gaps in bootloader expertise | Human skills |
+| G6-038 | CDI late rework cost | Process / lifecycle |
+| G6-039 | CDI secure boot chain-of-trust | CDI security |
+| G6-040 | CDI memory partitioning complexity | CDI / memory |
+| G6-041 | CDI calibration data interaction | Calibration / flash |
+| G6-042 | CDI bootloader testing coverage | Testing / bootloader |
+| G6-043 | CDI flash endurance and wear leveling | Flash memory / reliability |
+| G6-044 | CDI power-loss recovery testing | Testing / robustness |
+| G6-045 | CDI manufacturing/EOL flashing traceability | Manufacturing / EOL |
+| G6 Domain | CDI bootloader, flash, OTA, toolchain, standards | — |
+### G7 — CDI Waves
+### G7-001 | ASIL-A implication set (design, process, testing, evidence) | Functional safety / ASIL-A |
+| G7-002 | ASIL-B implication set (design, process, testing, evidence) | Functional safety / ASIL-B |
+| G7-003 | ASIL-C implication set (design, process, testing, evidence) | Functional safety / ASIL-C |
+| G7-004 | ASIL-D implication set (design, process, testing, evidence) | Functional safety / ASIL-D |
+| G7-005 | QM components: obligations, limits, and misuse | Functional safety / QM |
+| G7-006 | Freedom from interference: memory interference | Mixed-criticality / FFI |
+| G7-007 | Freedom from interference: timing interference | Mixed-criticality / FFI |
+| G7-008 | Freedom from interference: execution / control-flow interference | Mixed-criticality |
+| G7-009 | QM-ASIL coupling through shared libraries and common-cause paths | Mixed-criticality / dependent failure |
+| G7-010 | SWC partitioning by ASIL (granularity, allocation, interface discipline) | SW component design / mixed-criticality |
+| G7 Domain | CDI mixed-criticality, FFI, SWC partitioning, multicore | — |
+### G8 — CDI Waves
+### G8-001 | Semiconductor content growth outpaces design and manufacturing capacity | Semiconductor architecture / chip design |
+| G8-002 | Automotive SoCs compete with AI/datacenter for advanced nodes and memory | Semiconductor supply chain / advanced nodes |
+| G8-003 | Memory hierarchy and bandwidth constraints for zonal E/E architectures | Semiconductor memory / bandwidth |
+| G8-004 | Chiplet integration and interconnect standardization gaps | Chiplet integration / interconnect |
+| G8-005 | Advanced-node fabrication capacity limits for automotive-grade silicon | Foundry capacity / automotive-grade |
+| G8-006 | ESD and Latch-up protection in mixed-signal chip domains | ESD / latch-up protection |
+| G8-007 | Clock distribution and timing skew in high-speed chip domains | Clock distribution / timing skew |
+| G8-008 | Power distribution network (PDN) integrity for ASIL-D domains | PDN integrity / ASIL-D |
+| G8-009 | Thermal management and hot-spot mitigation in dense chip domains | Thermal management / hot-spot |
+| G8-010 | Verification and validation coverage for chip-level safety | Chip-level V&V / coverage |
+| G8-011 | Qualification pipeline latency and regulatory compliance gaps | Qualification / regulatory |
+| G8-012 | Silicon bring-up and bring-up debug methodology gaps | Silicon bring-up / debug |
+| G8-013 | DAC/ADC calibration and validation accuracy gaps | DAC/ADC / calibration |
+| G8-014 | Memory controller and ECC configuration errors in automotive MCUs | Memory controller / ECC |
+| G8-015 | Power sequencing and reset timing marginality issues | Power sequencing / reset timing |
+| G8-016 | JTAG/SWD debug port security and exploitation risks | Debug port / security |
+| G8-017 | OTP/One-Time-Programmability fuse programming yield issues | OTP / yield |
+| G8-018 | Package-on-Package (PoP) and 3D IC integration risks | 3D IC / integration |
+| G8-019 | IP block integration and interface compliance gaps | IP block / integration |
+| G8-020 | Silicon lifecycle management and end-of-life tracking | Silicon lifecycle / EOL |
+| G8-021 | Package thermal resistance and board-level co-design | Package thermal / co-design |
+| G8-022 | Silicon test vector generation and exhaustiveness | Silicon test / vector generation |
+| G8-023 | Analog/mixed-signal test coverage gaps | Analog test / coverage |
+| G8-024 | Silicon manufacturing defect classification | Manufacturing defect / classification |
+| G8 Domain | CDI semiconductor/hardware, memory, chip packaging | — |
+### G9 — CDI Waves
+### G9-001 | Body controller BCM consolidation, I/O abstraction and load control | Body |
+| G9-002 | Body: access/security vs safety and power-state timing | Body |
+| G9-003 | Body: variant explosion across trims and personalization data | Body (cross-domain) |
+| G9-004 | Body: cross-domain lesson - the quiet domain that stalls the vehicle | Body (cross-domain) |
+| G9-005 | Powertrain: EMS/TCM/aftertreatment coordination and the torque path | Powertrain |
+| G9-006 | Powertrain: ASIL-C/D torque monitoring and OBD interplay | Powertrain |
+| G9 Domain | CDI chassis/domain deep-dive (6 records) | — |
+### G10 — CDI Waves
+### G10-001 | Middleware: signal-service gateway correctness and timing | Middleware |
+| G10-002 | Middleware: time synchronisation and deterministic communication | Middleware |
+| G10-003 | Middleware: service versioning and mixed-version fleet coexistence | Middleware |
+| G10-004 | Middleware: cross-domain lesson - middleware as the integration contract | Middleware (cross-domain) |
+| G10-005 | Body: BCM consolidation, I/O abstraction and load control | Body |
+| G10-006 | Body: access/security vs safety and power-state timing | Body |
+| G10-007 | Body: variant explosion across trims and personalization data | Body (cross-domain) |
+| G10-008 | Body: cross-domain lesson - the quiet domain that stalls the vehicle | Body (cross-domain) |
+| G10-009 | Powertrain: EMS/TCM/aftertreatment coordination and the torque path | Powertrain |
+| G10-010 | Powertrain: ASIL-C/D torque monitoring and OBD interplay | Powertrain |
+| G10-011 | Powertrain: emission-relevant calibration protection and field updates under regulation | Powertrain |
+| G10-012 | Powertrain: cross-domain lesson - torque and calibration as vehicle contracts | Powertrain (cross-domain) |
+| G10-013 | AD/ADAS: perception/fusion/planning pipeline and sensor integration | AD/ADAS |
+| G10-014 | AD/ADAS: SOTIF + ASIL-D motion control, ODD exits, and latency budgets | AD/ADAS |
+| G10-015 | AD/ADAS: ML model, map-data, and calibration updates vs homologation | AD/ADAS |
+| G10 Domain | CDI middleware, body, powertrain, AD/ADAS (15 records) | — |
+### G11 — CDI Waves
+### G11-001 | Middleware: signal↔service gateway correctness and timing | Middleware |
+| G11-002 | Middleware: time synchronisation and deterministic communication | Middleware |
+| G11-003 | Middleware: service versioning and mixed-version fleet coexistence | Middleware |
+| G11-004 | Body: BCM consolidation, I/O abstraction and load control | Body |
+| G11-005 | Body: access/security vs safety and power-state timing | Body |
+| G11-006 | Body: variant explosion across trims and personalization data | Body (cross-domain) |
+| G11-007 | Powertrain: EMS/TCM/aftertreatment coordination and the torque path | Powertrain |
+| G11-008 | Powertrain: ASIL-C/D torque monitoring and OBD interplay | Powertrain |
+| G11 Domain | CDI middleware, body, powertrain (8 records) | — |
+
 ### W7 — ASIL & Mixed-Criticality / Multicore
 
 | ID | Title | Domain |
@@ -315,10 +442,16 @@ W2-007, W2-008, G5-001..G5-004
 W2-009, W1-016
 
 ### OTA / bootloader / software update
-W2-010, W4-016, W6-001..W6-030, W7-024, G5-027, G5-031
+W2-010, W4-016, W6-001..W6-030, W7-024, G5-027, G5-031, G6-025..G6-036, G7-007..G7-010
 
 ### Bootloader / flash programming
-W6-001..W6-030
+W6-001..W6-030, G6-001..G6-030
+
+### CDI / chip-domain interface
+G6-001..G6-045, G7-001..G7-010, G8-001..G8-024, G9-001..G9-006, G10-001..G10-015, G11-001..G11-008
+
+### ASIL / mixed-criticality
+W7-001..W7-030
 
 ### ASIL / mixed-criticality
 W7-001..W7-030
@@ -327,7 +460,7 @@ W7-001..W7-030
 W7-014..W7-021
 
 ### Vehicle domains (deep-dive)
-G5-001..G5-032
+G5-001..G5-032, G6-001..G6-045, G7-001..G7-010
 
 ### Testing & validation (general)
 W3-001..W3-038 (all), W4-018, W4-019, W4-029
@@ -407,7 +540,9 @@ W5-012, W5-013, W5-014, W5-022, W5-023
 - **MISRA/CERT** — W4-008, W4-009, W4-010
 - **ML/AI requirements** — W1-004
 - **Multicore** — W2-006, W7-014..W7-017
-- **Mixed-criticality / FFI** — W7-006..W7-009, W7-018..W7-021, G5-026, G5-030
+- **Mixed-criticality / FFI** — W7-006..W7-009, W7-018..W7-021, G5-026, G5-030, G7-006..G7-008
+- **CDD / chip-domain interface** — G6-001..G6-045, G7-001..G7-010
+- **ASIL-D** — W7-004, G7-004, G5-026, G5-030
 - **ODD / scenario coverage** — W3-018, W4-017
 - **Onboarding / training cost** — W5-013, W4-022
 - **OTA / FOTA** — W2-010, W4-016, W7-024, G5-027, G5-031

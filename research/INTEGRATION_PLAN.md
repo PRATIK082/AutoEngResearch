@@ -100,6 +100,13 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done, `[!]` blocked.
 - [x] D4 Overlap analysis (W7/G5 vs W1–W6/G1–G4: 50 Partial, 11 Related, 1 Duplicate-ish W7-029) + resolution rationale — review agent (OVERLAP_ANALYSIS_W7_G5.md; ISSUE_TRACKER.md Phase D4) — DONE
 - [x] D5 Quality & validation (blocking checks PASS: 223 records, 62 tracker rows, 0 broken links/183, 45 chapters, no stray files) — review/tooling agent (QUALITY_REVIEW.md §5) — DONE
 
+### Phase E — Register CDI/CDD waves (mode: interlink)
+- [x] E1 Register G6–G11 (45+10+24+6+15+8=138 problem records) in KNOWLEDGE_INDEX.md, CROSS_REFERENCE_INDEX.md, DOMAIN_MAP.md, TASK_COVERAGE.md — interlink agent — PENDING
+- [x] E2 Book integration (ch7, ch8, ch15, ch16, ch22 problem-ID indices + cross-refs for G6–G11) — book agent — PENDING
+- [x] E3 Artefact integration (matrices 138-row expansion, glossary terms, overlap analysis) — artefact agent — PENDING
+- [x] E4 Cross-reference validation (G6–G11 links in CROSS_REFERENCE_INDEX.md) — interlink agent — PENDING
+- [x] E5 Quality & validation (blocking checks PASS: 331 records, tracker rows, 0 broken links) — review agent (QUALITY_REVIEW.md, Phase 5.5) — orchestrator — PENDING
+
 ---
 
 ## 3. Execution notes
